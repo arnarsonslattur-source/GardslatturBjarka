@@ -392,7 +392,7 @@
       grid-template-columns: 120px 1fr 120px 1.2fr 0.95fr;
       gap: 20px;
       align-items: start;
-      padding: 72px 0 40px;
+      padding: 100px 0 40px;
     }
 
     .contact-text,
@@ -403,9 +403,15 @@
     }
 
     .contact-details {
-      max-width: 640px;
+      max-width: 700px;
       word-break: normal;
       overflow-wrap: anywhere;
+    }
+
+    .email {
+      display: inline-block;
+      margin-left: 6px;
+      font-weight: 500;
     }
 
     .facebook-block {
@@ -447,19 +453,32 @@
     .page-view {
       display: none;
       opacity: 0;
-      transform: translateY(18px);
+      transform: translateY(30px) scale(0.985);
+      filter: blur(6px);
     }
 
     .active-page {
       display: block;
-      animation: pageFade 0.45s ease forwards;
+      animation: pageFade 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     @keyframes pageFade {
-      from {
+      0% {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(30px) scale(0.985);
+        filter: blur(6px);
       }
+      60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.003);
+        filter: blur(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
       to {
         opacity: 1;
         transform: translateY(0);
@@ -743,7 +762,7 @@
             <div class="arrow">→</div>
             <div class="contact-details">
               Sími: 833-6070<br>
-              Email: arnarsonslattur@gmail.com<br>
+              Email: <span class="email">arnarsonslattur@gmail.com</span><br>
               Facebook: @SlatturBjarka
             </div>
 
@@ -779,7 +798,7 @@
         clickedLink.classList.add('active');
       }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
       document.getElementById('navLinks').classList.remove('show');
     }
 
