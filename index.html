@@ -665,69 +665,75 @@
       </div>
     </section>
 
-         <section class="section-gray areas">
-  <div class="container areas-wrap">
-    
-    <div>
-      <h2>Svæði sem við<br>þjónustum</h2>
-      <div class="areas-copy">
-        Akureyri &amp; nágrenni.<br>
-        Við sinnum slætti og garðvinnu í öllum hverfum Akureyrar.<br>
-        Hafðu samband og við komum til þín.
+    <section class="section-gray areas">
+      <div class="container areas-wrap">
+        <div>
+          <h2>Svæði sem við<br>þjónustum</h2>
+          <div class="areas-copy">
+            Akureyri &amp; nágrenni.<br>
+            Við sinnum slætti og garðvinnu í öllum hverfum Akureyrar.<br>
+            Hafðu samband og við komum til þín.
+          </div>
+        </div>
+
+        <div class="before-after">
+          <div>
+            <img src="fyrir.jpg" alt="Fyrir slátt" />
+            <div class="caption">Fyrir</div>
+          </div>
+          <div>
+            <img src="eftir.jpg" alt="Eftir slátt" />
+            <div class="caption">Eftir</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="before-after">
-      <div>
-        <img src="fyrir.jpg" alt="Fyrir slátt" />
-        <div class="caption">Fyrir</div>
+    <section class="section-gray contact-band">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="arrow">→</div>
+          <div class="contact-text">
+            Garðsláttur Bjarka<br>
+            Akureyri
+          </div>
+
+          <div class="arrow">→</div>
+          <div class="contact-details">
+            Sími: 833-6070<br>
+            Email: arnarsonslattur@gmail.com<br>
+            Facebook: @SlatturBjarka
+          </div>
+
+          <div class="facebook-block">
+            <div class="facebook-text">Smelltu á Facebook merkið</div>
+            <div class="down-arrow">↓</div>
+            <a class="facebook-icon" href="https://www.facebook.com/SlatturBjarka/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="eftir.jpg" alt="Eftir slátt" />
-        <div class="caption">Eftir</div>
-      </div>
-    </div>
+      <img class="bottom-image" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80" alt="Snyrtilegt útisvæði" />
+    </section>
+  </main>
 
-  </div>
-</section>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
 
-<section class="section-gray contact-band">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="arrow">→</div>
-      <div class="contact-text">
-        Garðsláttur Bjarka<br>
-        Akureyri
-      </div>
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Formið er bara sýnidæmi núna. Ég get næst tengt það við email eða Formspree svo þú fáir raunveruleg skilaboð.');
+    }
 
-      <div class="arrow">→</div>
-      <div class="contact-details">
-        Sími: 833-6070<br>
-        Email: arnarsonslattur@gmail.com<br>
-        Facebook: @SlatturBjarka
-      </div>
-
-      <div class="facebook-block">
-        <div class="facebook-text">Smelltu á Facebook merkið</div>
-        <div class="down-arrow">↓</div>
-        <a class="facebook-icon" href="https://www.facebook.com/SlatturBjarka/" target="_blank">f</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<script>
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('show');
-}
-
-function submitForm(event) {
-  event.preventDefault();
-  alert('Formið er bara demo núna');
-}
-</script>
-
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
+
+   
+           
