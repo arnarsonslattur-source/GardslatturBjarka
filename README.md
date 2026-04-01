@@ -1,2 +1,2 @@
-# Gar-slatturBjarka
+# GardslatturBjarka
 Landscaping website
