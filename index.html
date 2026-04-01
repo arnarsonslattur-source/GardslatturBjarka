@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garðsláttur Bjarka</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: url('https://images.unsplash.com/photo-1598514983318-2f64f8f4796c') center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.services {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.before-after {
+  display: flex;
+  gap: 10px;
+}
+
+.before-after img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+button {
+  background: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>Garðsláttur Bjarka</h1>
+  <p>Betra umhverfi. Betri upplifun.</p>
+</header>
+
+<section>
+  <h2>Af hverju að velja okkur</h2>
+  <p>Fljót þjónusta, sanngjarnt verð og vönduð vinna.</p>
+</section>
+
+<section>
+  <h2>Þjónustan okkar</h2>
+  <div class="services">
+    <div class="card">Sláttur</div>
+    <div class="card">Garðhreinsun</div>
+    <div class="card">Viðhald</div>
+  </div>
+</section>
+
+<section>
+  <h2>Fyrir & Eftir</h2>
+  <div class="before-after">
+    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6">
+    <img src="https://images.unsplash.com/photo-1597006182389-6fdf0b9c51b2">
+  </div>
+</section>
+
+<section>
+  <h2>Óska eftir tilboði</h2>
+  <form>
+    <input type="text" placeholder="Nafn">
+    <input type="text" placeholder="Sími">
+    <textarea placeholder="Hvað viltu láta gera?"></textarea>
+    <button>Senda</button>
+  </form>
+</section>
+
+<footer>
+  <p>Sími: 000-0000</p>
+</footer>
+
+</body>
+</html>
