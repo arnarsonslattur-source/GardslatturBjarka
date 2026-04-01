@@ -392,7 +392,7 @@
       grid-template-columns: 120px 1fr 120px 1.2fr 0.95fr;
       gap: 20px;
       align-items: start;
-      padding: 26px 0 40px;
+      padding: 72px 0 40px;
     }
 
     .contact-text,
@@ -400,6 +400,12 @@
     .facebook-text {
       font-size: clamp(22px, 1.7vw, 28px);
       line-height: 1.45;
+    }
+
+    .contact-details {
+      max-width: 640px;
+      word-break: normal;
+      overflow-wrap: anywhere;
     }
 
     .facebook-block {
@@ -438,8 +444,27 @@
       padding: 4px;
     }
 
-    .page-view { display: none; }
-    .active-page { display: block; }
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .active-page {
+      display: block;
+      animation: pageFade 0.45s ease forwards;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     @media (max-width: 1100px) {
       .hero-top,
