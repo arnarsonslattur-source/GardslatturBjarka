@@ -767,7 +767,11 @@
             </div>
           </div>
 
-          <form class="form-card" onsubmit="submitForm(event)">
+        <form class="form-card" action="https://formspree.io/f/mjgpozzr" method="POST">
+
+  <input type="hidden" name="_subject" value="Nýtt tilboð af vefsíðunni!" />
+
+  <div class="form-grid">
             <div class="form-grid">
               <div>
                 <label class="label" for="name">Nafn eða fyrirtæki</label>
@@ -929,10 +933,6 @@
       document.getElementById('navLinks').classList.remove('show');
     }
 
-    function submitForm(event) {
-      event.preventDefault();
-      alert('Formið er bara sýnidæmi núna. Ég get næst tengt það við email eða Formspree svo þú fáir raunveruleg skilaboð.');
-    }
   </script>
 </body>
 </html>
