@@ -561,6 +561,26 @@
       .facebook-block { justify-self: start; text-align: left; }
       .facebook-icon { width: 100px; height: 100px; font-size: 78px; }
     }
+    .fade-text {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeTextUp 0.9s ease forwards;
+}
+
+.fade-text.delay-1 { animation-delay: 0.15s; }
+.fade-text.delay-2 { animation-delay: 0.3s; }
+.fade-text.delay-3 { animation-delay: 0.45s; }
+
+@keyframes fadeTextUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 <body>
@@ -591,7 +611,7 @@
         <div class="container">
           <div class="hero-top">
             <div></div>
-            <h1 class="hero-headline">Betra umhverfi.<br>Betri upplifun.</h1>
+            <h1 class="hero-headline fade-text">Betra umhverfi.<br>Betri upplifun.</h1>
           </div>
         </div>
         <img class="hero-image" src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1800&q=80" alt="Sláttuvél á grasi" />
@@ -680,7 +700,7 @@
       <section class="section-gray services-section">
         <div class="container">
           <div class="services-header">
-            <h2>Þjónustan okkar</h2>
+            <h2 class="fade-text">Þjónustan okkar</h2>
             <p>Við sjáum um garðinn svo hann lítur alltaf vel út fyrir þig.</p>
           </div>
         </div>
@@ -724,7 +744,7 @@
       <section class="section-gray areas">
         <div class="container areas-wrap">
           <div>
-            <h2>Svæði sem við<br>þjónustum</h2>
+            <h2 class="fade-text">Svæði sem við<br>þjónustum</h2>
             <div class="areas-copy">
               Akureyri &amp; nágrenni.<br>
               Við sinnum slætti og garðvinnu í öllum hverfum Akureyrar.<br>
