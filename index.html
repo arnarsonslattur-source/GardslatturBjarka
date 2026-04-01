@@ -8,26 +8,48 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
 }
 
-header {
-  background: url('https://images.unsplash.com/photo-1598514983318-2f64f8f4796c') center/cover;
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1598514983318-2f64f8f4796c') center/cover;
+  height: 90vh;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 100px 20px;
 }
 
-header h1 {
-  font-size: 40px;
+.hero h1 {
+  font-size: 48px;
 }
 
+.hero p {
+  font-size: 20px;
+}
+
+.btn {
+  background: #2e7d32;
+  padding: 14px 30px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+/* SECTION */
 section {
-  padding: 40px 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  padding: 60px 20px;
 }
 
+/* SERVICES */
 .services {
   display: flex;
   gap: 20px;
@@ -36,84 +58,117 @@ section {
 
 .card {
   flex: 1;
-  min-width: 200px;
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
+  min-width: 250px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.before-after {
+/* GALLERY */
+.gallery {
   display: flex;
   gap: 10px;
 }
 
-.before-after img {
+.gallery img {
   width: 100%;
   border-radius: 10px;
 }
 
+/* CONTACT */
 form input, form textarea {
   width: 100%;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 button {
-  background: black;
+  background: #2e7d32;
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
   width: 100%;
+  border-radius: 6px;
 }
 
+/* FOOTER */
 footer {
+  background: #1b1b1b;
+  color: white;
   text-align: center;
-  padding: 20px;
-  background: #eee;
+  padding: 30px;
 }
 </style>
 
 </head>
 <body>
 
-<header>
-  <h1>Garðsláttur Bjarka</h1>
-  <p>Betra umhverfi. Betri upplifun.</p>
-</header>
+<div class="hero">
+  <div>
+    <h1>Garðsláttur Bjarka</h1>
+    <p>Fagleg og áreiðanleg garðþjónusta</p>
+    <a class="btn" href="#contact">FÁ TILBOÐ</a>
+  </div>
+</div>
 
 <section>
-  <h2>Af hverju að velja okkur</h2>
-  <p>Fljót þjónusta, sanngjarnt verð og vönduð vinna.</p>
+  <h2>Af hverju að velja mig?</h2>
+  <p>
+    Ég býð upp á vandaða og fljóta þjónustu á góðu verði. 
+    Markmiðið mitt er að halda garðinum þínum snyrtilegum og fallegum allt sumarið.
+  </p>
 </section>
 
 <section>
-  <h2>Þjónustan okkar</h2>
+  <h2>Þjónustan mín</h2>
   <div class="services">
-    <div class="card">Sláttur</div>
-    <div class="card">Garðhreinsun</div>
-    <div class="card">Viðhald</div>
+    <div class="card">
+      <h3>Sláttur</h3>
+      <p>Slæ gras faglega og skil eftir hreint og snyrtilegt svæði.</p>
+    </div>
+    <div class="card">
+      <h3>Garðhreinsun</h3>
+      <p>Fjarlægi lauf, rusl og annað sem safnast í garðinum.</p>
+    </div>
+    <div class="card">
+      <h3>Viðhald</h3>
+      <p>Regluleg þjónusta til að halda garðinum fallegum.</p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Fyrir & Eftir</h2>
-  <div class="before-after">
+  <h2>Verð</h2>
+  <p>
+    Sláttur frá <b>5.000 kr</b><br>
+    Verð fer eftir stærð garðs.<br>
+    Hafðu samband fyrir tilboð.
+  </p>
+</section>
+
+<section>
+  <h2>Fyrir & eftir</h2>
+  <div class="gallery">
     <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6">
     <img src="https://images.unsplash.com/photo-1597006182389-6fdf0b9c51b2">
   </div>
 </section>
 
-<section>
-  <h2>Óska eftir tilboði</h2>
+<section id="contact">
+  <h2>Hafa samband</h2>
   <form>
-    <input type="text" placeholder="Nafn">
-    <input type="text" placeholder="Sími">
+    <input placeholder="Nafn">
+    <input placeholder="Símanúmer">
     <textarea placeholder="Hvað viltu láta gera?"></textarea>
-    <button>Senda</button>
+    <button>Senda beiðni</button>
   </form>
 </section>
 
 <footer>
+  <p>Garðsláttur Bjarka</p>
   <p>Sími: 000-0000</p>
 </footer>
 
