@@ -793,16 +793,27 @@
               </div>
 
               <div>
-                <label class="label">Hvað hefur þú helst áhuga á?</label>
-                <div class="checkbox-list">
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Garðsláttur" /> Garðsláttur (eða reglulegur garðsláttur)</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Garðhreinsun" /> Garðhreinsun / þrif á lóð</label>
-                  <label class="checkbox-row highlight"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Flutningur" /> Flutningur á grasi og úrgangi</label>
-                </div>
-              </div>
+  <label class="label">Hvað hefur þú helst áhuga á?</label>
+  <div class="checkbox-list">
+    <label class="checkbox-row"><input type="checkbox" name="service" value="Garðsláttur" /> Garðsláttur (eða reglulegur garðsláttur)</label>
+    <label class="checkbox-row"><input type="checkbox" name="service" value="Garðhreinsun" /> Garðhreinsun / þrif á lóð</label>
+    <label class="checkbox-row highlight"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
+    <label class="checkbox-row"><input type="checkbox" name="service" value="Flutningur" /> Flutningur á grasi og úrgangi</label>
+  </div>
+</div>
 
-             <button class="submit-btn" type="submit">Submit</button>
+<div>
+  <label class="label" for="message">Nánari upplýsingar</label>
+  <textarea 
+    class="input" 
+    id="message" 
+    name="message" 
+    rows="5"
+    placeholder="Skrifaðu hér upplýsingar um garðinn þinn, stærð, hvað þú vilt láta gera o.s.frv.">
+  </textarea>
+</div>
+
+<button class="submit-btn" type="submit">Submit</button>
 <p id="form-message" style="display:none; margin-top:12px; font-weight:600;">
   Takk fyrir! Við höfum samband fljótlega.
 </p>
