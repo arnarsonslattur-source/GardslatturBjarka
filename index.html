@@ -1,176 +1,742 @@
 <!DOCTYPE html>
 <html lang="is">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garðsláttur Bjarka</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garðsláttur Bjarka</title>
+  <style>
+    :root {
+      --bg: #ececec;
+      --text: #111111;
+      --muted: #5d5d5d;
+      --line: #6d6d6d;
+      --card: #f5f5f5;
+      --shadow: 0 8px 24px rgba(0,0,0,0.06);
+      --nav-grad-1: #1f4956;
+      --nav-grad-2: #3b2b7a;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: white;
+    }
 
-/* HERO */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-  url('https://images.unsplash.com/photo-1598514983318-2f64f8f4796c') center/cover;
-  height: 90vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
 
-.hero h1 {
-  font-size: 48px;
-}
+    .topbar {
+      height: 14px;
+      background: linear-gradient(90deg, var(--nav-grad-1), var(--nav-grad-2));
+    }
 
-.hero p {
-  font-size: 20px;
-}
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #dcdcdc;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
 
-.btn {
-  background: #2e7d32;
-  padding: 14px 30px;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 15px;
-  display: inline-block;
-}
+    .nav-inner {
+      width: min(1380px, calc(100% - 48px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-/* SECTION */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-/* SERVICES */
-.services {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    .brand-logo {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #bfbfbf;
+      background: #ddd;
+      flex-shrink: 0;
+    }
 
-.card {
-  flex: 1;
-  min-width: 250px;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+    .brand-text {
+      line-height: 1;
+    }
 
-/* GALLERY */
-.gallery {
-  display: flex;
-  gap: 10px;
-}
+    .brand-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 27px;
+      letter-spacing: 0.2px;
+      margin-bottom: 6px;
+    }
 
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-}
+    .brand-sub {
+      font-size: 15px;
+      letter-spacing: 1.6px;
+    }
 
-/* CONTACT */
-form input, form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      font-size: 18px;
+      color: #3b4a5b;
+      white-space: nowrap;
+    }
 
-button {
-  background: #2e7d32;
-  color: white;
-  padding: 12px;
-  border: none;
-  width: 100%;
-  border-radius: 6px;
-}
+    .nav-links a.active { font-weight: 700; }
 
-/* FOOTER */
-footer {
-  background: #1b1b1b;
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
-</style>
+    .section-gray {
+      background: var(--bg);
+    }
 
+    .container {
+      width: min(1280px, calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 54px 0 0;
+    }
+
+    .hero-top {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      align-items: center;
+      gap: 48px;
+      padding-bottom: 42px;
+    }
+
+    .hero-headline {
+      font-size: clamp(48px, 6vw, 92px);
+      line-height: 0.95;
+      font-weight: 400;
+      letter-spacing: -2px;
+      margin: 0;
+      justify-self: end;
+      max-width: 700px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      min-height: 170px;
+      font-size: clamp(24px, 2.2vw, 31px);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .arrow {
+      font-size: 60px;
+      line-height: 1;
+      font-weight: 300;
+    }
+
+    .center-title { text-align: center; }
+
+    .why {
+      padding: 22px 0 34px;
+    }
+
+    .why-top {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: start;
+      padding: 40px 0 120px;
+    }
+
+    .why h2,
+    .quote h2,
+    .services-header h2,
+    .new-beginnings h2,
+    .areas h2 {
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      line-height: 0.92;
+      margin: 0;
+    }
+
+    .why h2 { font-size: clamp(52px, 6vw, 82px); max-width: 520px; }
+    .why-copy {
+      font-size: clamp(24px, 2vw, 28px);
+      line-height: 1.45;
+      max-width: 470px;
+      justify-self: end;
+      padding-top: 8px;
+    }
+
+    .reasons {
+      border-top: 1px solid var(--line);
+    }
+
+    .reason {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      min-height: 118px;
+      border-bottom: 1px solid var(--line);
+      font-size: clamp(28px, 2vw, 34px);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .quote {
+      padding: 70px 0 90px;
+    }
+
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .quote h2 { font-size: clamp(58px, 7vw, 86px); max-width: 520px; }
+
+    .quote-copy {
+      font-size: clamp(26px, 2.2vw, 34px);
+      line-height: 1.4;
+      max-width: 520px;
+      margin-top: 8px;
+    }
+
+    .form-card {
+      background: #f4f4f4;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid { display: grid; gap: 18px; }
+    .label { font-size: 16px; margin-bottom: 8px; display: block; }
+    .input, .textarea {
+      width: 100%;
+      border: 2px solid #a3a3a3;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 18px;
+      padding: 16px 14px;
+      font-family: inherit;
+    }
+
+    .checkbox-list { display: grid; gap: 10px; }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 16px;
+      border-radius: 6px;
+      background: #dfdfdf;
+      font-size: 18px;
+    }
+
+    .checkbox-row.highlight { background: #c8c8c8; }
+    .checkbox-row input { width: 22px; height: 22px; }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      background: #000;
+      color: #fff;
+      font-size: 21px;
+      padding: 18px;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .disclaimer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .services-section { padding: 0 0 70px; }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      padding: 62px 0 34px;
+    }
+
+    .services-header h2 { font-size: clamp(56px, 6vw, 84px); }
+    .services-header p {
+      font-size: clamp(24px, 2vw, 31px);
+      line-height: 1.4;
+      max-width: 500px;
+      justify-self: end;
+    }
+
+    .wide-image {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+    }
+
+    .new-beginnings {
+      padding: 86px 0 56px;
+    }
+
+    .new-beginnings h2 {
+      font-size: clamp(58px, 6vw, 88px);
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 74px;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 42px;
+    }
+
+    .service-card {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0 18px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 28px;
+      font-size: clamp(28px, 2.1vw, 42px);
+      line-height: 1.05;
+      font-weight: 400;
+      min-height: 108px;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      margin-bottom: 24px;
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .areas {
+      padding: 28px 0 30px;
+    }
+
+    .areas-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .areas h2 { font-size: clamp(58px, 6vw, 86px); margin-bottom: 36px; }
+    .areas-copy {
+      font-size: clamp(26px, 2vw, 34px);
+      line-height: 1.45;
+      max-width: 520px;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .before-after img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 30px;
+      margin-top: 12px;
+    }
+
+    .contact-band {
+      padding: 44px 0 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px 1.2fr 0.95fr;
+      gap: 20px;
+      align-items: start;
+      padding: 26px 0 40px;
+    }
+
+    .contact-text,
+    .contact-details,
+    .facebook-text {
+      font-size: clamp(22px, 1.7vw, 28px);
+      line-height: 1.45;
+    }
+
+    .facebook-block {
+      text-align: center;
+      justify-self: end;
+    }
+
+    .facebook-text { margin-bottom: 14px; }
+    .down-arrow { font-size: 56px; line-height: 1; margin-bottom: 8px; }
+    .facebook-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #1877f2;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+      font-weight: 700;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .bottom-image {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-top,
+      .why-top,
+      .quote-wrap,
+      .services-header,
+      .areas-wrap,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-headline,
+      .why-copy,
+      .services-header p {
+        justify-self: start;
+      }
+
+      .contact-grid {
+        gap: 8px;
+      }
+
+      .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .before-after img { height: 420px; }
+      .contact-grid .arrow,
+      .hero-bottom .arrow,
+      .reason .arrow { display: none; }
+      .hero-bottom,
+      .reason { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        width: calc(100% - 24px);
+        min-height: 68px;
+      }
+
+      .brand-title { font-size: 20px; }
+      .brand-sub { font-size: 12px; }
+      .brand-logo { width: 54px; height: 54px; }
+
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 12px;
+        left: 12px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        overflow: hidden;
+        display: none;
+      }
+
+      .nav-links.show { display: flex; }
+      .nav-links a { padding: 16px 18px; border-bottom: 1px solid #eee; }
+      .nav-links a:last-child { border-bottom: 0; }
+
+      .container { width: calc(100% - 28px); }
+      .hero { padding-top: 28px; }
+      .hero-image { height: 230px; }
+      .wide-image, .bottom-image { height: 240px; }
+      .why-top { padding-bottom: 56px; }
+      .service-cards { grid-template-columns: 1fr; gap: 26px; }
+      .service-card h3 { min-height: 0; }
+      .before-after { grid-template-columns: 1fr; }
+      .before-after img { height: 300px; }
+      .caption { font-size: 22px; }
+      .quote, .new-beginnings, .areas, .services-section { padding-bottom: 38px; }
+      .hero-bottom { min-height: 100px; font-size: 16px; text-align: center; }
+      .reason { min-height: 78px; font-size: 16px; padding: 8px 0; }
+      .checkbox-row { font-size: 16px; }
+      .contact-grid { padding-bottom: 26px; }
+      .facebook-block { justify-self: start; text-align: left; }
+      .facebook-icon { width: 100px; height: 100px; font-size: 78px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="topbar"></div>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=300&q=80" alt="Merki Garðsláttur Bjarka" />
+        <div class="brand-text">
+          <div class="brand-title">Sláttur þjónusta</div>
+          <div class="brand-sub">BJARKA</div>
+        </div>
+      </a>
 
-<div class="hero">
-  <div>
-    <h1>Garðsláttur Bjarka</h1>
-    <p>Fagleg og áreiðanleg garðþjónusta</p>
-    <a class="btn" href="#contact">FÁ TILBOÐ</a>
-  </div>
-</div>
+      <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">☰</button>
 
-<section>
-  <h2>Af hverju að velja mig?</h2>
-  <p>
-    Ég býð upp á vandaða og fljóta þjónustu á góðu verði. 
-    Markmiðið mitt er að halda garðinum þínum snyrtilegum og fallegum allt sumarið.
-  </p>
-</section>
-
-<section>
-  <h2>Þjónustan mín</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Sláttur</h3>
-      <p>Slæ gras faglega og skil eftir hreint og snyrtilegt svæði.</p>
+      <nav class="nav-links" id="navLinks">
+        <a class="active" href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
     </div>
-    <div class="card">
-      <h3>Garðhreinsun</h3>
-      <p>Fjarlægi lauf, rusl og annað sem safnast í garðinum.</p>
-    </div>
-    <div class="card">
-      <h3>Viðhald</h3>
-      <p>Regluleg þjónusta til að halda garðinum fallegum.</p>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section>
-  <h2>Verð</h2>
-  <p>
-    Sláttur frá <b>5.000 kr</b><br>
-    Verð fer eftir stærð garðs.<br>
-    Hafðu samband fyrir tilboð.
-  </p>
-</section>
+  <main>
+    <section class="section-gray hero" id="home">
+      <div class="container">
+        <div class="hero-top">
+          <div></div>
+          <h1 class="hero-headline">Betra umhverfi.<br>Betri upplifun.</h1>
+        </div>
+      </div>
+      <img class="hero-image" src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1800&q=80" alt="Sláttuvél á grasi" />
+      <div class="container">
+        <div class="hero-bottom">
+          <div class="arrow">→</div>
+          <div class="center-title">FAGLEG GARÐÞJÓNUSTA FYRIR HEIMILI OG EIGNIR.</div>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>Fyrir & eftir</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6">
-    <img src="https://images.unsplash.com/photo-1597006182389-6fdf0b9c51b2">
-  </div>
-</section>
+    <section class="section-gray why">
+      <div class="container">
+        <div class="why-top">
+          <h2>Af hverju að<br>velja okkur</h2>
+          <div class="why-copy">Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.</div>
+        </div>
 
-<section id="contact">
-  <h2>Hafa samband</h2>
-  <form>
-    <input placeholder="Nafn">
-    <input placeholder="Símanúmer">
-    <textarea placeholder="Hvað viltu láta gera?"></textarea>
-    <button>Senda beiðni</button>
-  </form>
-</section>
+        <div class="reasons">
+          <div class="reason">
+            <div class="arrow">→</div>
+            <div>ÉG LEGG METNAÐ Í AÐ GERA ÞETTA VEL</div>
+          </div>
+          <div class="reason">
+            <div class="arrow">→</div>
+            <div>ÁREIÐANLEG ÞJÓNUSTA SEM ÞÚ GETUR TREYST</div>
+          </div>
+          <div class="reason">
+            <div class="arrow">→</div>
+            <div>PERSÓNULEG ÞJÓNUSTA SEM ÞÚ GETUR TREYST</div>
+          </div>
+          <div class="reason">
+            <div class="arrow">→</div>
+            <div>SKILAR HREINU OG SNYRTILEGU HVERJU SINNI</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p>Garðsláttur Bjarka</p>
-  <p>Sími: 000-0000</p>
-</footer>
+    <section class="section-gray quote" id="contact">
+      <div class="container quote-wrap">
+        <div>
+          <h2>Óska eftir<br>tilboði</h2>
+          <div class="quote-copy">
+            Segðu okkur aðeins frá garðinum þínum: stærð, ástand og hvað þú vilt láta gera.<br><br>
+            Við sendum sérsniðið tilboð innan 48 klukkustunda eða komum á staðinn í stutta skoðun.
+          </div>
+        </div>
 
+        <form class="form-card" onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <div>
+              <label class="label" for="name">Nafn eða fyrirtæki</label>
+              <input class="input" id="name" name="name" type="text" />
+            </div>
+
+            <div>
+              <label class="label" for="email">Email</label>
+              <input class="input" id="email" name="email" type="email" />
+            </div>
+
+            <div>
+              <label class="label" for="address">Heimilisfang</label>
+              <input class="input" id="address" name="address" type="text" />
+            </div>
+
+            <div>
+              <label class="label">Hvað hefur þú helst áhuga á?</label>
+              <div class="checkbox-list">
+                <label class="checkbox-row"><input type="checkbox" name="service" value="Garðsláttur" /> Garðsláttur (eða reglulegur garðsláttur)</label>
+                <label class="checkbox-row"><input type="checkbox" name="service" value="Garðhreinsun" /> Garðhreinsun / þrif á lóð</label>
+                <label class="checkbox-row highlight"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
+                <label class="checkbox-row"><input type="checkbox" name="service" value="Flutningur" /> Flutningur á grasi og úrgangi</label>
+              </div>
+            </div>
+
+            <button class="submit-btn" type="submit">Submit</button>
+            <div class="disclaimer">Your Canva profile name will be shared. Never submit passwords.</div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-gray services-section" id="services">
+      <div class="container">
+        <div class="services-header">
+          <h2>Þjónustan okkar</h2>
+          <p>Við sjáum um garðinn svo hann lítur alltaf vel út fyrir þig.</p>
+        </div>
+      </div>
+      <img class="wide-image" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1800&q=80" alt="Garðvinna í beðum" />
+    </section>
+
+    <section class="section-gray new-beginnings">
+      <div class="container">
+        <h2>Ný byrjun í garðinum<br>þínum.</h2>
+
+        <div class="service-cards">
+          <article class="service-card">
+            <h3>Almenn<br>garðþjónusta</h3>
+            <img src="https://images.unsplash.com/photo-1589923188937-2f95d7b4a0ec?auto=format&fit=crop&w=800&q=80" alt="Sláttuvél í garði" />
+            <p>Við sláum, hreinsum og snyrtum garðinn svo hann líti alltaf vel út. Fullkomið fyrir reglulegt viðhald.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Smá garðvinna</h3>
+            <img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=800&q=80" alt="Blóm í garði" />
+            <p>Getum hjálpað með gróðursetningu, hreinsun og annað sem þarf í garðinum.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Árstíðabundið<br>viðhald</h3>
+            <img src="https://images.unsplash.com/photo-1599685315640-7e7a0d7f65e7?auto=format&fit=crop&w=800&q=80" alt="Garðverkfæri við limgerði" />
+            <p>Vorsnyrting, hausthreinsun eða undirbúningur fyrir viðburði – við sjáum um að garðurinn sé tilbúinn.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Hreinsun &amp; tiltekt</h3>
+            <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=800&q=80" alt="Gengustígur með grasi" />
+            <p>Við hreinsum hellur, göngustíga og útisvæði og látum allt líta snyrtilegra út.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gray areas">
+      <div class="container areas-wrap">
+        <div>
+          <h2>Svæði sem við<br>þjónustum</h2>
+          <div class="areas-copy">
+            Akureyri &amp; nágrenni.<br>
+            Við sinnum slætti og garðvinnu í öllum hverfum Akureyrar.<br>
+            Hafðu samband og við komum til þín.
+          </div>
+        </div>
+
+        <div class="before-after">
+          <div>
+            <img src="IMG_2469.jpg" alt="Fyrir slátt" />
+            <div class="caption">Fyrir</div>
+          </div>
+          <div>
+            <img src="IMG_2472.jpg" alt="Eftir slátt" />
+            <div class="caption">Eftir</div>
+          </div>
+        </div>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=80" alt="Eftir slátt" />
+            <div class="caption">Eftir</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gray contact-band">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="arrow">→</div>
+          <div class="contact-text">
+            Garðsláttur Bjarka<br>
+            Akureyri
+          </div>
+
+          <div class="arrow">→</div>
+          <div class="contact-details">
+            Sími: 833-6070<br>
+            Email: arnarsonslattur@gmail.com<br>
+            Facebook: @SlatturBjarka
+          </div>
+
+          <div class="facebook-block">
+            <div class="facebook-text">Smelltu á Facebook merkið</div>
+            <div class="down-arrow">↓</div>
+            <a class="facebook-icon" href="https://www.facebook.com/SlatturBjarka/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          </div>
+        </div>
+      </div>
+      <img class="bottom-image" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80" alt="Snyrtilegt útisvæði" />
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Formið er bara sýnidæmi núna. Ég get næst tengt það við email eða Formspree svo þú fáir raunveruleg skilaboð.');
+    }
+
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
