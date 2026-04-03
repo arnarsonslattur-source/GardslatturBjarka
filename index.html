@@ -936,5 +936,11 @@
       });
     }
   </script>
+  <script>
+  if (window.location.hash === "#home") {
+    history.replaceState(null, "", window.location.pathname);
+  }
+</script>
+
 </body>
 </html>
