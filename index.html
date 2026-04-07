@@ -674,10 +674,38 @@
       .contact-grid { padding-bottom: 26px; }
       .facebook-block { justify-self: start; text-align: left; }
       .facebook-icon { width: 100px; height: 100px; font-size: 78px; }
-    }
-  </style>
+
+     .top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+  font-size: 14px;
+  background: #f5f5f5;
+}
+
+.phone {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .top-info {
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+ }  
+  
+</style>
 </head>
 <body>
+  <div class="top-info">
+    <span class="location">📍 Akureyri</span>
+    <a href="tel:8336070" class="phone">📞 833-6070</a>
+  </div>
+
   <div class="topbar"></div>
   <header class="navbar">
     <div class="nav-inner">
@@ -698,7 +726,7 @@
       </nav>
     </div>
   </header>
-
+ 
   <main>
     <div id="home-page" class="page-view active-page">
       <section class="section-gray hero" id="home">
