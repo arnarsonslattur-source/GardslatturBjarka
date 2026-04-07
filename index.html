@@ -705,11 +705,25 @@
 
   .contact-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  margin: 0 8px;
+  line-height: 1.1;
+}
+
+.contact-info .phone {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.contact-info .location {
   font-size: 11px;
-  margin: 0 6px;
-  white-space: nowrap;
+  color: #64748b;
 }
 }
   
@@ -733,7 +747,11 @@
       </div>
 
       <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">☰</button>
-
+      <div class="contact-info">
+  <a href="tel:8336070" class="phone">📞 833-6070</a>
+  <span class="location">📍 Akureyri</span>
+</div>
+     
       <nav class="nav-links" id="navLinks">
         <a class="active" href="#" onclick="showPage('home-page', this); return false;">Heim</a>
         <a href="#" onclick="showPage('services-page', this); return false;">Þjónusta</a>
