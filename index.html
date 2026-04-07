@@ -700,18 +700,17 @@
 
 @media (max-width: 768px) {
   .nav-inner {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .contact-info {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 12px;
-    font-size: 12px;
-    margin-top: 6px;
-    order: 3;
-  }
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  margin: 0 6px;
+  white-space: nowrap;
+}
 }
   
 </style>
