@@ -675,36 +675,39 @@
       .facebook-block { justify-self: start; text-align: left; }
       .facebook-icon { width: 100px; height: 100px; font-size: 78px; }
 
-     .top-info {
+     .contact-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 6px 20px;
+  gap: 16px;
   font-size: 14px;
-  background: #f5f5f5;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
-.phone {
+.contact-info span,
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.contact-info a {
   text-decoration: none;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-@media (max-width: 600px) {
-  .top-info {
-    flex-direction: column;
-    gap: 2px;
-    text-align: center;
+@media (max-width: 768px) {
+  .contact-info {
+    display: none;
   }
- }  
+}
   
 </style>
 </head>
 <body>
-  <div class="topbar">
-  <span class="location">📍 Akureyri</span>
-  <a href="tel:8336070" class="phone">📞 833-6070</a>
-  </div>
+
   <header class="navbar">
     <div class="nav-inner">
       <a class="brand" href="#" onclick="showPage('home-page', document.querySelectorAll('#navLinks a')[0]); return false;">
@@ -714,6 +717,11 @@
           <div class="brand-sub">BJARKA</div>
         </div>
       </a>
+
+      <div class="contact-info">
+        <span>📍 Akureyri</span>
+        <a href="tel:8336070">📞 833-6070</a>
+      </div>
 
       <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">☰</button>
 
