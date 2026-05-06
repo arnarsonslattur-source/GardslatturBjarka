@@ -258,9 +258,16 @@
     }
 
     .hero-btn.primary {
-      background: #12202d;
-      color: white;
-    }
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 6px 18px rgba(47,111,79,0.25);
+}
+
+.hero-btn.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(47,111,79,0.35);
+}
 
     .hero-btn.secondary {
       background: white;
