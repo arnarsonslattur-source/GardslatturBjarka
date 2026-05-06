@@ -14,26 +14,23 @@
 
 <style>
     :root {
-  --bg: #f6f8f5;
-  --text: #0f172a;
-  --line: #d6d6d6;
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-  /* NEW COLORS */
-  --primary: #2f6f4f;
-  --primary-dark: #1f4d36;
-  --accent: #8bbf9f;
-  --beige: #f3efe7;
-}
+      --bg: #ececec;
+      --text: #111111;
+      --line: #6d6d6d;
+      --shadow: 0 8px 24px rgba(0,0,0,0.06);
+      --nav-grad-1: #1f4956;
+      --nav-grad-2: #3b2b7a;
+    }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: white;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: white;
+    }
+
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
@@ -111,8 +108,8 @@ body {
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
     }
 
-.nav-links a:hover {
-  background: rgba(47,111,79,0.08);
+    .nav-links a:hover {
+      background: rgba(31, 73, 86, 0.08);
       transform: translateY(-1px);
     }
 
@@ -131,9 +128,8 @@ body {
       padding: 4px;
     }
 
-.section-gray {
-  background: var(--bg);
-}
+    .section-gray { background: var(--bg); }
+
     .container {
       width: min(1280px, calc(100% - 56px));
       margin: 0 auto;
@@ -179,11 +175,11 @@ body {
         transform: translateY(0);
       }
     }
-.hero {
-  padding: 54px 0 0;
-  overflow: hidden;
-  position: relative;
-}
+
+    .hero {
+      padding: 54px 0 0;
+      overflow: hidden;
+    }
 
     .hero-top {
       display: grid;
@@ -216,14 +212,14 @@ body {
       max-width: 780px;
     }
 
-   .hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(47,111,79,0.12);
-  color: var(--primary);
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(31,73,86,0.08);
+      color: #1f4956;
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -257,47 +253,24 @@ body {
       box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     }
 
-   .hero-btn.primary {
-  background: #12202d;
-  color: white;
-  border: none;
-}
-
-.hero-btn.primary:hover {
-  background: #1c2e3d;
-  transform: translateY(-2px);
-}
+    .hero-btn.primary {
+      background: #12202d;
+      color: white;
+    }
 
     .hero-btn.secondary {
-  background: white;
-  color: var(--primary);
-  border: 1px solid rgba(47,111,79,0.25);
-}
-
-.hero-btn.secondary:hover {
-  background: rgba(47,111,79,0.08);
-  transform: translateY(-2px);
-}
+      background: white;
+      color: #12202d;
+      border: 1px solid rgba(18,32,45,0.15);
+    }
 
     .hero-image {
-  width: 100%;
-  height: 470px;
-  object-fit: cover;
-  position: relative;
-  filter: brightness(0.9) contrast(1.05);
-}
-
- .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(47,111,79,0.15),
-    rgba(0,0,0,0.2)
-  );
-  pointer-events: none;
-}
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
 
     .hero-bottom {
       display: grid;
@@ -387,12 +360,13 @@ body {
       margin-top: 8px;
     }
 
-   .form-card {
-  background: var(--beige);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: var(--shadow);
-}
+    .form-card {
+      background: #f4f4f4;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
     .form-grid { display: grid; gap: 18px; }
 
     .label {
@@ -402,67 +376,46 @@ body {
     }
 
     .input {
-  width: 100%;
-  border: 2px solid #d1d5db;
-  border-radius: 10px;
-  background: #fff;
-  font-size: 18px;
-  padding: 16px 14px;
-  font-family: inherit;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-}
+      width: 100%;
+      border: 2px solid #a3a3a3;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 18px;
+      padding: 16px 14px;
+      font-family: inherit;
+    }
 
-.input:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(47,111,79,0.15);
-}
- 
     textarea.input {
       resize: vertical;
       min-height: 140px;
     }
 
-.checkbox-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 16px;
-  border-radius: 6px;
-  background: #f2f2f2;
-  font-size: 18px;
-}
+    .checkbox-list { display: grid; gap: 10px; }
 
-.checkbox-row:hover {
-  background: #e8e8e8;
-}
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 16px;
+      border-radius: 6px;
+      background: #dfdfdf;
+      font-size: 18px;
+    }
 
-.checkbox-row input {
-  width: 22px;
-  height: 22px;
-}
+    .checkbox-row.highlight { background: #c8c8c8; }
+    .checkbox-row input { width: 22px; height: 22px; }
 
     .submit-btn {
-  width: 100%;
-  border-radius: 14px;
-  background: white;
-  color: black;
-  border: 1px solid #d1d5db;
-  font-size: 21px;
-  padding: 18px;
-  cursor: pointer;
-  margin-top: 6px;
-  transition: all 0.25s ease;
-}
-
-.submit-btn:hover {
-  background: #f3f4f6;
-}
-
-.submit-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      background: #000;
+      color: #fff;
+      font-size: 21px;
+      padding: 18px;
+      cursor: pointer;
+      margin-top: 6px;
+    }
 
     .services-section { padding: 0 0 70px; }
 
@@ -927,7 +880,7 @@ body {
                 <div class="checkbox-list">
                   <label class="checkbox-row"><input type="checkbox" name="service" value="Garðsláttur" /> Garðsláttur (eða reglulegur garðsláttur)</label>
                   <label class="checkbox-row"><input type="checkbox" name="service" value="Garðhreinsun" /> Garðhreinsun / þrif á lóð</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
+                  <label class="checkbox-row highlight"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
                   <label class="checkbox-row"><input type="checkbox" name="service" value="Flutningur" /> Flutningur á grasi og úrgangi</label>
                 </div>
               </div>
