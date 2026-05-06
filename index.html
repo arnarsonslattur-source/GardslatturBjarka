@@ -376,13 +376,12 @@
       margin-top: 8px;
     }
 
-    .form-card {
-      background: #f4f4f4;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
+   .form-card {
+  background: var(--beige);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
     .form-grid { display: grid; gap: 18px; }
 
     .label {
@@ -392,15 +391,22 @@
     }
 
     .input {
-      width: 100%;
-      border: 2px solid #a3a3a3;
-      border-radius: 8px;
-      background: #fff;
-      font-size: 18px;
-      padding: 16px 14px;
-      font-family: inherit;
-    }
+  width: 100%;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 18px;
+  padding: 16px 14px;
+  font-family: inherit;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
 
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47,111,79,0.15);
+}
+ 
     textarea.input {
       resize: vertical;
       min-height: 140px;
@@ -422,16 +428,22 @@
     .checkbox-row input { width: 22px; height: 22px; }
 
     .submit-btn {
-      width: 100%;
-      border: none;
-      border-radius: 18px;
-      background: #000;
-      color: #fff;
-      font-size: 21px;
-      padding: 18px;
-      cursor: pointer;
-      margin-top: 6px;
-    }
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 21px;
+  padding: 18px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
 
     .services-section { padding: 0 0 70px; }
 
