@@ -901,7 +901,40 @@ transition: 0.25s ease;
 
   pointer-events: auto;
 }
-  
+
+     /* ===== DESKTOP NAV FIX ===== */
+
+@media (min-width: 761px) {
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 18px;
+  }
+
+  .contact-info {
+    margin: 0;
+  }
+
+  .contact-info .phone,
+  .mobile-menu-btn {
+    width: 88px;
+    height: 88px;
+
+    font-size: 38px;
+  }
+
+  .contact-info .phone span {
+    font-size: 34px;
+  }
+
+  .mobile-menu-btn {
+    border-radius: 0;
+  }
+
+}
+     
 </style>
 </head>
 <body>
