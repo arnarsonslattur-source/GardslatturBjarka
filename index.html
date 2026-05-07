@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="is">
 <head>
- <meta charset="UTF-8" />
+ <meta charset="UTF-8" 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Garðsláttur Bjarka</title>
  <link rel="icon" href="favicon.png" type="image/png">
@@ -25,12 +27,33 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: white;
-    }
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
 
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(79,111,82,0.10),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at top right,
+      rgba(79,111,82,0.08),
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at bottom left,
+      rgba(79,111,82,0.07),
+      transparent 35%
+    ),
+
+    #f5f1ea;
+
+  background-attachment: fixed;
+}
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
@@ -128,7 +151,19 @@
       padding: 4px;
     }
 
-    .section-gray { background: var(--bg); }
+    .section-gray {
+  background: rgba(255,255,255,0.45);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  border-radius: 38px;
+
+  margin: 20px;
+
+  overflow: hidden;
+}
 
     .container {
       width: min(1280px, calc(100% - 56px));
@@ -180,6 +215,16 @@
       padding: 54px 0 0;
       overflow: hidden;
     }
+ .hero,
+.why,
+.quote,
+.services-section,
+.new-beginnings,
+.areas,
+.contact-band {
+  position: relative;
+  overflow: hidden;
+}
 
     .hero-top {
       display: grid;
@@ -599,6 +644,31 @@
       object-fit: cover;
     }
 
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: rgba(79,111,82,0.10);
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  top: -150px;
+  right: -150px;
+
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+ 
     @media (max-width: 1100px) {
       .hero-logo-wrap { justify-content: center; }
       .hero-logo-big { width: min(280px, 70vw); }
@@ -765,7 +835,23 @@
     font-size: 26px;
   }
 }
-  
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    url("https://grainy-gradients.vercel.app/noise.svg");
+
+  opacity: 0.025;
+
+  pointer-events: none;
+
+  z-index: 9999;
+}
+ 
 </style>
 </head>
 <body>
