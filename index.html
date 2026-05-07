@@ -119,14 +119,32 @@
   color: white;
 }
     .mobile-menu-btn {
-      display: none;
-      border: none;
-      background: transparent;
-      font-size: 30px;
-      cursor: pointer;
-      padding: 4px;
-     color: white;
-    }
+  display: none;
+
+  width: 64px;
+  height: 64px;
+
+  border: 2px solid rgba(255,255,255,0.9);
+  background: transparent;
+
+  font-size: 34px;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.25s ease;
+}
+
+ .mobile-menu-btn:hover,
+.contact-info .phone:hover {
+  background: white;
+  color: var(--green);
+  transform: scale(1.05);
+}
 
     .section-gray { background: var(--bg); }
 
@@ -638,7 +656,9 @@
       .brand-sub { font-size: 12px; }
       .brand-logo { width: 54px; height: 54px; }
 
-      .mobile-menu-btn { display: block; }
+     .mobile-menu-btn {
+  display: flex;
+}
 
       .nav-links {
         position: absolute;
@@ -708,36 +728,35 @@
 
   .contact-info {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 0 8px;
-  line-height: 1.1;
+  gap: 14px;
+  margin-left: auto;
+  margin-right: 14px;
 }
 
 .contact-info .phone {
-  font-size: 13px;
-  font-weight: 700;
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
   color: white;
   text-decoration: none;
 
-  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.9);
 
-  padding: 7px 14px;
-  border-radius: 999px;
-
-  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
 
   transition: 0.25s ease;
 }
-
+ 
  .contact-info .phone:hover {
   background: white;
   color: var(--green);
-}
-
-.contact-info .location {
-  font-size: 11px;
-  color: rgba(255,255,255,0.85);
 }
 
  /* ===== REVIEWS SECTION ===== */
@@ -832,7 +851,6 @@
      
       <div class="contact-info">
   <a href="tel:8336070" class="phone">📞 833-6070</a>
-  <span class="location">📍 Akureyri</span>
 </div>
 
       <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">☰</button>
