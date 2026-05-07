@@ -14,13 +14,14 @@
 
 <style>
     :root {
-      --bg: #ececec;
-      --text: #111111;
-      --line: #6d6d6d;
-      --shadow: 0 8px 24px rgba(0,0,0,0.06);
-      --nav-grad-1: #1f4956;
-      --nav-grad-2: #3b2b7a;
-    }
+  --bg: #ececec;
+  --text: #111111;
+  --line: #6d6d6d;
+  --shadow: 0 8px 24px rgba(0,0,0,0.06);
+
+  --green: #69b548;
+  --green-dark: #5aa03c;
+}
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -34,19 +35,16 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    .topbar {
-      height: 14px;
-      background: linear-gradient(90deg, var(--nav-grad-1), var(--nav-grad-2));
-    }
-
     .navbar {
-      background: rgba(255,255,255,0.92);
-      border-bottom: 1px solid #dcdcdc;
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(10px);
-    }
+  background: var(--green);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
 
     .nav-inner {
       width: min(1380px, calc(100% - 48px));
@@ -86,21 +84,23 @@
       font-size: 27px;
       letter-spacing: 0.2px;
       margin-bottom: 6px;
+     color: white;
     }
 
     .brand-sub {
-      font-size: 15px;
-      letter-spacing: 1.6px;
-    }
+  font-size: 15px;
+  letter-spacing: 1.6px;
+  color: rgba(255,255,255,0.85);
+}
 
     .nav-links {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      font-size: 16px;
-      color: #243241;
-      white-space: nowrap;
-    }
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+}
 
     .nav-links a {
       padding: 12px 18px;
@@ -109,16 +109,15 @@
     }
 
     .nav-links a:hover {
-      background: rgba(31, 73, 86, 0.08);
-      transform: translateY(-1px);
-    }
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+}
 
-    .nav-links a.active {
-      font-weight: 700;
-      background: linear-gradient(90deg, rgba(31,73,86,0.12), rgba(59,43,122,0.12));
-      color: #12202d;
-    }
-
+.nav-links a.active {
+  font-weight: 700;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
     .mobile-menu-btn {
       display: none;
       border: none;
@@ -126,6 +125,7 @@
       font-size: 30px;
       cursor: pointer;
       padding: 4px;
+     color: white;
     }
 
     .section-gray { background: var(--bg); }
@@ -717,16 +717,27 @@
 .contact-info .phone {
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: white;
   text-decoration: none;
-  background: #f1f5f9;
-  padding: 4px 10px;
+
+  background: rgba(255,255,255,0.15);
+
+  padding: 7px 14px;
   border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  transition: 0.25s ease;
+}
+
+ .contact-info .phone:hover {
+  background: white;
+  color: var(--green);
 }
 
 .contact-info .location {
   font-size: 11px;
-  color: #64748b;
+  color: rgba(255,255,255,0.85);
 }
 
  /* ===== REVIEWS SECTION ===== */
@@ -763,6 +774,45 @@
 
   .reviews-section h2 {
     font-size: 26px;
+  }
+}
+
+ @media (min-width: 769px) {
+
+  .nav-inner {
+    min-height: 100px;
+  }
+
+  .brand-logo {
+    width: 82px;
+    height: 82px;
+  }
+
+  .brand-title {
+    font-size: 34px;
+  }
+
+  .brand-sub {
+    font-size: 16px;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    gap: 18px;
+  }
+
+  .contact-info .phone {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+
+  .contact-info .location {
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    font-size: 17px;
+    padding: 14px 20px;
   }
 }
   
