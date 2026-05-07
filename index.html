@@ -18,11 +18,11 @@
 <style>
 
 :root{
-  --bg:#f5f3ec;
-  --text:#111111;
-  --primary:#0f2237;
-  --glass:rgba(255,255,255,0.55);
-  --border:rgba(255,255,255,0.35);
+  --bg:#f7f4ed;
+  --text:#111827;
+  --muted:#5f6672;
+  --primary:#10233b;
+  --card:rgba(255,255,255,0.56);
 }
 
 *{
@@ -33,28 +33,27 @@
 
 html{
   scroll-behavior:smooth;
-  -webkit-text-size-adjust:100%;
 }
 
 body{
   font-family:'Inter',sans-serif;
-  background:var(--bg);
   color:var(--text);
+  background:var(--bg);
   overflow-x:hidden;
-  padding-top:105px;
 }
 
 /* BACKGROUND */
 
 body::before{
   content:"";
+
   position:fixed;
   inset:0;
 
   background:
     linear-gradient(
-      rgba(247,245,239,0.82),
-      rgba(247,245,239,0.82)
+      rgba(248,246,241,0.78),
+      rgba(248,246,241,0.78)
     ),
     url("background.jpg");
 
@@ -73,8 +72,8 @@ body::after{
   width:700px;
   height:700px;
 
-  left:-250px;
-  bottom:-250px;
+  left:-240px;
+  bottom:-240px;
 
   background:
     radial-gradient(
@@ -83,7 +82,7 @@ body::after{
       transparent 70%
     );
 
-  filter:blur(45px);
+  filter:blur(50px);
 
   z-index:-2;
 }
@@ -98,31 +97,35 @@ body::after{
 
   transform:translateX(-50%);
 
-  width:calc(100% - 22px);
-  max-width:1320px;
+  width:calc(100% - 26px);
+  max-width:1380px;
 
-  z-index:999;
+  background:rgba(255,255,255,0.52);
 
-  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.4);
 
-  border:1px solid var(--border);
+  backdrop-filter:blur(18px);
 
-  backdrop-filter:blur(20px);
-
-  border-radius:28px;
+  border-radius:30px;
 
   box-shadow:
-    0 10px 35px rgba(0,0,0,0.08);
+    0 12px 32px rgba(0,0,0,0.06);
+
+  z-index:999;
 }
 
 .nav-inner{
-  min-height:84px;
+  min-height:86px;
 
-  padding:0 22px;
+  width:min(1320px,calc(100% - 40px));
+
+  margin:auto;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
+
+  gap:20px;
 }
 
 .brand{
@@ -135,271 +138,275 @@ body::after{
 }
 
 .brand-logo{
-  width:62px;
-  height:62px;
+  width:70px;
+  height:70px;
 
   border-radius:50%;
 
   object-fit:cover;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.08);
 }
 
 .brand-title{
-  font-size:30px;
-  font-family:Georgia,serif;
+  font-size:28px;
+  font-weight:700;
 }
 
 .brand-sub{
-  font-size:13px;
-  letter-spacing:4px;
-}
-
-.contact-info{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:4px;
-}
-
-.phone{
-  background:white;
-
-  padding:8px 14px;
-
-  border-radius:999px;
-
-  font-weight:700;
-
-  text-decoration:none;
-
-  color:#111;
-}
-
-.location{
+  letter-spacing:3px;
   font-size:12px;
-  color:#6b7280;
+  color:var(--muted);
 }
 
-.mobile-btn{
-  border:none;
-  background:none;
-  font-size:34px;
-  cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-  width:100%;
-}
-
-.container{
-  width:min(1280px,calc(100% - 30px));
-  margin:auto;
-}
-
-.hero-grid{
-  min-height:78vh;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  align-items:center;
-
-  gap:70px;
-}
-
-.hero-logo-wrap{
+.nav-links{
   display:flex;
-  justify-content:center;
+  align-items:center;
+  gap:10px;
 }
 
-.hero-logo{
-  width:min(450px,100%);
-
-  filter:
-    drop-shadow(0 20px 30px rgba(0,0,0,0.10));
-}
-
-.hero-right{
-  position:relative;
-}
-
-.hero-badge{
-  display:inline-flex;
+.nav-links a{
+  text-decoration:none;
+  color:var(--text);
 
   padding:12px 18px;
 
   border-radius:999px;
 
-  background:rgba(255,255,255,0.45);
+  transition:0.25s ease;
 
-  backdrop-filter:blur(14px);
-
-  font-size:13px;
-
-  letter-spacing:2px;
-
-  margin-bottom:24px;
+  font-weight:600;
 }
 
-.hero-title{
-  font-size:clamp(62px,7vw,110px);
+.nav-links a:hover{
+  background:rgba(16,35,59,0.08);
+}
 
-  line-height:0.92;
+.contact-pill{
+  background:white;
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  text-decoration:none;
+  color:var(--primary);
+
+  font-weight:700;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+
+  padding-top:150px;
+  padding-bottom:100px;
+
+  display:flex;
+  align-items:center;
+}
+
+.container{
+  width:min(1280px,calc(100% - 40px));
+  margin:auto;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero-logo{
+  width:min(450px,100%);
+  margin:auto;
+
+  filter:
+    drop-shadow(0 18px 28px rgba(0,0,0,0.12));
+}
+
+.hero-tag{
+  display:inline-flex;
+
+  background:rgba(255,255,255,0.5);
+
+  border:1px solid rgba(255,255,255,0.4);
+
+  backdrop-filter:blur(12px);
+
+  padding:12px 18px;
+
+  border-radius:999px;
+
+  margin-bottom:22px;
+
+  font-weight:600;
+}
+
+.hero h1{
+  font-size:clamp(58px,8vw,100px);
+
+  line-height:0.9;
 
   letter-spacing:-4px;
 
-  margin-bottom:28px;
+  margin-bottom:26px;
 }
 
-.hero-text{
-  font-size:22px;
+.hero p{
+  font-size:24px;
 
-  line-height:1.7;
+  line-height:1.6;
 
-  max-width:560px;
+  color:var(--muted);
 
-  color:#333;
-
-  margin-bottom:34px;
+  max-width:620px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:18px;
+  gap:14px;
+
+  margin-top:34px;
+
   flex-wrap:wrap;
 }
 
-.hero-btn{
-  padding:18px 28px;
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 26px;
 
   border-radius:999px;
-
-  font-size:18px;
 
   font-weight:700;
 
   text-decoration:none;
 
-  transition:0.25s;
+  transition:0.25s ease;
 }
 
-.hero-btn:hover{
-  transform:translateY(-3px);
-}
-
-.primary{
+.btn-primary{
   background:var(--primary);
   color:white;
 }
 
-.secondary{
+.btn-secondary{
   background:white;
-  color:#111;
+  color:var(--primary);
 }
 
+.btn:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
 .hero-image{
+  margin-top:70px;
+
   width:100%;
-  height:420px;
+  height:520px;
 
   object-fit:cover;
 
-  border-radius:26px;
-
-  margin-top:20px;
+  border-radius:34px;
 
   box-shadow:
-    0 20px 40px rgba(0,0,0,0.12);
+    0 24px 40px rgba(0,0,0,0.12);
 }
 
-/* FEATURES */
+/* SECTIONS */
 
-.features{
-  padding:90px 0;
-}
-
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-
-.feature{
-  background:rgba(255,255,255,0.45);
-
-  border:1px solid rgba(255,255,255,0.3);
-
-  backdrop-filter:blur(14px);
-
-  padding:34px;
-
-  border-radius:28px;
-}
-
-.feature-number{
-  font-size:14px;
-
-  letter-spacing:2px;
-
-  color:#777;
-
-  margin-bottom:18px;
-}
-
-.feature h3{
-  font-size:34px;
-
-  margin-bottom:18px;
-}
-
-.feature p{
-  line-height:1.7;
-
-  color:#444;
-}
-
-/* SERVICES */
-
-.services{
-  padding:40px 0 100px;
+.section{
+  padding:110px 0;
 }
 
 .section-title{
-  font-size:clamp(48px,6vw,90px);
+  font-size:clamp(50px,6vw,84px);
 
   line-height:0.95;
 
   letter-spacing:-3px;
 
-  margin-bottom:18px;
+  margin-bottom:30px;
 }
 
-.section-sub{
+.section-text{
   font-size:24px;
 
-  color:#444;
+  line-height:1.7;
 
-  margin-bottom:60px;
+  color:var(--muted);
+
+  max-width:760px;
 }
 
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+/* REASONS */
 
-  gap:28px;
+.reasons{
+  margin-top:60px;
+
+  display:grid;
+  gap:20px;
+}
+
+.reason{
+  background:var(--card);
+
+  border:1px solid rgba(255,255,255,0.4);
+
+  backdrop-filter:blur(16px);
+
+  border-radius:28px;
+
+  padding:32px;
+
+  font-size:28px;
+
+  font-weight:600;
+
+  transition:0.25s ease;
+}
+
+.reason:hover{
+  transform:translateY(-4px);
+}
+
+/* SERVICES */
+
+.cards{
+  margin-top:50px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:24px;
 }
 
 .card{
-  overflow:hidden;
+  background:var(--card);
+
+  border:1px solid rgba(255,255,255,0.4);
+
+  backdrop-filter:blur(16px);
 
   border-radius:30px;
 
-  background:white;
+  overflow:hidden;
 
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.08);
-
-  transition:0.3s;
+  transition:0.3s ease;
 }
 
 .card:hover{
@@ -408,233 +415,174 @@ body::after{
 
 .card img{
   width:100%;
-  height:260px;
+  height:220px;
+
   object-fit:cover;
 }
 
 .card-content{
-  padding:28px;
+  padding:24px;
 }
 
 .card h3{
   font-size:32px;
 
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
 .card p{
-  color:#444;
+  color:var(--muted);
 
   line-height:1.7;
 }
 
 /* CONTACT */
 
-.contact{
-  padding:100px 0;
-}
-
-.contact-box{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.55),
-      rgba(255,255,255,0.28)
-    );
-
-  border:1px solid rgba(255,255,255,0.35);
-
-  backdrop-filter:blur(18px);
-
-  border-radius:36px;
-
-  padding:60px;
-}
-
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:50px;
+  gap:40px;
+  align-items:start;
 }
 
-.contact-title{
-  font-size:70px;
+.contact-card{
+  background:var(--card);
 
-  line-height:0.95;
+  border:1px solid rgba(255,255,255,0.4);
 
-  letter-spacing:-3px;
+  backdrop-filter:blur(16px);
 
-  margin-bottom:24px;
+  border-radius:30px;
+
+  padding:34px;
 }
 
-.contact-text{
+.contact-item{
+  margin-bottom:18px;
+
   font-size:22px;
-
-  line-height:1.7;
-
-  color:#444;
 }
 
-.form{
-  display:grid;
-  gap:18px;
-}
+.facebook-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
-.input{
-  width:100%;
+  width:90px;
+  height:90px;
 
-  border:none;
+  border-radius:50%;
 
-  background:white;
-
-  border-radius:18px;
-
-  padding:18px;
-
-  font-size:17px;
-
-  font-family:inherit;
-}
-
-textarea.input{
-  min-height:140px;
-  resize:none;
-}
-
-.submit{
-  border:none;
-
-  background:var(--primary);
+  background:#1877f2;
 
   color:white;
 
-  padding:18px;
+  font-size:56px;
 
-  border-radius:999px;
+  text-decoration:none;
 
-  font-size:18px;
+  margin-top:18px;
 
-  font-weight:700;
-
-  cursor:pointer;
-}
-
-/* FOOTER */
-
-.footer{
-  padding:40px 0 80px;
-
-  text-align:center;
-
-  color:#555;
+  box-shadow:
+    0 18px 30px rgba(0,0,0,0.18);
 }
 
 /* MOBILE */
 
-@media(max-width:980px){
-
-  body{
-    padding-top:92px;
-  }
+@media(max-width:1000px){
 
   .hero-grid,
-  .contact-grid,
-  .features-grid,
-  .services-grid{
+  .contact-grid{
     grid-template-columns:1fr;
   }
 
-  .hero-grid{
-    min-height:auto;
-    gap:30px;
-
-    text-align:center;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .hero-text{
-    margin:auto auto 34px;
-  }
-
-  .hero-logo{
-    width:min(320px,82vw);
-  }
-
-  .hero-title{
-    font-size:58px;
-    letter-spacing:-2px;
-  }
-
-  .hero-image{
-    height:260px;
-  }
-
-  .contact-title{
-    font-size:52px;
-  }
-
-  .contact-box{
-    padding:30px;
-  }
-
-  .services-grid{
-    gap:20px;
-  }
-
-  .card img{
-    height:220px;
-  }
-
-  .nav-inner{
-    min-height:72px;
-    padding:0 16px;
-  }
-
-  .brand-logo{
-    width:48px;
-    height:48px;
-  }
-
-  .brand-title{
-    font-size:18px;
-  }
-
-  .brand-sub{
-    font-size:10px;
-    letter-spacing:2px;
-  }
-
-  .phone{
-    font-size:12px;
-    padding:6px 10px;
-  }
-
-  .location{
-    font-size:10px;
+  .cards{
+    grid-template-columns:repeat(2,1fr);
   }
 
 }
 
-@media(max-width:600px){
+@media(max-width:760px){
 
-  .hero-title{
-    font-size:50px;
+  .navbar{
+    top:10px;
+    border-radius:24px;
   }
 
-  .hero-btn{
-    width:100%;
-    justify-content:center;
+  .nav-inner{
+    min-height:76px;
+  }
+
+  .brand-logo{
+    width:54px;
+    height:54px;
+  }
+
+  .brand-title{
+    font-size:20px;
+  }
+
+  .brand-sub{
+    font-size:10px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .contact-pill{
+    padding:8px 12px;
+    font-size:13px;
+  }
+
+  .hero{
+    padding-top:130px;
+  }
+
+  .hero h1{
+    font-size:62px;
+  }
+
+  .hero p{
+    font-size:20px;
   }
 
   .hero-buttons{
     flex-direction:column;
   }
 
+  .btn{
+    width:100%;
+  }
+
+  .hero-image{
+    height:280px;
+    border-radius:24px;
+  }
+
+  .section{
+    padding:70px 0;
+  }
+
   .section-title{
     font-size:52px;
+  }
+
+  .section-text{
+    font-size:20px;
+  }
+
+  .reason{
+    font-size:20px;
+    padding:24px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card h3{
+    font-size:28px;
   }
 
 }
@@ -648,35 +596,28 @@ textarea.input{
   <div class="nav-inner">
 
     <a href="#" class="brand">
-
-      <img
-        src="1B9168F7-A439-40E3-99F4-D8A8D6DF2573.PNG"
-        class="brand-logo"
-      >
+      <img src="1B9168F7-A439-40E3-99F4-D8A8D6DF2573.PNG" class="brand-logo">
 
       <div>
         <div class="brand-title">Garðsláttur</div>
         <div class="brand-sub">BJARKA</div>
       </div>
-
     </a>
 
-    <div class="contact-info">
-      <a href="tel:8336070" class="phone">
-        📞 833-6070
-      </a>
+    <nav class="nav-links">
+      <a href="#afhverju">Af hverju við</a>
+      <a href="#thjonusta">Þjónusta</a>
+      <a href="#samband">Hafa samband</a>
+    </nav>
 
-      <div class="location">
-        📍 Akureyri
-      </div>
-    </div>
-
-    <button class="mobile-btn">
-      ☰
-    </button>
+    <a href="tel:8336070" class="contact-pill">
+      📞 833-6070
+    </a>
 
   </div>
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -684,42 +625,37 @@ textarea.input{
 
     <div class="hero-grid">
 
-      <div class="hero-logo-wrap">
-
+      <div>
         <img
           src="1B9168F7-A439-40E3-99F4-D8A8D6DF2573.PNG"
           class="hero-logo"
         >
-
       </div>
 
-      <div class="hero-right">
+      <div>
 
-        <div class="hero-badge">
-          GARÐSLÁTTUR BJARKA
+        <div class="hero-tag">
+          Premium garðþjónusta á Akureyri
         </div>
 
-        <h1 class="hero-title">
-          Betra umhverfi.<br>
-          Betri upplifun.
+        <h1>
+          Betra útlit.<br>
+          Betri garður.
         </h1>
 
-        <p class="hero-text">
-          Fagleg og persónuleg garðþjónusta á Akureyri.
-          Við sjáum um slátt, hreinsun og snyrtingu
+        <p>
+          Við sjáum um slátt, snyrtingu og garðvinnu
           svo garðurinn þinn líti alltaf vel út.
         </p>
 
         <div class="hero-buttons">
-
-          <a href="#contact" class="hero-btn primary">
+          <a href="#samband" class="btn btn-primary">
             Fá tilboð
           </a>
 
-          <a href="#services" class="hero-btn secondary">
+          <a href="#thjonusta" class="btn btn-secondary">
             Skoða þjónustu
           </a>
-
         </div>
 
       </div>
@@ -735,43 +671,33 @@ textarea.input{
 
 </section>
 
-<section class="features">
+<!-- WHY -->
+
+<section class="section" id="afhverju">
 
   <div class="container">
 
-    <div class="features-grid">
+    <h2 class="section-title">
+      Af hverju að velja okkur
+    </h2>
 
-      <div class="feature">
-        <div class="feature-number">01</div>
+    <p class="section-text">
+      Við leggjum metnað í að skila fallegum og snyrtilegum görðum.
+      Áreiðanleg þjónusta, flott vinnubrögð og persónuleg samskipti.
+    </p>
 
-        <h3>Áreiðanlegt</h3>
+    <div class="reasons">
 
-        <p>
-          Mætum á réttum tíma og skilum
-          alltaf snyrtilegri vinnu.
-        </p>
+      <div class="reason">
+        ✔️ Vönduð og fagleg þjónusta
       </div>
 
-      <div class="feature">
-        <div class="feature-number">02</div>
-
-        <h3>Faglegt</h3>
-
-        <p>
-          Góð tæki, vandvirkni og flottur
-          frágangur í hverjum garði.
-        </p>
+      <div class="reason">
+        ✔️ Áreiðanleg mæting og góð samskipti
       </div>
 
-      <div class="feature">
-        <div class="feature-number">03</div>
-
-        <h3>Persónulegt</h3>
-
-        <p>
-          Persónuleg þjónusta þar sem
-          viðskiptavinurinn skiptir máli.
-        </p>
+      <div class="reason">
+        ✔️ Snyrtileg og premium upplifun
       </div>
 
     </div>
@@ -780,7 +706,9 @@ textarea.input{
 
 </section>
 
-<section class="services" id="services">
+<!-- SERVICES -->
+
+<section class="section" id="thjonusta">
 
   <div class="container">
 
@@ -788,61 +716,58 @@ textarea.input{
       Þjónustan okkar
     </h2>
 
-    <p class="section-sub">
-      Við sjáum um garðinn svo þú þurfir þess ekki.
+    <p class="section-text">
+      Við hjálpum þér að halda garðinum fallegum allt sumarið.
     </p>
 
-    <div class="services-grid">
+    <div class="cards">
 
       <div class="card">
-
-        <img src="IMG_2399.jpg">
+        <img src="https://images.unsplash.com/photo-1589923188937-2f95d7b4a0ec?auto=format&fit=crop&w=900&q=80">
 
         <div class="card-content">
-
           <h3>Garðsláttur</h3>
 
           <p>
-            Reglulegur eða stakur sláttur
-            fyrir heimili og fyrirtæki.
+            Reglulegur sláttur og snyrting sem heldur garðinum flottum.
           </p>
-
         </div>
-
       </div>
 
       <div class="card">
+        <img src="IMG_2399.jpg">
 
+        <div class="card-content">
+          <h3>Garðvinna</h3>
+
+          <p>
+            Hjálp með gróðursetningu, hreinsun og almenna garðvinnu.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
         <img src="IMG_2379.jpg">
 
         <div class="card-content">
-
-          <h3>Garðhreinsun</h3>
+          <h3>Viðhald</h3>
 
           <p>
-            Hreinsum og snyrtum svo
-            garðurinn verði flottur aftur.
+            Vorsnyrting, hausthreinsun og reglulegt viðhald.
           </p>
-
         </div>
-
       </div>
 
       <div class="card">
-
         <img src="IMG_2472.jpg">
 
         <div class="card-content">
-
-          <h3>Snyrting</h3>
+          <h3>Hreinsun</h3>
 
           <p>
-            Við sjáum um kantana,
-            fráganginn og útlitið.
+            Við hreinsum og snyrtum útisvæði svo allt líti betur út.
           </p>
-
         </div>
-
       </div>
 
     </div>
@@ -851,51 +776,47 @@ textarea.input{
 
 </section>
 
-<section class="contact" id="contact">
+<!-- CONTACT -->
+
+<section class="section" id="samband">
 
   <div class="container">
 
-    <div class="contact-box">
+    <div class="contact-grid">
 
-      <div class="contact-grid">
+      <div>
 
-        <div>
+        <h2 class="section-title">
+          Hafa samband
+        </h2>
 
-          <h2 class="contact-title">
-            Fáðu tilboð
-          </h2>
+        <p class="section-text">
+          Hafðu samband fyrir verðtilboð eða frekari upplýsingar.
+        </p>
 
-          <p class="contact-text">
-            Sendu okkur upplýsingar um garðinn
-            þinn og við svörum eins fljótt og hægt er.
-          </p>
+      </div>
 
+      <div class="contact-card">
+
+        <div class="contact-item">
+          📞 833-6070
         </div>
 
-        <form class="form">
+        <div class="contact-item">
+          ✉️ arnarsonslattur@gmail.com
+        </div>
 
-          <input
-            type="text"
-            class="input"
-            placeholder="Nafn"
-          >
+        <div class="contact-item">
+          📍 Akureyri
+        </div>
 
-          <input
-            type="email"
-            class="input"
-            placeholder="Email"
-          >
-
-          <textarea
-            class="input"
-            placeholder="Skrifaðu skilaboð..."
-          ></textarea>
-
-          <button class="submit">
-            Senda fyrirspurn
-          </button>
-
-        </form>
+        <a
+          href="https://www.facebook.com/GardslatturBjarka/"
+          target="_blank"
+          class="facebook-btn"
+        >
+          f
+        </a>
 
       </div>
 
@@ -904,12 +825,6 @@ textarea.input{
   </div>
 
 </section>
-
-<footer class="footer">
-
-  © 2026 Garðsláttur Bjarka — Akureyri
-
-</footer>
 
 </body>
 </html>
