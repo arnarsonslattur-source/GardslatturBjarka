@@ -93,41 +93,61 @@
   color: rgba(255,255,255,0.85);
 }
 
-    .nav-links {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  font-size: 16px;
-  color: white;
-  white-space: nowrap;
+.nav-links {
+  position: absolute;
+
+  top: 100%;
+  right: 20px;
+
+  width: 240px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 14px 34px rgba(0,0,0,0.14);
+
+  padding: 12px;
+
+  display: none;
+  flex-direction: column;
+
+  gap: 6px;
+
+  z-index: 999;
 }
 
     .nav-links a {
-      padding: 12px 18px;
-      border-radius: 999px;
-      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-    }
+  padding: 16px 18px;
+
+  border-radius: 14px;
+
+  color: #111;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
 
     .nav-links a:hover {
-  background: rgba(255,255,255,0.15);
-  transform: translateY(-1px);
+  background: #f2f2f2;
 }
 
 .nav-links a.active {
-  font-weight: 700;
-  background: rgba(255,255,255,0.2);
+  background: var(--green);
   color: white;
 }
+ 
     .mobile-menu-btn {
-  display: none;
+  width: 72px;
+  height: 72px;
 
-  width: 64px;
-  height: 64px;
+  border: 2px solid rgba(255,255,255,0.85);
 
-  border: 2px solid rgba(255,255,255,0.9);
   background: transparent;
 
-  font-size: 34px;
+  font-size: 38px;
   color: white;
 
   cursor: pointer;
@@ -137,7 +157,10 @@
   justify-content: center;
 
   transition: 0.25s ease;
+
+  flex-shrink: 0;
 }
+ 
 
  .mobile-menu-btn:hover,
 .contact-info .phone:hover {
@@ -735,23 +758,25 @@
 }
 
 .contact-info .phone {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 28px;
+  font-size: 34px;
 
   color: white;
   text-decoration: none;
 
-  border: 2px solid rgba(255,255,255,0.9);
+  border: 2px solid rgba(255,255,255,0.85);
 
   background: transparent;
 
   transition: 0.25s ease;
+
+  flex-shrink: 0;
 }
  
  .contact-info .phone:hover {
@@ -834,6 +859,13 @@
     padding: 14px 20px;
   }
 }
+
+ .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
   
 </style>
 </head>
@@ -849,19 +881,34 @@
         </div>
       </a>
      
-      <div class="contact-info">
-  <a href="tel:8336070" class="phone">📞 833-6070</a>
+      <div class="nav-actions">
+
+  <div class="contact-info">
+    <a href="tel:8336070" class="phone">
+      ☎
+    </a>
+  </div>
+
+  <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">
+    ☰
+  </button>
+
 </div>
 
-      <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">☰</button>
-     
-      <nav class="nav-links" id="navLinks">
-        <a class="active" href="#" onclick="showPage('home-page', this); return false;">Heim</a>
-        <a href="#" onclick="showPage('services-page', this); return false;">Þjónusta</a>
-        <a href="#" onclick="showPage('contact-page', this); return false;">Hafa samband</a>
-      </nav>
-    </div>
-  </header>
+<nav class="nav-links" id="navLinks">
+  <a class="active" href="#" onclick="showPage('home-page', this); return false;">Heim</a>
+
+  <a href="#" onclick="showPage('services-page', this); return false;">
+    Þjónusta
+  </a>
+
+  <a href="#" onclick="showPage('contact-page', this); return false;">
+    Hafa samband
+  </a>
+</nav>
+
+</div>
+</header>
  
   <main>
     <div id="home-page" class="page-view active-page">
