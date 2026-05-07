@@ -37,10 +37,8 @@ linear-gradient(
   135deg,
   #f8f6f1 0%,
   #f4efe4 45%,
-  #edf2e7 100%
-);
-     
-  background-attachment: fixed;
+  #edf2e7 
+  
      position: relative;
 
 isolation: isolate;
@@ -878,27 +876,25 @@ body::after {
   z-index: 0;
 }
 
-/* TOP RIGHT GREEN SHAPE */
 body::before {
   content: "";
 
   position: fixed;
 
-  width: 850px;
-  height: 850px;
-
-  top: -250px;
-  right: -250px;
+  inset: 0;
 
   background:
-    radial-gradient(
-      circle,
-      rgba(126,145,104,0.45) 0%,
-      rgba(126,145,104,0.18) 35%,
-      transparent 70%
-    );
+    linear-gradient(
+      rgba(248,246,241,0.76),
+      rgba(248,246,241,0.76)
+    ),
+    url("background.jpg");
 
-  filter: blur(30px);
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: repeat-y;
 
   z-index: -1;
 
