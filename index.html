@@ -32,26 +32,13 @@
   color: var(--text);
 
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(79,111,82,0.10),
-      transparent 35%
-    ),
-
-    radial-gradient(
-      circle at top right,
-      rgba(79,111,82,0.08),
-      transparent 40%
-    ),
-
-    radial-gradient(
-      circle at bottom left,
-      rgba(79,111,82,0.07),
-      transparent 35%
-    ),
-
-    #f5f1ea;
-
+linear-gradient(
+180deg,
+#f8f6f1 0%,
+#f3efe5 35%,
+#eef2e8 100%
+);
+     
   background-attachment: fixed;
 }
     img { max-width: 100%; display: block; }
@@ -61,15 +48,30 @@
       height: 14px;
       background: linear-gradient(90deg, var(--nav-grad-1), var(--nav-grad-2));
     }
+.navbar {
+  background: rgba(255,255,255,0.45);
 
-    .navbar {
-      background: rgba(255,255,255,0.92);
-      border-bottom: 1px solid #dcdcdc;
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(10px);
-    }
+  border: 1px solid rgba(255,255,255,0.3);
+
+  position: sticky;
+
+  top: 12px;
+
+  z-index: 30;
+
+  backdrop-filter: blur(18px);
+
+  width: calc(100% - 24px);
+
+  max-width: 1380px;
+
+  margin: 0 auto;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+}
 
     .nav-inner {
       width: min(1380px, calc(100% - 48px));
@@ -840,6 +842,71 @@ body::before {
   pointer-events: none;
 
   z-index: 9999;
+}
+
+ /* BIG GREEN SHAPE */
+body::before {
+  content: "";
+
+  position: fixed;
+
+  width: 900px;
+  height: 900px;
+
+  top: -250px;
+  right: -250px;
+
+  background:
+    rgba(126,145,104,0.16);
+
+  border-radius: 50%;
+
+  filter: blur(40px);
+
+  z-index: -2;
+}
+
+/* SOFT BEIGE SHAPE */
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 700px;
+  height: 700px;
+
+  bottom: -250px;
+  left: -200px;
+
+  background:
+    rgba(214,205,180,0.20);
+
+  border-radius: 50%;
+
+  filter: blur(60px);
+
+  z-index: -2;
+}
+
+ .hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -120px;
+  left: -80px;
+
+  background-image:
+    url('https://www.transparenttextures.com/patterns/leaves.png');
+
+  opacity: 0.06;
+
+  transform: rotate(-12deg);
+
+  z-index: 0;
 }
  
 </style>
