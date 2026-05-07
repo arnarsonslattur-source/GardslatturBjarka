@@ -718,6 +718,41 @@ transition: 0.25s ease;
   padding: 14px 20px;
 }
 
+ /* ===== DESKTOP NAV ===== */
+
+.contact-info .phone {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(255,255,255,0.9);
+
+  color: white;
+
+  background: transparent;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+
+  flex-shrink: 0;
+}
+
+.contact-info .phone span {
+  font-size: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-links.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
     @media (max-width: 760px) {
       .nav-inner {
         width: calc(100% - 24px);
@@ -1131,8 +1166,14 @@ transition: 0.25s ease;
  
   <script>
     function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('show');
-    }
+  const menu = document.getElementById('navLinks');
+
+  if (menu.classList.contains('show')) {
+    menu.classList.remove('show');
+  } else {
+    menu.classList.add('show');
+  }
+}
 
     function showPage(pageId, clickedLink) {
       document.querySelectorAll('.page-view').forEach(page => {
