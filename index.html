@@ -145,10 +145,13 @@ transition: 0.25s ease;
   color: white;
 }
  
-    .mobile-menu-btn {
-     display: flex;
+    ..mobile-menu-btn {
+  display: flex;
   width: 72px;
   height: 72px;
+
+  position: relative;
+z-index: 10000;
 
   border: 2px solid rgba(255,255,255,0.85);
 
@@ -686,22 +689,6 @@ transition: 0.25s ease;
       .brand-sub { font-size: 12px; }
       .brand-logo { width: 54px; height: 54px; }
 
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 20px;
-        left: 12px;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 14px;
-        box-shadow: var(--shadow);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        overflow: hidden;
-        display: none;
-      }
-
       .nav-links.show {
   display: flex;
 
@@ -753,11 +740,6 @@ transition: 0.25s ease;
   color: black;
   font-weight: 500;
 }
-
-@media (max-width: 768px) {
-  .nav-inner {
-    flex-wrap: nowrap;
-  }
 
   .contact-info {
   display: flex;
@@ -826,19 +808,6 @@ transition: 0.25s ease;
   border: none;
 }
 
-@media (max-width: 768px) {
-  .reviews-section {
-    padding: 0 12px;
-    margin: 40px auto;
-  }
-
-  .reviews-section h2 {
-    font-size: 26px;
-  }
-}
-
- @media (min-width: 769px) {
-
   .nav-inner {
     min-height: 100px;
   }
@@ -875,7 +844,8 @@ transition: 0.25s ease;
     padding: 14px 20px;
   }
 }
-
+}
+ 
  .nav-actions {
   display: flex;
   align-items: center;
@@ -885,6 +855,15 @@ transition: 0.25s ease;
 
  .nav-links {
   left: auto !important;
+}
+
+ .nav-links.show {
+  display: flex;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  pointer-events: auto;
 }
   
 </style>
@@ -904,13 +883,14 @@ transition: 0.25s ease;
       <div class="nav-actions">
 
   <div class="contact-info">
-    <a href="tel:8336070" class="phone">
-  <span>📞</span>
-</a>
+  <a href="tel:8336070" class="phone">
+    <span>📞</span>
+  </a>
+</div>
 
-  <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">
-    ☰
-  </button>
+<button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">
+  ☰
+</button>
 
 </div>
 
