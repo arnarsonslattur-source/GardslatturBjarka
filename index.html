@@ -96,8 +96,8 @@
 .nav-links {
   position: absolute;
 
-  top: 100%;
-  right: 20px;
+  top: 115%;
+  right: 12px;
 
   width: 240px;
 
@@ -140,6 +140,7 @@
 }
  
     .mobile-menu-btn {
+     display: flex;
   width: 72px;
   height: 72px;
 
@@ -679,10 +680,6 @@
       .brand-sub { font-size: 12px; }
       .brand-logo { width: 54px; height: 54px; }
 
-     .mobile-menu-btn {
-  display: flex;
-}
-
       .nav-links {
         position: absolute;
         top: 100%;
@@ -760,12 +757,13 @@
 .contact-info .phone {
   width: 72px;
   height: 72px;
+ box-sizing: border-box;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 34px;
+ font-size: 0;
 
   color: white;
   text-decoration: none;
@@ -777,6 +775,11 @@
   transition: 0.25s ease;
 
   flex-shrink: 0;
+}
+
+ .contact-info .phone span {
+  font-size: 34px;
+  filter: brightness(0) invert(1);
 }
  
  .contact-info .phone:hover {
@@ -885,9 +888,8 @@
 
   <div class="contact-info">
     <a href="tel:8336070" class="phone">
-      ☎
-    </a>
-  </div>
+  <span>📞</span>
+</a>
 
   <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">
     ☰
