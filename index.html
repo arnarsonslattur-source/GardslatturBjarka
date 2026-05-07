@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="is">
 <head>
- <meta charset="UTF-8" 
+ <meta charset="UTF-8" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -221,9 +221,8 @@ overflow-x: hidden;
 .areas,
 .contact-band {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
-
     .hero-top {
       display: grid;
       grid-template-columns: 0.9fr 1.15fr;
@@ -647,21 +646,22 @@ overflow-x: hidden;
 
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 800px;
 
-  background: rgba(79,111,82,0.10);
+  background:
+    rgba(126,145,104,0.16);
 
   border-radius: 50%;
 
-  filter: blur(120px);
+  filter: blur(100px);
 
-  top: -150px;
-  right: -150px;
+  top: -250px;
+  right: -250px;
 
   z-index: 0;
 }
-
+ 
 .hero > * {
   position: relative;
   z-index: 1;
@@ -834,43 +834,6 @@ overflow-x: hidden;
   }
 }
 
-body::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
-  background-image:
-    url("https://grainy-gradients.vercel.app/noise.svg");
-
-  opacity: 0.025;
-
-  pointer-events: none;
-
-  z-index: 9999;
-}
-
- /* BIG GREEN SHAPE */
-body::before {
-  content: "";
-
-  position: fixed;
-
-  width: 900px;
-  height: 900px;
-
-  top: -250px;
-  right: -250px;
-
-  background:
-    rgba(126,145,104,0.16);
-
-  border-radius: 50%;
-
-  filter: blur(40px);
-
-  z-index: 0;
-}
 
 /* SOFT BEIGE SHAPE */
 body::after {
