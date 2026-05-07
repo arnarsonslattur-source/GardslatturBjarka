@@ -54,6 +54,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+     position: relative;
     }
 
     .brand {
@@ -96,10 +97,15 @@
 .nav-links {
   position: absolute;
 
+ pointer-events: none;
+opacity: 0;
+transform: translateY(-10px);
+transition: 0.25s ease;
+
   top: 115%;
   right: 12px;
 
-  width: 240px;
+  width: 210px;
 
   background: white;
 
@@ -683,7 +689,7 @@
       .nav-links {
         position: absolute;
         top: 100%;
-        right: 12px;
+        right: 20px;
         left: 12px;
         background: #fff;
         border: 1px solid #ddd;
@@ -696,7 +702,14 @@
         display: none;
       }
 
-      .nav-links.show { display: flex; }
+      .nav-links.show {
+  display: flex;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
       .nav-links a { padding: 16px 18px; border-bottom: 1px solid #eee; }
       .nav-links a:last-child { border-bottom: 0; }
 
@@ -778,7 +791,7 @@
 }
 
  .contact-info .phone span {
-  font-size: 34px;
+  font-size: 26px;
   filter: brightness(0) invert(1);
 }
  
@@ -868,6 +881,10 @@
   align-items: center;
   gap: 16px;
   margin-left: auto;
+}
+
+ .nav-links {
+  left: auto !important;
 }
   
 </style>
