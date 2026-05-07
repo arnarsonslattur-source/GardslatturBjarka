@@ -877,6 +877,7 @@ body::after {
 
   z-index: 0;
 }
+
 /* BIG GREEN GLOW */
 body::before {
   content: "";
@@ -890,13 +891,13 @@ body::before {
   right: -250px;
 
   background:
-    rgba(126,145,104,0.16);
+    rgba(126,145,104,0.32);
 
   border-radius: 50%;
 
-  filter: blur(40px);
+  filter: blur(140px);
 
-  z-index: 0;
+  z-index: -1;
 }
 
 /* SOFT BEIGE GLOW */
@@ -916,9 +917,9 @@ body::after {
 
   border-radius: 50%;
 
-  filter: blur(60px);
+  filter: blur(120px);
 
-  z-index: 0;
+  z-index: -1;
 }
  
 </style>
