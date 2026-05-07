@@ -34,10 +34,10 @@
 
   background:
 linear-gradient(
-180deg,
-#f8f6f1 0%,
-#f3efe5 35%,
-#eef2e8 100%
+  135deg,
+  #f8f6f1 0%,
+  #f4efe4 45%,
+  #edf2e7 100%
 );
      
   background-attachment: fixed;
@@ -878,48 +878,81 @@ body::after {
   z-index: 0;
 }
 
-/* BIG GREEN GLOW */
+/* TOP RIGHT GREEN SHAPE */
 body::before {
   content: "";
 
   position: fixed;
 
-  width: 900px;
-  height: 900px;
+  width: 850px;
+  height: 850px;
 
   top: -250px;
   right: -250px;
 
   background:
-    rgba(126,145,104,0.32);
+    radial-gradient(
+      circle,
+      rgba(126,145,104,0.45) 0%,
+      rgba(126,145,104,0.18) 35%,
+      transparent 70%
+    );
 
-  border-radius: 50%;
-
-  filter: blur(140px);
+  filter: blur(30px);
 
   z-index: -1;
+
+  pointer-events: none;
 }
 
-/* SOFT BEIGE GLOW */
+/* BOTTOM LEFT WARM SHAPE */
 body::after {
   content: "";
 
   position: fixed;
 
-  width: 700px;
-  height: 700px;
+  width: 750px;
+  height: 750px;
 
   bottom: -250px;
-  left: -200px;
+  left: -250px;
 
   background:
-    rgba(214,205,180,0.25);
+    radial-gradient(
+      circle,
+      rgba(214,205,180,0.50) 0%,
+      rgba(214,205,180,0.20) 40%,
+      transparent 75%
+    );
 
-  border-radius: 50%;
-
-  filter: blur(120px);
+  filter: blur(40px);
 
   z-index: -1;
+
+  pointer-events: none;
+}
+
+ .hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -120px;
+  bottom: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.35),
+      transparent 70%
+    );
+
+  filter: blur(40px);
+
+  z-index: 0;
 }
  
 </style>
