@@ -937,6 +937,83 @@ align-items: center;
     border-radius: 0;
   }
 
+ /* ===== SIMPLE WHY SECTION ===== */
+
+.why-simple-section {
+  padding: 90px 0;
+  background: #f3f3f3;
+}
+
+.why-simple-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+
+  margin-bottom: 60px;
+}
+
+.why-simple-line {
+  width: 5px;
+  height: 260px;
+
+  background: var(--green);
+
+  border-radius: 999px;
+
+  flex-shrink: 0;
+}
+
+.why-simple-title-wrap h2 {
+  margin: 0;
+
+  font-size: clamp(72px, 8vw, 140px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -4px;
+}
+
+.why-simple-cards {
+  display: grid;
+  gap: 28px;
+}
+
+.why-simple-card {
+  width: 100%;
+
+  height: 170px;
+
+  background: white;
+
+  border-radius: 28px;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 760px) {
+
+  .why-simple-section {
+    padding: 60px 0;
+  }
+
+  .why-simple-line {
+    height: 150px;
+  }
+
+  .why-simple-title-wrap h2 {
+    font-size: 64px;
+    letter-spacing: -2px;
+  }
+
+  .why-simple-card {
+    height: 130px;
+    border-radius: 22px;
+  }
+
 }
      
 </style>
@@ -1012,97 +1089,28 @@ align-items: center;
       <section class="section-gray why-modern-section">
 
   <div class="container">
-<section class="section-gray why-modern-section">
+<section class="section-gray why-simple-section">
 
   <div class="container">
 
-    <div class="why-top-text">
-      FAGLEG GARÐÞJÓNUSTA FYRIR HEIMILI OG EIGNIR.
-    </div>
+    <div class="why-simple-title-wrap">
 
-    <div class="why-green-line-top"></div>
+      <div class="why-simple-line"></div>
 
-    <div class="why-main">
-
-      <div class="why-title-side">
-
-        <div class="why-vertical-line"></div>
-
-        <div>
-
-          <h2>
-            Af hverju að<br>
-            velja okkur
-          </h2>
-
-          <p>
-            Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="why-decoration">
-
-        <div class="why-dots"></div>
-
-      </div>
+      <h2>
+        Af hverju að<br>
+        velja okkur
+      </h2>
 
     </div>
 
-    <div class="why-card-list">
+    <div class="why-simple-cards">
 
-      <div class="why-card">
+      <div class="why-simple-card"></div>
 
-        <div class="why-card-icon">
-          🏆
-        </div>
+      <div class="why-simple-card"></div>
 
-        <div class="why-card-divider"></div>
-
-        <div class="why-card-content">
-          <h3>Við leggjum metnað</h3>
-          <span>í að gera þetta vel</span>
-        </div>
-
-        <div class="why-card-arrow">›</div>
-
-      </div>
-
-      <div class="why-card">
-
-        <div class="why-card-icon">
-          ✔️
-        </div>
-
-        <div class="why-card-divider"></div>
-
-        <div class="why-card-content">
-          <h3>Áreiðanleg og persónuleg þjónusta</h3>
-          <span>sem þú getur treyst</span>
-        </div>
-
-        <div class="why-card-arrow">›</div>
-
-      </div>
-
-      <div class="why-card">
-
-        <div class="why-card-icon">
-          🌱
-        </div>
-
-        <div class="why-card-divider"></div>
-
-        <div class="why-card-content">
-          <h3>Skilum hreinu og snyrtilegu</h3>
-          <span>hverju sinni</span>
-        </div>
-
-        <div class="why-card-arrow">›</div>
-
-      </div>
+      <div class="why-simple-card"></div>
 
     </div>
 
