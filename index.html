@@ -938,151 +938,135 @@ align-items: center;
   }
 
 .why-modern-section {
-  padding: 70px 0 90px;
+  padding: 70px 0;
   background: #f3f3f3;
 }
 
 .why-top-text {
   text-align: center;
-  font-size: 28px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
   letter-spacing: 1px;
-  margin-bottom: 26px;
 }
 
 .why-green-line-top {
   width: 90px;
-  height: 5px;
+  height: 4px;
   background: var(--green);
-  border-radius: 999px;
   margin: 0 auto 60px;
+  border-radius: 999px;
 }
 
-.why-modern-layout {
+.why-main {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 0.5fr;
   gap: 40px;
   align-items: center;
 }
 
-.why-title-wrap {
+.why-title-side {
   display: flex;
-  gap: 26px;
-  align-items: flex-start;
+  gap: 24px;
 }
 
-.why-side-line {
+.why-vertical-line {
   width: 5px;
-  min-height: 360px;
   background: var(--green);
   border-radius: 999px;
 }
 
-.why-title-wrap h2 {
-  font-size: clamp(70px, 7vw, 120px);
+.why-title-side h2 {
+  font-size: clamp(58px, 8vw, 110px);
   line-height: 0.92;
-  margin: 0 0 26px;
+  margin: 0 0 30px;
   font-weight: 500;
 }
 
-.why-title-wrap p {
-  font-size: clamp(28px, 2vw, 40px);
+.why-title-side p {
+  font-size: clamp(22px, 2vw, 34px);
   line-height: 1.5;
   max-width: 700px;
 }
 
-.why-right {
+.why-decoration {
   position: relative;
-  min-height: 420px;
+  min-height: 260px;
 }
 
 .why-dots {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  right: 0;
+  top: 0;
 
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
 
   border-radius: 50%;
 
   background:
-  radial-gradient(circle, rgba(105,181,72,0.25) 2px, transparent 2px);
+  radial-gradient(circle, rgba(105,181,72,0.22) 2px, transparent 2px);
 
   background-size: 16px 16px;
 }
 
-.why-grass {
-  position: absolute;
-  bottom: 0;
-  right: 80px;
-
-  font-size: 180px;
-  opacity: 0.8;
-}
-
-.why-cards {
-  margin-top: 70px;
+.why-card-list {
+  margin-top: 60px;
   display: grid;
-  gap: 30px;
+  gap: 26px;
 }
 
 .why-card {
   background: white;
 
-  border-radius: 28px;
+  border-radius: 26px;
 
-  padding: 34px;
+  padding: 30px;
 
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 26px;
 
-  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
-
-  transition: 0.25s ease;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
 }
 
-.why-card:hover {
-  transform: translateY(-4px);
-}
-
-.why-icon {
-  width: 110px;
-  height: 110px;
+.why-card-icon {
+  width: 92px;
+  height: 92px;
 
   border-radius: 50%;
 
-  background: rgba(105,181,72,0.12);
+  background: rgba(105,181,72,0.1);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 50px;
+  font-size: 40px;
 
   flex-shrink: 0;
 }
 
-.why-divider {
+.why-card-divider {
   width: 2px;
   height: 90px;
   background: #ececec;
 }
 
-.why-card-text h3 {
-  margin: 0 0 10px;
-  font-size: 42px;
+.why-card-content h3 {
+  margin: 0 0 8px;
+  font-size: 34px;
 }
 
-.why-card-text span {
-  font-size: 28px;
+.why-card-content span {
+  font-size: 24px;
   color: #555;
 }
 
-.why-arrow {
+.why-card-arrow {
   margin-left: auto;
 
-  font-size: 70px;
+  font-size: 54px;
 
   color: var(--green);
 }
@@ -1090,67 +1074,53 @@ align-items: center;
 @media (max-width: 760px) {
 
   .why-modern-section {
-    padding: 40px 0 60px;
+    padding: 40px 0;
   }
 
-  .why-top-text {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  .why-green-line-top {
-    width: 70px;
-    margin-bottom: 34px;
-  }
-
-  .why-modern-layout {
+  .why-main {
     grid-template-columns: 1fr;
   }
 
-  .why-right {
+  .why-decoration {
     display: none;
   }
 
-  .why-side-line {
-    min-height: 220px;
+  .why-title-side h2 {
+    font-size: 72px;
   }
 
-  .why-title-wrap h2 {
-    font-size: 64px;
-  }
-
-  .why-title-wrap p {
+  .why-title-side p {
     font-size: 22px;
   }
 
   .why-card {
     padding: 22px;
-    gap: 16px;
+    gap: 18px;
   }
 
-  .why-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 32px;
+  .why-card-icon {
+    width: 68px;
+    height: 68px;
+    font-size: 28px;
   }
 
-  .why-divider {
-    height: 60px;
+  .why-card-divider {
+    height: 56px;
   }
 
-  .why-card-text h3 {
-    font-size: 24px;
+  .why-card-content h3 {
+    font-size: 22px;
   }
 
-  .why-card-text span {
+  .why-card-content span {
     font-size: 18px;
   }
 
-  .why-arrow {
-    font-size: 42px;
+  .why-card-arrow {
+    font-size: 38px;
   }
 }
+ 
      
 </style>
 </head>
@@ -1225,6 +1195,9 @@ align-items: center;
       <section class="section-gray why-modern-section">
 
   <div class="container">
+<section class="section-gray why-modern-section">
+
+  <div class="container">
 
     <div class="why-top-text">
       FAGLEG GARÐÞJÓNUSTA FYRIR HEIMILI OG EIGNIR.
@@ -1232,83 +1205,85 @@ align-items: center;
 
     <div class="why-green-line-top"></div>
 
-    <div class="why-modern-layout">
+    <div class="why-main">
 
-      <div class="why-left">
+      <div class="why-title-side">
 
-        <div class="why-title-wrap">
+        <div class="why-vertical-line"></div>
 
-          <div class="why-side-line"></div>
+        <div>
 
-          <div>
-            <h2>
-              Af hverju að<br>
-              velja okkur
-            </h2>
+          <h2>
+            Af hverju að<br>
+            velja okkur
+          </h2>
 
-            <p>
-              Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.
-            </p>
-          </div>
+          <p>
+            Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.
+          </p>
 
         </div>
 
       </div>
 
-      <div class="why-right">
+      <div class="why-decoration">
 
         <div class="why-dots"></div>
-
-        <div class="why-grass">🌱</div>
 
       </div>
 
     </div>
 
-    <div class="why-cards">
+    <div class="why-card-list">
 
       <div class="why-card">
 
-        <div class="why-icon">🏆</div>
+        <div class="why-card-icon">
+          🏆
+        </div>
 
-        <div class="why-divider"></div>
+        <div class="why-card-divider"></div>
 
-        <div class="why-card-text">
+        <div class="why-card-content">
           <h3>Við leggjum metnað</h3>
           <span>í að gera þetta vel</span>
         </div>
 
-        <div class="why-arrow">›</div>
+        <div class="why-card-arrow">›</div>
 
       </div>
 
       <div class="why-card">
 
-        <div class="why-icon">✔️</div>
+        <div class="why-card-icon">
+          ✔️
+        </div>
 
-        <div class="why-divider"></div>
+        <div class="why-card-divider"></div>
 
-        <div class="why-card-text">
+        <div class="why-card-content">
           <h3>Áreiðanleg og persónuleg þjónusta</h3>
           <span>sem þú getur treyst</span>
         </div>
 
-        <div class="why-arrow">›</div>
+        <div class="why-card-arrow">›</div>
 
       </div>
 
       <div class="why-card">
 
-        <div class="why-icon">🌱</div>
+        <div class="why-card-icon">
+          🌱
+        </div>
 
-        <div class="why-divider"></div>
+        <div class="why-card-divider"></div>
 
-        <div class="why-card-text">
+        <div class="why-card-content">
           <h3>Skilum hreinu og snyrtilegu</h3>
           <span>hverju sinni</span>
         </div>
 
-        <div class="why-arrow">›</div>
+        <div class="why-card-arrow">›</div>
 
       </div>
 
