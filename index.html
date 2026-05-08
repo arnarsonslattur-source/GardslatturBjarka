@@ -937,6 +937,142 @@ align-items: center;
     border-radius: 0;
   }
 
+.why-modern {
+  padding: 80px 0;
+}
+
+.why-header {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.why-line {
+  width: 5px;
+  min-height: 220px;
+  background: var(--green);
+  border-radius: 999px;
+}
+
+.why-header h2 {
+  font-size: clamp(54px, 7vw, 92px);
+  line-height: 0.95;
+  margin: 0 0 24px;
+}
+
+.why-header p {
+  font-size: clamp(24px, 2vw, 34px);
+  line-height: 1.4;
+  max-width: 650px;
+}
+
+.why-cards {
+  display: grid;
+  gap: 26px;
+}
+
+.why-card {
+  background: white;
+
+  border-radius: 28px;
+
+  padding: 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 26px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+  transition: 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+}
+
+.why-icon {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: rgba(105,181,72,0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+
+  flex-shrink: 0;
+}
+
+.why-text h3 {
+  margin: 0 0 6px;
+  font-size: 34px;
+}
+
+.why-text span {
+  font-size: 24px;
+  color: #555;
+}
+
+.why-arrow {
+  margin-left: auto;
+
+  font-size: 52px;
+
+  color: var(--green);
+}
+
+@media (max-width: 760px) {
+
+  .why-modern {
+    padding: 50px 0;
+  }
+
+  .why-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .why-line {
+    width: 70px;
+    min-height: 5px;
+  }
+
+  .why-header h2 {
+    font-size: 62px;
+  }
+
+  .why-header p {
+    font-size: 22px;
+  }
+
+  .why-card {
+    padding: 24px;
+    gap: 18px;
+  }
+
+  .why-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+
+  .why-text h3 {
+    font-size: 24px;
+  }
+
+  .why-text span {
+    font-size: 18px;
+  }
+
+  .why-arrow {
+    font-size: 38px;
+  }
 }
      
 </style>
@@ -1010,28 +1146,61 @@ align-items: center;
       </section>
 
       <section class="section-gray why">
-        <div class="container">
-          <div class="why-top">
-            <h2 class="fade-text">Af hverju að<br>velja okkur</h2>
-            <div class="why-copy">Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.</div>
-          </div>
 
-          <div class="reasons">
-            <div class="reason">
-              <div class="arrow">→</div>
-              <div>Við LEGGJUM METNAÐ Í AÐ GERA ÞETTA VEL</div>
-            </div>
-            <div class="reason">
-              <div class="arrow">→</div>
-              <div>ÁREIÐANLEG OG PERSÓNULEG ÞJÓNUSTA SEM ÞÚ GETUR TREYST</div>
-            </div>
-            <div class="reason">
-              <div class="arrow">→</div>
-              <div>SKILUM HREINU OG SNYRTILEGU HVERJU SINNI</div>
-            </div>
-          </div>
+  <div class="container why-modern">
+
+    <div class="why-header">
+      <div class="why-line"></div>
+
+      <div>
+        <h2>Af hverju að<br>velja okkur</h2>
+
+        <p>
+          Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-cards">
+
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+
+        <div class="why-text">
+          <h3>Við leggjum metnað</h3>
+          <span>í að gera þetta vel</span>
         </div>
-      </section>
+
+        <div class="why-arrow">›</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">✔️</div>
+
+        <div class="why-text">
+          <h3>Áreiðanleg þjónusta</h3>
+          <span>sem þú getur treyst</span>
+        </div>
+
+        <div class="why-arrow">›</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🌱</div>
+
+        <div class="why-text">
+          <h3>Skilum hreinu</h3>
+          <span>og snyrtilegu hverju sinni</span>
+        </div>
+
+        <div class="why-arrow">›</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
      <section id="tilbod" class="section-gray quote">
         <div class="container quote-wrap">
