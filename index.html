@@ -1019,6 +1019,73 @@ align-items: center;
     border-radius: 22px;
   }
 
+ .why-simple-card {
+  width: 100%;
+
+  min-height: 170px;
+
+  background: white;
+
+  border-radius: 28px;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 34px;
+
+  gap: 26px;
+}
+
+.why-card-left {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: #eef2ea;
+
+  flex-shrink: 0;
+}
+
+.why-card-divider {
+  width: 1px;
+  height: 90px;
+
+  background: #e3e3e3;
+
+  flex-shrink: 0;
+}
+
+.why-card-text {
+  flex: 1;
+}
+
+.why-card-text h3 {
+  margin: 0 0 10px;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+.why-card-text p {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #333;
+}
+
+.why-card-arrow {
+  font-size: 60px;
+
+  color: var(--green);
+
+  font-weight: 300;
+}
+
 }
      
 </style>
@@ -1105,11 +1172,50 @@ align-items: center;
 
     <div class="why-simple-cards">
 
-      <div class="why-simple-card"></div>
+      <div class="why-simple-card">
 
-      <div class="why-simple-card"></div>
+  <div class="why-card-left"></div>
 
-      <div class="why-simple-card"></div>
+  <div class="why-card-divider"></div>
+
+  <div class="why-card-text">
+    <h3>Við leggjum metnað</h3>
+    <p>í að gera þetta vel</p>
+  </div>
+
+  <div class="why-card-arrow">›</div>
+
+</div>
+
+      <div class="why-simple-card">
+
+  <div class="why-card-left"></div>
+
+  <div class="why-card-divider"></div>
+
+  <div class="why-card-text">
+    <h3>Áreiðanleg og persónuleg þjónusta</h3>
+    <p>sem þú getur treyst</p>
+  </div>
+
+  <div class="why-card-arrow">›</div>
+
+</div>
+
+      <div class="why-simple-card">
+
+  <div class="why-card-left"></div>
+
+  <div class="why-card-divider"></div>
+
+  <div class="why-card-text">
+    <h3>Skilum hreinu og snyrtilegu</h3>
+    <p>hverju sinni</p>
+  </div>
+
+  <div class="why-card-arrow">›</div>
+
+</div>
 
     </div>
 
