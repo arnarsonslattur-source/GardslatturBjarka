@@ -1531,6 +1531,96 @@ align-items: center;
 
     font-size: 82px;
   }
+  
+  /* ===== MODERN CONTACT CARDS ===== */
+
+.modern-contact {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.contact-card {
+
+  background: white;
+
+  border-radius: 26px;
+
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.06);
+}
+
+.contact-icon {
+
+  width: 74px;
+  height: 74px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 38px;
+
+  flex-shrink: 0;
+
+  font-weight: 700;
+}
+
+.contact-divider {
+
+  width: 1px;
+  height: 58px;
+
+  background: #e5e5e5;
+
+  flex-shrink: 0;
+}
+
+.contact-text-modern {
+
+  font-size: 26px;
+
+  line-height: 1.4;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:760px){
+
+  .contact-card {
+
+    padding: 16px 18px;
+
+    gap: 16px;
+  }
+
+  .contact-icon {
+
+    width: 58px;
+    height: 58px;
+
+    font-size: 28px;
+  }
+
+  .contact-text-modern {
+
+    font-size: 18px;
+  }
 
 }
     
@@ -1811,11 +1901,39 @@ align-items: center;
         Garðsláttur Bjarka<br>
         Akureyri
       </div>
-      <div class="contact-details">
-        <div>Sími: 833-6070</div>
-        <div>Email: <span class="email">arnarsonslattur@gmail.com</span></div>
-        <div>Facebook: @GardslatturBjarka</div>
-      </div>
+      <div class="contact-details modern-contact">
+
+  <div class="contact-card">
+    <div class="contact-icon">📞</div>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-text-modern">
+      <strong>Sími:</strong> 833-6070
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-text-modern">
+      <strong>Email:</strong> arnarsonslattur@gmail.com
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-icon">f</div>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-text-modern">
+      <strong>Facebook:</strong> @GardslatturBjarka
+    </div>
+  </div>
+
+</div>
       <div class="facebook-modern">
 
   <div class="facebook-left">
