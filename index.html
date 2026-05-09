@@ -2052,6 +2052,108 @@ overflow: hidden;
     gap:28px;
   }
 
+/* ===== FORCE MOBILE DESIGN ON DESKTOP ===== */
+
+@media (min-width: 761px) {
+
+  .why-simple-cards{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:26px !important;
+  }
+
+  .why-simple-card{
+
+    width:100% !important;
+
+    min-height:170px !important;
+
+    background:white !important;
+
+    border-radius:28px !important;
+
+    box-shadow:0 10px 28px rgba(0,0,0,0.06) !important;
+
+    display:flex !important;
+
+    flex-direction:row !important;
+
+    align-items:center !important;
+
+    justify-content:flex-start !important;
+
+    padding:0 34px !important;
+
+    gap:26px !important;
+  }
+
+  .why-card-left{
+
+    width:90px !important;
+    height:90px !important;
+
+    border-radius:50% !important;
+
+    background:#eef2ea !important;
+
+    flex-shrink:0 !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    margin-bottom:0 !important;
+  }
+
+  .why-card-left img{
+
+    width:52px !important;
+    height:52px !important;
+
+    object-fit:contain !important;
+  }
+
+  .why-card-divider{
+
+    display:block !important;
+
+    width:1px !important;
+    height:90px !important;
+
+    background:#e3e3e3 !important;
+
+    flex-shrink:0 !important;
+  }
+
+  .why-card-text{
+    flex:1 !important;
+  }
+
+  .why-card-text h3{
+
+    font-size:28px !important;
+
+    line-height:1.05 !important;
+
+    margin:0 0 8px !important;
+  }
+
+  .why-card-text p{
+
+    font-size:20px !important;
+
+    margin:0 !important;
+  }
+
+  .why-card-arrow{
+
+    display:block !important;
+
+    font-size:56px !important;
+
+    color:var(--green) !important;
+  }
+
 }
     
 </style>
