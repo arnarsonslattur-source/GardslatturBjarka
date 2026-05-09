@@ -1771,6 +1771,107 @@ overflow: hidden;
   cursor: pointer;
 }
   
+.service-hero{
+
+  display:grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap:40px;
+
+  align-items:center;
+
+  padding:40px 0 70px;
+}
+
+.service-title{
+
+  font-size: clamp(64px, 8vw, 120px);
+
+  line-height: 0.92;
+
+  letter-spacing:-4px;
+
+  margin:30px 0 24px;
+
+  font-family: Georgia, serif;
+
+  color:#1d3416;
+}
+
+.service-text{
+
+  font-size:24px;
+
+  line-height:1.6;
+
+  max-width:500px;
+
+  color:#333;
+}
+
+.service-main-image{
+
+  width:100%;
+
+  height:520px;
+
+  object-fit:cover;
+
+  border-radius:34px;
+}
+
+.back-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  color:var(--green);
+
+  font-size:18px;
+
+  font-weight:600;
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+  .service-hero{
+
+    grid-template-columns: 0.95fr 1.05fr;
+
+    gap:18px;
+
+    align-items:start;
+  }
+
+  .service-title{
+
+    font-size: clamp(42px, 8vw, 64px);
+
+    letter-spacing:-2px;
+
+    margin:18px 0;
+  }
+
+  .service-text{
+
+    font-size:16px;
+
+    line-height:1.5;
+  }
+
+  .service-main-image{
+
+    height:320px;
+
+    border-radius:24px;
+  }
+
 }
     
 </style>
@@ -2205,6 +2306,50 @@ onclick="showPage('hreinsun-page')">
 <section class="section-gray" style="padding:40px 0 80px;">
 
 <div class="container">
+  
+  <section class="service-hero">
+
+  <div class="service-left">
+
+    <a href="#" class="back-btn"
+onclick="showPage('services-page'); return false;">
+← Til baka
+</a>
+
+    <h1 class="service-title">
+      Almenn<br>
+      garðþjónusta
+    </h1>
+
+    <p class="service-text">
+      Við sjáum um garðinn svo þú getir notið hans —
+      við sláum, snyrtum og hreinsum allt af fagmennsku og metnaði.
+    </p>
+
+  </div>
+
+  <div class="service-right">
+
+    <img
+      class="service-main-image"
+      src="https://images.unsplash.com/photo-1589923188937-2f95d7b4a0ec?auto=format&fit=crop&w=1200&q=80"
+    >
+
+  </div>
+
+</section>
+
+</div>
+
+</section>
+
+</div>
+
+<div id="smavinna-page" class="page-view">
+
+<section class="section-gray" style="padding:40px 0 80px;">
+
+<div class="container">
 
 <button onclick="showPage('services-page')"
 style="
@@ -2221,10 +2366,10 @@ cursor:pointer;
 </button>
 
 <h1 style="font-size:48px; margin-bottom:20px;">
-Almenn garðþjónusta
+Smá garðvinna
 </h1>
 
-<img src="https://images.unsplash.com/photo-1589923188937-2f95d7b4a0ec?auto=format&fit=crop&w=1200&q=80"
+<img src="IMG_2399.jpg"
 style="
 width:100%;
 border-radius:28px;
@@ -2236,8 +2381,97 @@ font-size:22px;
 line-height:1.7;
 max-width:800px;
 ">
-Við sláum, hreinsum og snyrtum garðinn svo hann líti alltaf vel út.
-Fullkomið fyrir reglulegt viðhald yfir sumarið.
+Við hjálpum með gróðursetningu, hreinsun og ýmis smáverk í garðinum.
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+<div id="arstida-page" class="page-view">
+
+<section class="section-gray" style="padding:40px 0 80px;">
+
+<div class="container">
+
+<button onclick="showPage('services-page')"
+style="
+padding:12px 18px;
+border:none;
+border-radius:14px;
+background:var(--green);
+color:white;
+font-size:16px;
+margin-bottom:30px;
+cursor:pointer;
+">
+← Til baka
+</button>
+
+<h1 style="font-size:48px; margin-bottom:20px;">
+Árstíðabundið viðhald
+</h1>
+
+<img src="IMG_2379.jpg"
+style="
+width:100%;
+border-radius:28px;
+margin-bottom:30px;
+">
+
+<p style="
+font-size:22px;
+line-height:1.7;
+max-width:800px;
+">
+Við sjáum um vorsnyrtingu, hausthreinsun og undirbúning fyrir sumarið svo garðurinn sé alltaf tilbúinn.
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+<div id="hreinsun-page" class="page-view">
+
+<section class="section-gray" style="padding:40px 0 80px;">
+
+<div class="container">
+
+<button onclick="showPage('services-page')"
+style="
+padding:12px 18px;
+border:none;
+border-radius:14px;
+background:var(--green);
+color:white;
+font-size:16px;
+margin-bottom:30px;
+cursor:pointer;
+">
+← Til baka
+</button>
+
+<h1 style="font-size:48px; margin-bottom:20px;">
+Hreinsun & tiltekt
+</h1>
+
+<img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1200&q=80"
+style="
+width:100%;
+border-radius:28px;
+margin-bottom:30px;
+">
+
+<p style="
+font-size:22px;
+line-height:1.7;
+max-width:800px;
+">
+Við hreinsum hellur, göngustíga og útisvæði og látum garðinn líta snyrtilegan og ferskan út.
 </p>
 
 </div>
