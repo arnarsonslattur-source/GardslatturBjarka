@@ -517,8 +517,8 @@ transition: 0.25s ease;
     }
 
     .service-cards{
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:1fr;
   gap:24px;
 }
 
@@ -1955,10 +1955,10 @@ overflow: hidden;
   /* þjónustu cards */
 
   .service-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 28px;
+}
 
   .service-card {
     min-height: 180px;
@@ -1987,6 +1987,33 @@ overflow: hidden;
   .before-after img {
     height: 320px;
     object-fit: cover;
+  }
+
+@media (min-width: 761px){
+
+  .container{
+    width:min(1400px, calc(100% - 80px));
+  }
+
+  .areas-wrap,
+  .quote-wrap,
+  .services-header,
+  .hero-top,
+  .contact-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .service-hero{
+    grid-template-columns:0.9fr 1.1fr !important;
+  }
+
+  .service-main-image{
+    height:520px;
+    object-fit:cover;
+  }
+
+  .hero-headline{
+    font-size:78px;
   }
 
 }
