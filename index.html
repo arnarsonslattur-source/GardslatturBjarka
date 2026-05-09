@@ -196,15 +196,18 @@ transition: 0.25s ease;
     }
 
     .page-view {
-      display: none;
-      opacity: 0;
-      transform: translateY(16px);
-    }
+  display: none;
+  opacity: 0;
+  transform: translateY(16px);
+  width: 100%;
+  min-height: 100vh;
+}
 
-    .active-page {
-      display: block;
-      animation: pageFade 0.35s ease-out forwards;
-    }
+  .active-page {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 
     @keyframes pageFade {
       from {
@@ -1870,6 +1873,11 @@ overflow: hidden;
 
     border-radius:24px;
   }
+  
+  .page-view {
+  width: 100%;
+  min-height: 100vh;
+}
 
 }
     
@@ -2296,6 +2304,7 @@ onclick="showPage('hreinsun-page')">
         }(document, "script", "EmbedSocialHashtagScript"));
       </script>
     </div>
+  </div>
   </div>
 </section>
 <!-- ALMENN GARÐÞJÓNUSTA -->
