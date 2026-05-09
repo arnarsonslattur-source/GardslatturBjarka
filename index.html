@@ -1418,6 +1418,101 @@ align-items: center;
   display: none !important;
 }
     
+    /* ===== MODERN FACEBOOK CARD ===== */
+
+.facebook-modern {
+
+  width: 100%;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+}
+
+.facebook-left {
+
+  flex-shrink: 0;
+}
+
+.facebook-center {
+
+  flex: 1;
+
+  font-size: 28px;
+
+  font-weight: 500;
+}
+
+.facebook-button {
+
+  background: var(--green);
+
+  color: white;
+
+  padding: 18px 26px;
+
+  border-radius: 18px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: 0.25s ease;
+}
+
+.facebook-button:hover {
+
+  background: var(--green-dark);
+
+  transform: translateY(-2px);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:760px){
+
+  .facebook-modern {
+
+    flex-direction: row;
+
+    padding: 18px;
+  }
+
+  .facebook-center {
+
+    font-size: 18px;
+  }
+
+  .facebook-button {
+
+    padding: 14px 18px;
+
+    font-size: 14px;
+  }
+
+  .facebook-icon {
+
+    width: 78px;
+    height: 78px;
+
+    font-size: 58px;
+  }
+
+}
+    
 </style>
 </head>
 <body>
@@ -1700,11 +1795,33 @@ align-items: center;
         <div>Email: <span class="email">arnarsonslattur@gmail.com</span></div>
         <div>Facebook: @GardslatturBjarka</div>
       </div>
-      <div class="facebook-block">
-        <div class="facebook-text">Við erum á Facebook.</div>
-        <div class="down-arrow">↓</div>
-        <a class="facebook-icon" href="https://www.facebook.com/GardslatturBjarka/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-      </div>
+      <div class="facebook-modern">
+
+  <div class="facebook-left">
+
+    <a class="facebook-icon"
+       href="https://www.facebook.com/GardslatturBjarka/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Facebook">
+      f
+    </a>
+
+  </div>
+
+  <div class="facebook-center">
+    Við erum á Facebook.
+  </div>
+
+  <a class="facebook-button"
+     href="https://www.facebook.com/GardslatturBjarka/"
+     target="_blank">
+
+     FARA Á FACEBOOK ›
+
+  </a>
+
+</div>
     </div>
 
     <div class="reviews-section">
