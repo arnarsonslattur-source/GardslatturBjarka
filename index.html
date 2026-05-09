@@ -1899,6 +1899,96 @@ overflow: hidden;
   min-height: 100vh;
 }
 
+/* ===== DESKTOP FIX ===== */
+
+@media (min-width: 761px) {
+
+  .why-simple-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .why-simple-card {
+    min-height: 220px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    overflow: hidden;
+  }
+
+  .why-card-left {
+    width: 90px;
+    height: 90px;
+
+    margin-bottom: 20px;
+  }
+
+  .why-card-left img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .why-card-divider {
+    display: none;
+  }
+
+  .why-card-text h3 {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .why-card-text p {
+    font-size: 18px;
+  }
+
+  .why-card-arrow {
+    display: none;
+  }
+
+  /* þjónustu cards */
+
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .service-card {
+    min-height: 180px;
+  }
+
+  .service-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* contact */
+
+  .contact-grid {
+    grid-template-columns: 80px 1fr 1fr 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+
+  .facebook-modern {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* fyrri eftir myndir */
+
+  .before-after img {
+    height: 320px;
+    object-fit: cover;
+  }
+
 }
     
 </style>
