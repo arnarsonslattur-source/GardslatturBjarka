@@ -519,28 +519,45 @@ transition: 0.25s ease;
   gap:24px;
 }
 
-    .service-card {
+   .service-card {
 
   background: white;
 
-  border-radius: 32px;
+  border-radius: 26px;
 
-  padding: 20px;
+  padding: 16px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 20px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.06);
-
-  transition: 0.25s ease;
-
-  border: none;
+  gap: 16px;
 
   position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.05);
+
+  transition: 0.25s ease;
+}
+
+.service-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 12px;
+  left: 16px;
+
+  width: 44px;
+  height: 4px;
+
+  background: var(--green);
+
+  border-radius: 999px;
 }
 
 .service-card:hover {
@@ -548,30 +565,30 @@ transition: 0.25s ease;
   transform: translateY(-4px);
 }
 
-    .service-card h3 {
+   .service-card h3 {
 
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 
-  font-size: 32px;
+  font-size: 22px;
 
-  line-height: 1;
+  line-height: 1.05;
 
-  min-height: auto;
+  font-weight: 700;
 }
 
     .service-card img {
 
-  width: 140px;
+  width: 96px;
 
-  height: 140px;
+  height: 96px;
 
-  border-radius: 20px;
+  border-radius: 16px;
 
   object-fit: cover;
 
-  margin: 0;
-
   flex-shrink: 0;
+
+  margin-top: 10px;
 }
 
 .service-card-content {
@@ -579,28 +596,28 @@ transition: 0.25s ease;
   flex: 1;
 }
 
-    .service-card p {
+   .service-card p {
 
   margin: 0;
 
-  font-size: 18px;
+  font-size: 15px;
 
-  line-height: 1.5;
+  line-height: 1.45;
 
-  color: #333;
+  color: #444;
 }
 
 .service-arrow {
 
-  font-size: 56px;
+  margin-left: auto;
+
+  font-size: 42px;
 
   color: var(--green);
 
-  font-weight: 300;
-
   flex-shrink: 0;
 
-  transition: 0.25s ease;
+  font-weight: 300;
 }
 
 .service-card:hover .service-arrow {
@@ -1111,6 +1128,37 @@ align-items: center;
     height: 120px;
     border-radius: 22px;
   }
+  
+  .service-card {
+
+  padding: 14px;
+
+  gap: 14px;
+
+  border-radius: 24px;
+}
+
+.service-card img {
+
+  width: 82px;
+
+  height: 82px;
+}
+
+.service-card h3 {
+
+  font-size: 18px;
+}
+
+.service-card p {
+
+  font-size: 14px;
+}
+
+.service-arrow {
+
+  font-size: 34px;
+}
 
  .why-simple-card {
   width: 100%;
@@ -1948,7 +1996,7 @@ overflow: hidden;
     
      </div>
     
-    <div class="service-arrow">↗</div>
+    <div class="service-arrow">›</div>
 
 </article>
 
@@ -1966,7 +2014,7 @@ overflow: hidden;
 
   </div>
 
-  <div class="service-arrow">↗</div>
+  <div class="service-arrow">›</div>
 
 </article>
 
@@ -1984,7 +2032,7 @@ overflow: hidden;
 
   </div>
 
-  <div class="service-arrow">↗</div>
+  <div class="service-arrow">›</div>
 
 </article>
 
@@ -2003,7 +2051,7 @@ overflow: hidden;
 
   </div>
 
-  <div class="service-arrow">↗</div>
+  <div class="service-arrow">›</div>
 
 </article>
 
