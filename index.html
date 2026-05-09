@@ -2493,24 +2493,33 @@ Við hreinsum hellur, göngustíga og útisvæði og látum garðinn líta snyrt
   }
 }
 
-    function showPage(pageId, clickedLink) {
-      document.querySelectorAll('.page-view').forEach(page => {
-        page.classList.remove('active-page');
-      });
+    function showPage(pageId, clickedLink = null) {
 
-      document.getElementById(pageId).classList.add('active-page');
+  document.querySelectorAll('.page-view').forEach(page => {
+    page.classList.remove('active-page');
+  });
 
-      document.querySelectorAll('#navLinks a').forEach(link => {
-        link.classList.remove('active');
-      });
+  document.getElementById(pageId).classList.add('active-page');
 
-      if (clickedLink) {
-        clickedLink.classList.add('active');
-      }
+  document.querySelectorAll('#navLinks a').forEach(link => {
+    link.classList.remove('active');
+  });
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      document.getElementById('navLinks').classList.remove('show');
-    }
+  if (clickedLink) {
+    clickedLink.classList.add('active');
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+  const menu = document.getElementById('navLinks');
+
+  if (menu) {
+    menu.classList.remove('show');
+  }
+}
 
     const form = document.getElementById('quote-form');
     const formMessage = document.getElementById('form-message');
