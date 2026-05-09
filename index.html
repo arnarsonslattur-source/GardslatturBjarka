@@ -593,7 +593,7 @@ transition: 0.25s ease;
       grid-template-columns: 80px 1fr 1.2fr 1fr;
       gap: 48px;
       align-items: center;
-      padding: 160px 0 40px;
+      padding: 40px 0 40px;
     }
 
     .contact-text,
@@ -1110,6 +1110,22 @@ align-items: center;
   font-weight: 300;
 }
  
+.facebook-block {
+
+  width: 100%;
+
+  background: white;
+
+  padding: 24px;
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.06);
+
+  text-align: center;
+}
+
  }
 
 /* ===== WHY SECTION DESKTOP FIX ===== */
@@ -1281,6 +1297,127 @@ align-items: center;
 
 }
      
+    /* ===== REVIEWS SECTION ===== */
+
+.reviews-section {
+
+  margin-top: 90px;
+
+  padding: 70px 28px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f5f5f5,
+      #eeeeee
+    );
+
+  border-radius: 38px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.06);
+}
+
+/* little grass bottom corners */
+
+.reviews-section::before,
+.reviews-section::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: -10px;
+
+  width: 120px;
+  height: 120px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  opacity: 0.95;
+}
+
+.reviews-section::before {
+  left: -10px;
+  background-image: url('grass-left.png');
+}
+
+.reviews-section::after {
+  right: -10px;
+  background-image: url('grass-right.png');
+}
+
+/* title */
+
+.reviews-section h2 {
+
+  text-align: center;
+
+  font-size: clamp(42px, 5vw, 72px);
+
+  margin-bottom: 50px;
+
+  font-family: Georgia, serif;
+
+  letter-spacing: -2px;
+}
+
+/* green line under title */
+
+.reviews-section h2::after {
+
+  content: "";
+
+  display: block;
+
+  width: 120px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+  margin: 18px auto 0;
+}
+
+/* widget card */
+
+.embedsocial-hashtag {
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
+  overflow: hidden;
+}
+
+/* iframe */
+
+.embedsocial-hashtag iframe {
+
+  border-radius: 22px !important;
+}
+
+/* hide embedsocial branding */
+
+.feed-powered-by-es {
+  display: none !important;
+}
+    
+    .feed-powered-by-es {
+  display: none !important;
+}
+    
 </style>
 </head>
 <body>
