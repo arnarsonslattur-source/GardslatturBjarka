@@ -541,6 +541,8 @@ transition: 0.25s ease;
     0 6px 20px rgba(0,0,0,0.05);
 
   transition: 0.25s ease;
+  
+  cursor: pointer;
 }
 
 .service-card::before {
@@ -2271,7 +2273,7 @@ Fullkomið fyrir reglulegt viðhald yfir sumarið.
         clickedLink.classList.add('active');
       }
 
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       document.getElementById('navLinks').classList.remove('show');
     }
 
