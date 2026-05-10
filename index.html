@@ -1,2079 +1,531 @@
+Partur 1 😄
+Þetta er clean <head> + byrjunin á CSS-inu.
+DELETE-aðu gamla <head> alveg og replace-aðu með þessu.
+
 <!DOCTYPE html>
 <html lang="is">
 <head>
- <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Garðsláttur Bjarka</title>
- 
- <link rel="icon" href="favicon.png" type="image/png"> 
-
- <link rel="apple-touch-icon" href="/icon-180.png">
-
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Garðsláttur">
-
 <meta name="apple-mobile-web-app-capable" content="yes">
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
 <style>
-    :root {
-  --bg: #ececec;
-  --text: #111111;
-  --line: #6d6d6d;
-  --shadow: 0 8px 24px rgba(0,0,0,0.06);
-
-  --green: #69b548;
-  --green-dark: #5aa03c;
+:root{
+  --bg:#ececec;
+  --text:#111;
+  --green:#69b548;
+  --green-dark:#5aa03c;
+  --shadow:0 10px 28px rgba(0,0,0,0.06);
 }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: white;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    .navbar {
-  background: var(--green);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-
-  position: sticky;
-  top: 0;
-  z-index: 999;
-
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-}
-
-    .nav-inner {
-      width: min(1380px, calc(100% - 48px));
-      margin: 0 auto;
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-     position: relative;
-    }
-
-    .brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-}
-
-.brand:hover {
-  transform: scale(1.05);
-  transition: 0.2s ease;
-}
-    .brand-logo {
-  width: 74px;
-  height: 74px;
-  border-radius: 50%;
-  object-fit: cover;
-
-  border: none;
-  background: transparent;
-
-  flex-shrink: 0;
-}
-    .brand-text { line-height: 1; }
-
-    .brand-title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 27px;
-      letter-spacing: 0.2px;
-      margin-bottom: 6px;
-     color: white;
-    }
-
-    .brand-sub {
-  font-size: 15px;
-  letter-spacing: 1.6px;
-  color: rgba(255,255,255,0.85);
-}
-
-.nav-links {
-  position: absolute;
-
- pointer-events: none;
-opacity: 0;
-transform: translateY(-10px);
-transition: 0.25s ease;
-
-  top: 115%;
-  right: 12px;
-
-  width: 210px;
-
-  background: white;
-
-  border-radius: 18px;
-
-  box-shadow: 0 14px 34px rgba(0,0,0,0.14);
-
-  padding: 12px;
-
-  display: none;
-  flex-direction: column;
-
-  gap: 6px;
-
-  z-index: 999;
-}
-
-    .nav-links a {
-  padding: 16px 18px;
-
-  border-radius: 14px;
-
-  color: #111;
-
-  font-size: 17px;
-  font-weight: 600;
-
-  transition: 0.25s ease;
-}
-
-    .nav-links a:hover {
-  background: #f2f2f2;
-}
-
-.nav-links a.active {
-  background: var(--green);
-  color: white;
-}
- 
-    .mobile-menu-btn {
-  width: 72px;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-
-  border: 2px solid rgba(255,255,255,0.9);
-
-  color: white;
-  font-size: 34px;
-
-  cursor: pointer;
-
-  transition: 0.25s ease;
-
-  flex-shrink: 0;
-
-  border-radius: 0;
-}
-
- .mobile-menu-btn:hover {
-  background: white;
-  color: var(--green);
-}
- 
-
- .mobile-menu-btn:hover,
-.contact-info .phone:hover {
-  background: white;
-  color: var(--green);
-  transform: scale(1.05);
-}
-
-    .section-gray { background: var(--bg); }
-
-    .container {
-      width: min(1280px, calc(100% - 56px));
-      margin: 0 auto;
-    }
-
-    .page-view {
-  display: none;
-  opacity: 0;
-  transform: translateY(16px);
-  width: 100%;
-  min-height: 100vh;
-}
-
-  .active-page {
-  display: block !important;
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-    @keyframes pageFade {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-text {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeTextUp 0.9s ease forwards;
-    }
-
-    .fade-text.delay-1 { animation-delay: 0.15s; }
-
-    @keyframes fadeTextUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero {
-      padding: 54px 0 0;
-      overflow: hidden;
-    }
-
-    .hero-top {
-      display: grid;
-      grid-template-columns: 0.9fr 1.15fr;
-      align-items: center;
-      gap: 48px;
-      padding: 38px 0 42px;
-    }
-
-    .hero-logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .hero-logo-big {
-      width: min(360px, 100%);
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.08));
-    }
-
-    .hero-headline {
-      font-size: clamp(50px, 6vw, 94px);
-      line-height: 0.94;
-      font-weight: 400;
-      letter-spacing: -2.5px;
-      margin: 0;
-      justify-self: end;
-      max-width: 780px;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(31,73,86,0.08);
-      color: #1f4956;
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .hero-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-      text-decoration: none;
-    }
-
-    .hero-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-    }
-
-    .hero-btn.primary {
-  background: var(--green);
-  color: white;
-}
-
-    .hero-btn.secondary {
-      background: white;
-      color: #12202d;
-      border: 1px solid rgba(18,32,45,0.15);
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 470px;
-      object-fit: cover;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .hero-bottom {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      align-items: center;
-      min-height: 170px;
-      font-size: clamp(24px, 2.2vw, 31px);
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
-
-    .arrow {
-      font-size: 60px;
-      line-height: 1;
-      font-weight: 300;
-    }
-
-    .center-title {
-      text-align: center;
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .why {
-      padding: 22px 0 34px;
-    }
-
-    .why-top {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
-      align-items: start;
-      padding: 40px 0 120px;
-    }
-
-    .why h2,
-    .quote h2,
-    .services-header h2,
-    .new-beginnings h2,
-    .areas h2 {
-      font-weight: 400;
-      letter-spacing: -1.5px;
-      line-height: 0.92;
-      margin: 0;
-    }
-
-    .why h2 { font-size: clamp(52px, 6vw, 82px); max-width: 520px; }
-
-    .why-copy {
-      font-size: clamp(24px, 2vw, 28px);
-      line-height: 1.45;
-      max-width: 470px;
-      justify-self: end;
-      padding-top: 8px;
-    }
-
-    .reasons { border-top: 1px solid var(--line); }
-
-    .reason {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      align-items: center;
-      min-height: 118px;
-      border-bottom: 1px solid var(--line);
-      font-size: clamp(28px, 2vw, 34px);
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-    }
-
-    .quote {
-      padding: 70px 0 90px;
-    }
-
-    .quote-wrap {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 70px;
-      align-items: start;
-    }
-
-    .quote h2 { font-size: clamp(58px, 7vw, 86px); max-width: 520px; }
-
-    .quote-copy {
-      font-size: clamp(26px, 2.2vw, 34px);
-      line-height: 1.4;
-      max-width: 520px;
-      margin-top: 8px;
-    }
-
-    .form-card {
-      background: #f4f4f4;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .form-grid { display: grid; gap: 18px; }
-
-    .label {
-      font-size: 16px;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .input {
-      width: 100%;
-      border: 2px solid #a3a3a3;
-      border-radius: 8px;
-      background: #fff;
-      font-size: 18px;
-      padding: 16px 14px;
-      font-family: inherit;
-    }
-
-    textarea.input {
-      resize: vertical;
-      min-height: 140px;
-    }
-
-    .checkbox-list { display: grid; gap: 10px; }
-
-    .checkbox-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 18px 16px;
-      border-radius: 6px;
-      background: #dfdfdf;
-      font-size: 18px;
-    }
-
-    .checkbox-row.highlight { background: #c8c8c8; }
-    .checkbox-row input { width: 22px; height: 22px; }
-
-    .submit-btn {
-      width: 100%;
-      border: none;
-      border-radius: 18px;
-      background: #000;
-      color: #fff;
-      font-size: 21px;
-      padding: 18px;
-      cursor: pointer;
-      margin-top: 6px;
-    }
-
-    .services-section { padding: 0 0 70px; }
-
-    .services-header {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
-      padding: 62px 0 34px;
-    }
-
-    .services-header h2 { font-size: clamp(56px, 6vw, 84px); }
-
-    .services-header p {
-      font-size: clamp(24px, 2vw, 31px);
-      line-height: 1.4;
-      max-width: 500px;
-      justify-self: end;
-    }
-
-    .wide-image {
-      width: 100%;
-      height: 470px;
-      object-fit: cover;
-    }
-
-    .new-beginnings {
-      padding: 86px 0 56px;
-    }
-
-    .new-beginnings h2 {
-      font-size: clamp(58px, 6vw, 88px);
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 74px;
-    }
-
-    .service-cards{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:24px;
-}
-
-   .service-card {
-
-  background: white;
-
-  border-radius: 26px;
-
-  padding: 16px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 16px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 6px 20px rgba(0,0,0,0.05);
-
-  transition: 0.25s ease;
-  
-  cursor: pointer;
-}
-
-.service-card::before {
-
-  content: "";
-
-  position: absolute;
-
-  top: 12px;
-  left: 16px;
-
-  width: 44px;
-  height: 4px;
-
-  background: var(--green);
-
-  border-radius: 999px;
-}
-
-.service-card:hover {
-
-  transform: translateY(-4px);
-}
-
-   .service-card h3 {
-
-  margin: 0 0 6px;
-
-  font-size: 22px;
-
-  line-height: 1.05;
-
-  font-weight: 700;
-}
-
-    .service-card img {
-
-  width: 96px;
-
-  height: 96px;
-
-  border-radius: 16px;
-
-  object-fit: cover;
-
-  flex-shrink: 0;
-
-  margin-top: 10px;
-}
-
-.service-card-content {
-
-  flex: 1;
-}
-
-   .service-card p {
-
-  margin: 0;
-
-  font-size: 15px;
-
-  line-height: 1.45;
-
-  color: #444;
-}
-
-.service-arrow {
-
-  margin-left: auto;
-
-  font-size: 42px;
-
-  color: var(--green);
-
-  flex-shrink: 0;
-
-  font-weight: 300;
-}
-
-.service-card:hover .service-arrow {
-
-  transform: translateX(6px);
-}
-
-    .areas {
-      padding: 28px 0 30px;
-    }
-
-    .areas-wrap {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .areas h2 { font-size: clamp(58px, 6vw, 86px); margin-bottom: 36px; }
-
-    .areas-copy {
-      font-size: clamp(26px, 2vw, 34px);
-      line-height: 1.45;
-      max-width: 520px;
-    }
-
-    .before-after {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items: start;
-    }
-
-    .before-after img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 4px;
-      display: block;
-    }
-
-    .caption {
-      text-align: center;
-      font-size: 30px;
-      margin-top: 12px;
-    }
-
-    .contact-band {
-      padding: 44px 0 0;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 80px 1fr 1.2fr 1fr;
-      gap: 48px;
-      align-items: center;
-      padding: 40px 0 40px;
-    }
-
-    .contact-text,
-    .contact-details,
-    .facebook-text {
-      font-size: clamp(22px, 1.7vw, 28px);
-      line-height: 1.45;
-    }
-    
-    .contact-text {
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-    .contact-details {
-      max-width: 520px;
-      font-size: clamp(20px, 1.5vw, 26px);
-      line-height: 1.6;
-    }
-
-    .contact-details div { margin-bottom: 10px; }
-
-    .email { font-weight: 500; }
-
-    .facebook-block {
-      text-align: center;
-      justify-self: center;
-      align-self: center;
-    }
-
-    .facebook-text {
-      margin-bottom: 14px;
-      font-weight: 500;
-    }
-
-    .down-arrow {
-      font-size: 56px;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .facebook-icon {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: #1877f2;
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 120px;
-      font-weight: 700;
-      font-family: Arial, Helvetica, sans-serif;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .facebook-icon:hover {
-      transform: scale(1.08);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-    }
-
-    .bottom-image {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-    }
-
-    @media (max-width: 1100px) {
-      .hero-logo-wrap { justify-content: center; }
-      .hero-logo-big { width: min(280px, 70vw); }
-
-      .hero-top,
-      .why-top,
-      .quote-wrap,
-      .services-header,
-      .areas-wrap,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-headline,
-      .why-copy,
-      .services-header p {
-        justify-self: start;
-      }
-
-      .contact-grid { gap: 12px; }
-      .service-cards { grid-template-columns: repeat(2, 1fr); }
-      .before-after img { height: 420px; }
-      .contact-grid .arrow,
-      .hero-bottom .arrow,
-      .reason .arrow { display: none; }
-      .hero-bottom,
-      .reason { grid-template-columns: 1fr; }
-    }
-
- .nav-inner {
-  min-height: 100px;
-}
-
-.brand-logo {
-  width: 82px;
-  height: 82px;
-}
-
-.brand-title {
-  font-size: 34px;
-}
-
-.brand-sub {
-  font-size: 16px;
-}
-
-.contact-info {
-  flex-direction: row;
- display: flex;
-align-items: center;
-  gap: 18px;
-}
-
-.contact-info .phone {
-  font-size: 15px;
-  padding: 10px 18px;
-}
-
-.contact-info .location {
-  font-size: 15px;
-}
-
-.nav-links a {
-  font-size: 17px;
-  padding: 14px 20px;
-}
-
- /* ===== DESKTOP NAV ===== */
-
-.contact-info .phone {
-  width: 72px;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid rgba(255,255,255,0.9);
-
-  color: white;
-
-  background: transparent;
-
-  text-decoration: none;
-
-  transition: 0.25s ease;
-
-  flex-shrink: 0;
-}
-
-.contact-info .phone span {
-  font-size: 30px;
-  filter: brightness(0) invert(1);
-}
-
-.nav-links.show {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-    @media (max-width: 760px) {
-      .nav-inner {
-        width: calc(100% - 24px);
-        min-height: 68px;
-      }
-
-      .brand-title { font-size: 20px; }
-      .brand-sub { font-size: 12px; }
-      .brand-logo { width: 54px; height: 54px; }
-
-      .nav-links.show {
-  display: flex;
-
-  opacity: 1;
-  transform: translateY(0);
-
-  pointer-events: auto;
-}
-      .nav-links a { padding: 16px 18px; border-bottom: 1px solid #eee; }
-      .nav-links a:last-child { border-bottom: 0; }
-
-      .container { width: calc(100% - 28px); }
-      .hero { padding-top: 28px; }
-      .hero-image { height: 230px; }
-      .wide-image, .bottom-image { height: 240px; }
-      .why-top { padding-bottom: 56px; }
-      .service-cards { grid-template-columns: 1fr; gap: 26px; }
-      .service-card h3 { min-height: 0; }
-      .before-after { grid-template-columns: 1fr; }
-      .before-after img { height: 300px; }
-      .caption { font-size: 22px; }
-      .quote, .new-beginnings, .areas, .services-section { padding-bottom: 38px; }
-      .hero-bottom { min-height: 100px; font-size: 16px; text-align: center; }
-      .reason { min-height: 78px; font-size: 16px; padding: 8px 0; }
-      .checkbox-row { font-size: 16px; }
-      .contact-grid { padding-bottom: 26px; }
-      .facebook-block { justify-self: start; text-align: left; }
-      .facebook-icon { width: 100px; height: 100px; font-size: 78px; }
-
-     .contact-info {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 14px;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.contact-info span,
-.contact-info a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-.contact-info a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-}
-
-  .contact-info {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-left: auto;
-  margin-right: 14px;
-}
-
-.contact-info .phone {
-  width: 72px;
-  height: 72px;
- box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
- font-size: 0;
-
-  color: white;
-  text-decoration: none;
-
-  border: 2px solid rgba(255,255,255,0.85);
-
-  background: transparent;
-
-  transition: 0.25s ease;
-
-  flex-shrink: 0;
-}
-
- .contact-info .phone span {
-  font-size: 26px;
-  filter: brightness(0) invert(1);
-}
- 
- .contact-info .phone:hover {
-  background: white;
-  color: var(--green);
-}
-
- /* ===== REVIEWS SECTION ===== */
-.reviews-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.reviews-section h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.embedsocial-hashtag {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block !important;
-}
-
-.embedsocial-hashtag iframe {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block !important;
-  border: none;
-}
- 
- .nav-actions {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 18px;
-  margin-left: auto;
-}
-
- .nav-links {
-  left: auto !important;
-}
-
- .nav-links.show {
-  display: flex;
-
-  opacity: 1;
-  transform: translateY(0);
-
-  pointer-events: auto;
-}
-
-    <!-- SETTU ÞETTA Í STAÐINN FYRIR ALLT "WHY SIMPLE" CSS-IÐ -->
-
-/* ===== WHY SIMPLE SECTION ===== */
-
-.why-simple-section{
-  padding:90px 0;
-  background:#f3f3f3;
-}
-
-.why-simple-header{
-  display:flex;
-  align-items:flex-start;
-  gap:24px;
-  margin-bottom:50px;
-}
-
-.why-simple-line{
-  width:5px;
-  height:180px;
-  background:var(--green);
-  border-radius:999px;
-  flex-shrink:0;
-}
-
-.why-simple-header h2{
+*{
   margin:0;
-  font-size:clamp(56px,8vw,120px);
-  line-height:0.9;
-  font-weight:500;
-  letter-spacing:-3px;
+  padding:0;
+  box-sizing:border-box;
 }
-
-.why-simple-subtext{
-  margin-top:28px;
-  font-size:34px;
-  line-height:1.4;
-  max-width:520px;
-  color:#222;
+html{
+  scroll-behavior:smooth;
 }
-
-.why-simple-cards{
-  display:grid;
-  gap:26px;
-}
-
-/* ===== CARD ===== */
-
-.why-simple-card{
-
-  width:100%;
-
-  min-height:170px;
-
+body{
+  font-family:Arial, Helvetica, sans-serif;
   background:white;
-
-  border-radius:28px;
-
-  box-shadow:0 10px 28px rgba(0,0,0,0.06);
-
-  display:flex;
-
-  align-items:center;
-
-  gap:34px;
-
-  padding:26px 34px;
-
-  overflow:hidden;
+  color:var(--text);
 }
-
-.why-card-left{
-
-  width:82px;
-  height:82px;
-
+img{
+  max-width:100%;
+  display:block;
+}
+a{
+  text-decoration:none;
+  color:inherit;
+}
+.section-gray{
+  background:var(--bg);
+}
+.container{
+  width:min(1280px, calc(100% - 40px));
+  margin:auto;
+}
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:var(--green);
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+}
+.nav-inner{
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.brand-logo{
+  width:74px;
+  height:74px;
   border-radius:50%;
-
-  background:#eef1ea;
-
-  flex-shrink:0;
-
+  object-fit:cover;
+}
+.brand-title{
+  font-size:30px;
+  color:white;
+  font-family:Georgia, serif;
+}
+.brand-sub{
+  color:rgba(255,255,255,0.85);
+  letter-spacing:2px;
+  font-size:14px;
+}
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.phone{
+  width:64px;
+  height:64px;
+  border:2px solid rgba(255,255,255,0.9);
   display:flex;
   align-items:center;
   justify-content:center;
-
-  overflow:hidden;
+  color:white;
+  font-size:28px;
+  transition:.25s;
 }
-
-.why-card-left img{
-
-  width:44px;
-  height:44px;
-
-  object-fit:contain;
+.phone:hover{
+  background:white;
+  color:var(--green);
 }
-
-.why-card-divider{
-
-  width:1px;
-  height:90px;
-
-  background:#e5e5e5;
-
+.mobile-menu-btn{
+  width:64px;
+  height:64px;
+  border:none;
+  background:transparent;
+  color:white;
+  font-size:34px;
+  cursor:pointer;
+}
+.nav-links{
+  position:absolute;
+  top:110%;
+  right:0;
+  background:white;
+  border-radius:24px;
+  width:220px;
+  padding:12px;
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.12);
+}
+.nav-links.show{
+  display:flex;
+}
+.nav-links a{
+  padding:16px 18px;
+  border-radius:16px;
+  font-weight:600;
+  transition:.2s;
+}
+.nav-links a:hover{
+  background:#f3f3f3;
+}
+.nav-links a.active{
+  background:var(--green);
+  color:white;
+}
+/* =========================
+   HERO
+========================= */
+.hero{
+  padding-top:50px;
+}
+.hero-top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  padding-bottom:50px;
+}
+.hero-logo-big{
+  width:min(360px, 100%);
+  margin:auto;
+}
+.hero-right{
+  text-align:right;
+}
+.hero-kicker{
+  display:inline-flex;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(0,0,0,0.05);
+  margin-bottom:20px;
+  font-size:14px;
+}
+.hero-headline{
+  font-size:clamp(54px, 7vw, 92px);
+  line-height:0.92;
+  letter-spacing:-3px;
+  font-family:Georgia, serif;
+}
+.hero-actions{
+  display:flex;
+  gap:14px;
+  justify-content:flex-end;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+.hero-btn{
+  padding:15px 24px;
+  border-radius:999px;
+  font-weight:700;
+  transition:.25s;
+}
+.hero-btn.primary{
+  background:var(--green);
+  color:white;
+}
+.hero-btn.secondary{
+  background:white;
+}
+.hero-btn:hover{
+  transform:translateY(-2px);
+}
+.hero-image{
+  width:100%;
+  height:470px;
+  object-fit:cover;
+}
+.hero-bottom{
+  min-height:150px;
+  display:grid;
+  grid-template-columns:100px 1fr;
+  align-items:center;
+  font-size:clamp(22px, 2vw, 30px);
+}
+.arrow{
+  font-size:60px;
+}
+.center-title{
+  text-align:center;
+}
+/* =========================
+   WHY SECTION
+========================= */
+.why-simple-section{
+  padding:90px 0;
+}
+.why-simple-header{
+  display:flex;
+  gap:24px;
+  margin-bottom:50px;
+}
+.why-simple-line{
+  width:5px;
+  border-radius:999px;
+  background:var(--green);
+}
+.why-simple-header h2{
+  font-size:clamp(60px, 8vw, 110px);
+  line-height:0.9;
+  font-family:Georgia, serif;
+}
+.why-simple-subtext{
+  margin-top:24px;
+  font-size:30px;
+  max-width:520px;
+  line-height:1.4;
+}
+.why-simple-cards{
+  display:grid;
+  gap:24px;
+}
+.why-simple-card{
+  background:white;
+  border-radius:28px;
+  padding:30px 40px;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  box-shadow:var(--shadow);
+}
+.why-card-left{
+  width:82px;
+  height:82px;
+  border-radius:50%;
+  background:#eef2ea;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   flex-shrink:0;
 }
-
+.why-card-left img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+.why-card-divider{
+  width:1px;
+  height:90px;
+  background:#e5e5e5;
+}
 .why-card-text{
   flex:1;
 }
-
 .why-card-text h3{
-
-  margin:0 0 8px;
-
   font-size:28px;
-
-  line-height:1.05;
-
-  font-weight:700;
+  margin-bottom:8px;
 }
-
 .why-card-text p{
-
-  margin:0;
-
-  font-size:22px;
-
-  line-height:1.4;
-
-  color:#333;
+  font-size:20px;
+  color:#444;
 }
-
 .why-card-arrow{
-
-  font-size:64px;
-
+  font-size:58px;
   color:var(--green);
-
-  font-weight:300;
-
-  flex-shrink:0;
 }
-
-/* ===== MOBILE ===== */
-
+/* =========================
+   MOBILE
+========================= */
 @media (max-width:760px){
-
-  .why-simple-section{
-    padding:60px 0;
+  .nav-inner{
+    min-height:78px;
   }
-
-  .why-simple-header{
-    gap:16px;
-    margin-bottom:30px;
+  .brand-logo{
+    width:56px;
+    height:56px;
   }
-
-  .why-simple-line{
-    height:110px;
+  .brand-title{
+    font-size:22px;
   }
-
-  .why-simple-header h2{
-    font-size:56px;
+  .brand-sub{
+    font-size:11px;
   }
-
-  .why-simple-subtext{
-
-    font-size:20px;
-
-    margin-top:16px;
-
-    max-width:320px;
-  }
-
-  .why-simple-card{
-
-    min-height:120px;
-
-    padding:18px 18px;
-
-    gap:18px;
-
-    border-radius:24px;
-  }
-
-  .why-card-left{
-
-    width:70px;
-    height:70px;
-  }
-
-  .why-card-left img{
-
-    width:34px;
-    height:34px;
-  }
-
-  .why-card-divider{
-
-    height:70px;
-  }
-
-  .why-card-text h3{
-
-    font-size:16px;
-
-    margin-bottom:6px;
-  }
-
-  .why-card-text p{
-
-    font-size:12px;
-
-    line-height:1.35;
-  }
-
-  .why-card-arrow{
-
-    font-size:42px;
-  }
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width: 760px) {
-
-  .why-simple-section {
-    padding: 60px 0;
-  }
-
- .why-simple-subtext {
-
-  font-size: 20px;
-
-  margin-top: 18px;
-
-  max-width: 320px;
-}
-
-  .why-simple-line {
-    height: 120px;
-  }
-
-  .why-simple-header h2 {
-    font-size: 56px;
-  }
-
-  .why-simple-card {
-    height: 120px;
-    border-radius: 22px;
-  }
-  
-  .service-card {
-
-  padding: 14px;
-
-  gap: 14px;
-
-  border-radius: 24px;
-}
-
-.service-card img {
-
-  width: 82px;
-
-  height: 82px;
-}
-
-.service-card h3 {
-
-  font-size: 18px;
-}
-
-.service-card p {
-
-  font-size: 14px;
-}
-
-.service-arrow {
-
-  font-size: 34px;
-}
-
- .why-simple-card {
-  width: 100%;
-
-  min-height: 170px;
-
-  background: white;
-
-  border-radius: 28px;
-
-  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 34px;
-
-  gap: 26px;
-}
-
-.why-card-left {
-  width: 90px;
-  height: 90px;
-
-  border-radius: 50%;
-
-  background: #eef2ea;
-
-  flex-shrink: 0;
-}
-
-.why-card-divider {
-  width: 1px;
-  height: 90px;
-
-  background: #e3e3e3;
-
-  flex-shrink: 0;
-}
-
-.why-card-text {
-  flex: 1;
-}
-
-.why-card-text h3 {
-  margin: 0 0 8px;
-
-  font-size: 22px;
-
-  line-height: 1.05;
-
-  font-weight: 700;
-}
-
-.why-card-text p {
-  margin: 0;
-
-  font-size: 16px;
-
-  color: #333;
-}
-
-.why-card-arrow {
-  font-size: 46px;
-
-  color: var(--green);
-
-  font-weight: 300;
-}
- 
-.facebook-block {
-
-  width: 100%;
-
-  background: white;
-
-  padding: 24px;
-
-  border-radius: 26px;
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,0.06);
-
-  text-align: center;
-}
-
-}
-
-@media (min-width: 761px){
-
+  .phone,
   .mobile-menu-btn{
-    display:none;
+    width:54px;
+    height:54px;
   }
-
-  .nav-links{
-    position:static;
-    display:flex !important;
-    opacity:1 !important;
-    transform:none !important;
-    pointer-events:auto !important;
-    flex-direction:row;
-    background:transparent;
-    box-shadow:none;
-    padding:0;
-    width:auto;
-    gap:24px;
-  }
-
-  .nav-links a{
-    color:white;
-    padding:0;
-    font-size:18px;
-  }
-
-  .service-cards{
-    grid-template-columns:1fr;
-  }
-
-  .service-hero{
-    grid-template-columns:1fr;
-  }
-
   .hero-top{
     grid-template-columns:1fr;
     text-align:center;
   }
-
+  .hero-right{
+    text-align:center;
+  }
   .hero-actions{
     justify-content:center;
   }
-
-  .hero-logo-wrap{
-    justify-content:center;
+  .hero-image{
+    height:240px;
   }
-
-  .services-header{
+  .hero-bottom{
     grid-template-columns:1fr;
-  }
-
-  .quote-wrap{
-    grid-template-columns:1fr;
-  }
-
-  .areas-wrap{
-    grid-template-columns:1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .before-after{
-    grid-template-columns:1fr;
-  
-  .why-simple-cards{
-  display:grid;
-  gap:26px;
-}
-
-.why-simple-card{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:34px;
-
-  padding:26px 34px;
-
-  min-height:170px;
-
-  background:white;
-
-  border-radius:28px;
-}
-
-.why-card-left{
-
-  width:82px;
-  height:82px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  overflow:hidden;
-}
-
-.why-card-left img{
-
-  width:44px;
-  height:44px;
-
-  object-fit:contain;
-}
-}
-
-/* ===== WHY CARDS DESKTOP FIX ===== */
-
-  .why-simple-card {
-
-    display: flex;
-    align-items: center;
-
-    gap: 34px;
-
-    padding: 0 42px;
-
-    min-height: 170px;
-  }
-
-  .why-card-left {
-
-    width: 82px;
-    height: 82px;
-
-    border-radius: 50%;
-
-    background: #eef1ea;
-
-    flex-shrink: 0;
-    
-    display: flex;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-  }
-  
- .why-card-left img {
-
-  width: 44px;
-  height: 44px;
-
-  object-fit: contain;
-
-  image-rendering: auto;
-}
-  
-  .why-card-divider {
-
-    width: 1px;
-    height: 90px;
-
-    background: #e5e5e5;
-
-    flex-shrink: 0;
-  }
-
-  .why-card-text {
-    flex: 1;
-  }
-
-  .why-card-text h3 {
-
-    font-size: 28px;
-
-    margin: 0 0 8px;
-
-    font-weight: 700;
-  }
-
-  .why-card-text p {
-
-    font-size: 22px;
-
-    margin: 0;
-
-    color: #333;
-  }
-
-.why-card-arrow {
-
-  font-size: 64px;
-
-  color: var(--green);
-
-  font-weight: 300;
-  }
-     
-    /* ===== REVIEWS SECTION ===== */
-
-.reviews-section {
-
-  margin-top: 90px;
-
-  padding: 30px 28px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #f5f5f5,
-      #eeeeee
-    );
-
-  border-radius: 38px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.06);
-}
-
-/* little grass bottom corners */
-
-.reviews-section::before,
-.reviews-section::after {
-
-  content: "";
-
-  position: absolute;
-
-  bottom: -10px;
-
-  width: 120px;
-  height: 120px;
-
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  opacity: 0.95;
-}
-
-.reviews-section::before {
-  left: -10px;
-  background-image: url('grass-left.png');
-}
-
-.reviews-section::after {
-  right: -10px;
-  background-image: url('grass-right.png');
-}
-
-/* title */
-
-.reviews-section h2 {
-
-  text-align: center;
-
-  font-size: clamp(42px, 5vw, 72px);
-
-  margin-bottom: 50px;
-
-  font-family: Georgia, serif;
-
-  letter-spacing: -2px;
-}
-
-/* green line under title */
-
-.reviews-section h2::after {
-
-  content: "";
-
-  display: block;
-
-  width: 120px;
-  height: 4px;
-
-  border-radius: 999px;
-
-  background: var(--green);
-
-  margin: 18px auto 0;
-}
-
-/* widget card */
-
-.embedsocial-hashtag {
-
-  background: white;
-
-  border-radius: 30px;
-
-  padding: 18px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
-
-  overflow: hidden;
-}
-
-/* iframe */
-
-.embedsocial-hashtag iframe {
-
-  border-radius: 22px !important;
-}
-
-/* hide embedsocial branding */
-
-.feed-powered-by-es {
-  display: none !important;
-}
-    
-    .feed-powered-by-es {
-  display: none !important;
-}
-    
-    /* ===== MODERN FACEBOOK CARD ===== */
-
-.facebook-modern {
-
-  width: 100%;
-
-  background: white;
-
-  border-radius: 30px;
-
-  padding: 24px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 18px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
-}
-
-.facebook-left {
-
-  flex-shrink: 0;
-}
-
-.facebook-center {
-
-  flex: 1;
-
-  font-size: 28px;
-
-  font-weight: 500;
-}
-
-.facebook-button {
-
-  background: var(--green);
-
-  color: white;
-
-  padding: 18px 26px;
-
-  border-radius: 18px;
-
-  font-weight: 700;
-
-  white-space: nowrap;
-
-  transition: 0.25s ease;
-}
-
-.facebook-button:hover {
-
-  background: var(--green-dark);
-
-  transform: translateY(-2px);
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width:760px){
-
- .facebook-modern {
-
-  flex-direction: column;
-
-  align-items: center;
-
-  text-align: center;
-
-  padding: 34px 22px;
-
-  border-radius: 30px;
-
-  gap: 26px;
-}
-
-  .facebook-center {
-
-    font-size: 18px;
-
-    line-height: 1.4;
-
-    text-align: center;
-
-    max-width: 260px;
-}
-  
-  .contact-text {
-  font-size: 28px;
-}
-
-  .facebook-button {
-
-    width: 100%;
-
-    max-width: 280px;
-
-    text-align: center;
-
-    padding: 16px 20px;
-
-    border-radius: 18px;
-
-    background: var(--green);
-
-    color: white;
-
-    font-weight: 700;
-  }
-
-  .facebook-icon {
-
-    width: 130px;
-    height: 130px;
-
-    font-size: 90px;
-
-    margin: 0 auto;
-}
-  
-  }
-  
-  /* ===== MODERN CONTACT CARDS ===== */
-
-.modern-contact {
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 20px;
-}
-
-.contact-card {
-
-  background: white;
-
-  border-radius: 26px;
-
-  padding: 20px 24px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 22px;
-
-  box-shadow:
-    0 10px 28px rgba(0,0,0,0.06);
-}
-
-.contact-icon {
-
-  width: 74px;
-  height: 74px;
-
-  border-radius: 50%;
-
-  background: var(--green);
-
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 38px;
-
-  flex-shrink: 0;
-
-  font-weight: 700;
-}
-
-.contact-icon i {
-  color: white;
-  font-size: 28px;
-}
-
-.contact-divider {
-
-  width: 1px;
-  height: 58px;
-
-  background: #e5e5e5;
-
-  flex-shrink: 0;
-}
-
-.contact-text-modern {
-
-  font-size: 26px;
-
-  line-height: 1.4;
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width:760px){
-
-  .contact-card {
-
-    padding: 16px 18px;
-
-    gap: 16px;
-  }
-
-  .contact-icon {
-
-    width: 58px;
-    height: 58px;
-
-    font-size: 28px;
-  }
-
-  .contact-text-modern {
-
-    font-size: 18px;
-  }
-  
-  .service-card {
-
-  cursor: pointer;
-}
-
-}
-
-.service-hero{
-
-  display:grid;
-
-  grid-template-columns: 0.9fr 1.1fr;
-
-  gap:40px;
-
-  align-items:center;
-
-  padding:40px 0 70px;
-}
-
-.service-title{
-
-  font-size: clamp(64px, 8vw, 120px);
-
-  line-height: 0.92;
-
-  letter-spacing:-4px;
-
-  margin:30px 0 24px;
-
-  font-family: Georgia, serif;
-
-  color:#1d3416;
-}
-
-.service-text{
-
-  font-size:24px;
-
-  line-height:1.6;
-
-  max-width:500px;
-
-  color:#333;
-}
-
-.service-main-image{
-
-  width:100%;
-
-  height:520px;
-
-  object-fit:cover;
-
-  border-radius:34px;
-}
-
-.back-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  color:var(--green);
-
-  font-size:18px;
-
-  font-weight:600;
-}
-
- @media (max-width:760px){
-
-  .service-hero{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .service-title{
-    font-size:36px;
-  }
-
-  .service-text{
+    text-align:center;
+    min-height:100px;
     font-size:16px;
-    line-height:1.5;
   }
-
-  .service-main-image{
-    height:260px;
+  .arrow{
+    display:none;
   }
-  
-  .page-view {
-  width: 100%;
-  min-height: 100vh;
+  .why-simple-header h2{
+    font-size:52px;
+  }
+  .why-simple-subtext{
+    font-size:20px;
+  }
+  .why-simple-card{
+    padding:22px;
+    gap:18px;
+  }
+  .why-card-left{
+    width:64px;
+    height:64px;
+  }
+  .why-card-left img{
+    width:32px;
+    height:32px;
+  }
+  .why-card-text h3{
+    font-size:18px;
+  }
+  .why-card-text p{
+    font-size:14px;
+  }
+  .why-card-divider{
+    height:60px;
+  }
+  .why-card-arrow{
+    font-size:34px;
+  }
 }
 
-}
-    
 </style>
 </head>
+
 <body>
 
-  <header class="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="#" onclick="showPage('home-page', document.querySelectorAll('#navLinks a')[0]); return false;">
-        <img class="brand-logo" src="newlogo.png" alt="Merki Garðsláttur Bjarka" />
-        <div class="brand-text">
-          <div class="brand-title">Garðsláttur</div>
-          <div class="brand-sub">BJARKA</div>
+<header class="navbar">
+
+  <div class="container nav-inner">
+
+    <a class="brand" href="#"
+onclick="showPage('home-page', document.querySelectorAll('#navLinks a')[0]); return false;">
+
+      <img class="brand-logo"
+           src="newlogo.png"
+           alt="Garðsláttur Bjarka">
+
+      <div>
+
+        <div class="brand-title">
+          Garðsláttur
         </div>
+
+        <div class="brand-sub">
+          BJARKA
+        </div>
+
+      </div>
+
+    </a>
+
+    <div class="nav-actions">
+
+      <a href="tel:8336070"
+         class="phone">
+         📞
       </a>
-     
-      <div class="nav-actions">
 
-  <div class="contact-info">
+      <button class="mobile-menu-btn"
+              onclick="toggleMenu()">
+        ☰
+      </button>
 
-  <a href="tel:8336070" class="phone">
-    <span>📞</span>
-  </a>
+    </div>
 
-  <button class="mobile-menu-btn" aria-label="Opna valmynd" onclick="toggleMenu()">
-    ☰
-  </button>
+    <nav class="nav-links"
+         id="navLinks">
 
-</div>
+      <a class="active"
+         href="#"
+onclick="showPage('home-page', this); return false;">
+         Heim
+      </a>
 
-<nav class="nav-links" id="navLinks">
-  <a class="active" href="#" onclick="showPage('home-page', this); return false;">Heim</a>
+      <a href="#"
+onclick="showPage('services-page', this); return false;">
+         Þjónusta
+      </a>
 
-  <a href="#" onclick="showPage('services-page', this); return false;">
-    Þjónusta
-  </a>
+      <a href="#"
+onclick="showPage('contact-page', this); return false;">
+         Hafa samband
+      </a>
 
-  <a href="#" onclick="showPage('contact-page', this); return false;">
-    Hafa samband
-  </a>
-</nav>
+    </nav>
 
-</div>
+  </div>
+
 </header>
- 
-  <main>
-    <div id="home-page" class="page-view active-page">
-      <section class="section-gray hero" id="home">
-        <div class="container">
-          <div class="hero-top">
-            <div class="hero-logo-wrap fade-text">
-              <img class="hero-logo-big" src="newlogo.png" alt="Stórt merki Garðsláttur Bjarka" />
-            </div>
-            <div style="justify-self:end; text-align:right; max-width:780px;">
-              <div class="hero-kicker">Garðsláttur Bjarka</div>
-              <h1 class="hero-headline fade-text">Betra umhverfi.<br>Betri upplifun.</h1>
-              <div class="hero-actions fade-text delay-1">
-                <a class="hero-btn primary" href="#tilbod">Fá tilboð</a>
-                <a class="hero-btn secondary" href="#" onclick="showPage('services-page', document.querySelectorAll('#navLinks a')[1]); return false;">Skoða þjónustu</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img class="hero-image" src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1800&q=80" alt="Sláttuvél á grasi" />
-        <div class="container">
-          <div class="hero-bottom">
-            <div class="arrow">→</div>
-            <div class="center-title">FAGLEG GARÐÞJÓNUSTA FYRIR HEIMILI OG EIGNIR.</div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section-gray why-simple-section">
+<main>
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<div id="home-page"
+     class="page-view active-page">
+
+<section class="section-gray hero">
+
+  <div class="container">
+
+    <div class="hero-top">
+
+      <div>
+
+        <img class="hero-logo-big"
+             src="newlogo.png"
+             alt="Logo">
+
+      </div>
+
+      <div class="hero-right">
+
+        <div class="hero-kicker">
+          Garðsláttur Bjarka
+        </div>
+
+        <h1 class="hero-headline">
+          Betra umhverfi.<br>
+          Betri upplifun.
+        </h1>
+
+        <div class="hero-actions">
+
+          <a class="hero-btn primary"
+             href="#tilbod">
+             Fá tilboð
+          </a>
+
+          <a class="hero-btn secondary"
+             href="#"
+onclick="showPage('services-page', document.querySelectorAll('#navLinks a')[1]); return false;">
+
+             Skoða þjónustu
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <img class="hero-image"
+       src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1800&q=80"
+       alt="Garðsláttur">
+
+  <div class="container">
+
+    <div class="hero-bottom">
+
+      <div class="arrow">
+        →
+      </div>
+
+      <div class="center-title">
+        FAGLEG GARÐÞJÓNUSTA FYRIR HEIMILI OG EIGNIR.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     WHY SECTION
+========================= -->
+
+<section class="section-gray why-simple-section">
 
   <div class="container">
 
@@ -2083,68 +535,104 @@ overflow: hidden;
 
       <div>
 
-  <h2>Af hverju að<br>velja okkur</h2>
+        <h2>
+          Af hverju að<br>
+          velja okkur
+        </h2>
 
-  <p class="why-simple-subtext">
-    Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.
-  </p>
+        <p class="why-simple-subtext">
+          Við sjáum um allt svo þú þarft ekki að hafa áhyggjur.
+        </p>
 
-</div>
+      </div>
 
-     </div>
+    </div>
 
     <div class="why-simple-cards">
 
-    <div class="why-simple-card">
+      <!-- CARD 1 -->
 
-  <div class="why-card-left">
-    <img src="trophy.png" alt="">
-  </div>
+      <div class="why-simple-card">
 
-  <div class="why-card-divider"></div>
+        <div class="why-card-left">
+          <img src="trophy.png" alt="">
+        </div>
 
-  <div class="why-card-text">
-    <h3>Við leggjum metnað</h3>
-    <p>í að gera þetta vel</p>
-  </div>
+        <div class="why-card-divider"></div>
 
-  <div class="why-card-arrow">›</div>
+        <div class="why-card-text">
 
-</div>
+          <h3>
+            Við leggjum metnað
+          </h3>
 
-       <div class="why-simple-card">
+          <p>
+            í að gera þetta vel
+          </p>
 
-  <div class="why-card-left">
-    <img src="shield.png" alt="">
-  </div>
+        </div>
 
-  <div class="why-card-divider"></div>
+        <div class="why-card-arrow">
+          ›
+        </div>
 
-  <div class="why-card-text">
-    <h3>Áreiðanleg og persónuleg þjónusta</h3>
-    <p>sem þú getur treyst</p>
-  </div>
+      </div>
 
-  <div class="why-card-arrow">›</div>
+      <!-- CARD 2 -->
 
-</div>
+      <div class="why-simple-card">
 
-       <div class="why-simple-card">
+        <div class="why-card-left">
+          <img src="shield.png" alt="">
+        </div>
 
-  <div class="why-card-left">
-    <img src="leaf.png" alt="">
-  </div>
+        <div class="why-card-divider"></div>
 
-  <div class="why-card-divider"></div>
+        <div class="why-card-text">
 
-  <div class="why-card-text">
-    <h3>Skilum hreinu og snyrtilegu</h3>
-    <p>hverju sinni</p>
-  </div>
+          <h3>
+            Áreiðanleg þjónusta
+          </h3>
 
-  <div class="why-card-arrow">›</div>
+          <p>
+            sem þú getur treyst
+          </p>
 
-</div>
+        </div>
+
+        <div class="why-card-arrow">
+          ›
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="why-simple-card">
+
+        <div class="why-card-left">
+          <img src="leaf.png" alt="">
+        </div>
+
+        <div class="why-card-divider"></div>
+
+        <div class="why-card-text">
+
+          <h3>
+            Hreint og snyrtilegt
+          </h3>
+
+          <p>
+            í hvert skipti
+          </p>
+
+        </div>
+
+        <div class="why-card-arrow">
+          ›
+        </div>
+
+      </div>
 
     </div>
 
@@ -2152,243 +640,465 @@ overflow: hidden;
 
 </section>
 
-     <section id="tilbod" class="section-gray quote">
-        <div class="container quote-wrap">
-          <div>
-            <h2 class="fade-text">Óska eftir<br>tilboði</h2>
-            <div class="quote-copy">
-              Segðu okkur aðeins frá garðinum þínum: stærð, ástand og hvað þú vilt láta gera.<br><br>
-              Við sendum sérsniðið tilboð innan 48 klukkustunda eða komum á staðinn í stutta skoðun.
-            </div>
-          </div>
+<!-- =========================
+     QUOTE SECTION
+========================= -->
 
-          <form class="form-card" id="quote-form">
-            <input type="hidden" name="_subject" value="Nýtt tilboð af vefsíðunni!" />
+<section id="tilbod"
+         class="section-gray quote-section">
 
-            <div class="form-grid">
-              <div>
-                <label class="label" for="name">Nafn eða fyrirtæki</label>
-                <input class="input" id="name" name="name" type="text" />
-              </div>
+<div class="container quote-wrap">
 
-              <div>
-                <label class="label" for="email">Email</label>
-                <input class="input" id="email" name="email" type="email" />
-              </div>
+  <div class="quote-left">
 
-              <div>
-                <label class="label" for="address">Heimilisfang</label>
-                <input class="input" id="address" name="address" type="text" />
-              </div>
+    <h2 class="quote-title">
+      Óska eftir<br>
+      tilboði
+    </h2>
 
-              <div>
-                <label class="label">Hvað hefur þú helst áhuga á?</label>
-                <div class="checkbox-list">
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Garðsláttur" /> Garðsláttur (eða reglulegur garðsláttur)</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Garðhreinsun" /> Garðhreinsun / þrif á lóð</label>
-                  <label class="checkbox-row highlight"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Flutningur" /> Flutningur á grasi og úrgangi</label>
-                </div>
-              </div>
+    <p class="quote-text">
 
-              <div>
-                <label class="label" for="message">Nánari upplýsingar</label>
-                <textarea class="input" id="message" name="message" rows="5" placeholder="Skrifaðu hér upplýsingar um garðinn þinn, stærð, hvað þú vilt láta gera o.s.frv."></textarea>
-              </div>
+      Segðu okkur aðeins frá garðinum þínum:
+      stærð, ástand og hvað þú vilt láta gera.
 
-              <button class="submit-btn" type="submit">Submit</button>
-              <p id="form-message" style="display:none; margin-top:12px; font-weight:600;">Takk fyrir! Við höfum samband fljótlega.</p>
-            </div>
-          </form>
+      <br><br>
+
+      Við sendum sérsniðið tilboð innan
+      48 klukkustunda eða komum á staðinn
+      í stutta skoðun.
+
+    </p>
+
+  </div>
+
+  <form class="form-card"
+        id="quote-form">
+
+    <input type="hidden"
+           name="_subject"
+           value="Nýtt tilboð af vefsíðunni!">
+
+    <div class="form-grid">
+
+      <div>
+
+        <label class="label">
+          Nafn eða fyrirtæki
+        </label>
+
+        <input class="input"
+               type="text"
+               name="name">
+
+      </div>
+
+      <div>
+
+        <label class="label">
+          Email
+        </label>
+
+        <input class="input"
+               type="email"
+               name="email">
+
+      </div>
+
+      <div>
+
+        <label class="label">
+          Heimilisfang
+        </label>
+
+        <input class="input"
+               type="text"
+               name="address">
+
+      </div>
+
+      <div>
+
+        <label class="label">
+          Hvað hefur þú helst áhuga á?
+        </label>
+
+        <div class="checkbox-list">
+
+          <label class="checkbox-row">
+            <input type="checkbox"
+                   name="service"
+                   value="Garðsláttur">
+
+            Garðsláttur
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox"
+                   name="service"
+                   value="Garðhreinsun">
+
+            Garðhreinsun
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox"
+                   name="service"
+                   value="Gróðursetning">
+
+            Gróðursetning
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox"
+                   name="service"
+                   value="Flutningur">
+
+            Flutningur á grasi og úrgangi
+          </label>
+
         </div>
-      </section>
+
+      </div>
+
+      <div>
+
+        <label class="label">
+          Nánari upplýsingar
+        </label>
+
+        <textarea class="input"
+                  name="message"
+                  rows="5"
+placeholder="Skrifaðu hér upplýsingar um garðinn..."></textarea>
+
+      </div>
+
+      <button class="submit-btn"
+              type="submit">
+
+        Submit
+
+      </button>
+
+      <p id="form-message"
+style="display:none; font-weight:600;">
+
+        Takk fyrir! Við höfum samband fljótlega.
+
+      </p>
+
     </div>
 
-    <div id="services-page" class="page-view">
-      <section class="section-gray services-section">
-        <div class="container">
-          <div class="services-header">
-            <h2 class="fade-text">Þjónustan okkar</h2>
-            <p>Við sjáum um garðinn svo hann lítur alltaf vel út fyrir þig.</p>
-          </div>
-        </div>
-        <img class="wide-image" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1800&q=80" alt="Garðvinna í beðum" />
-      </section>
+  </form>
 
-      <section class="section-gray new-beginnings">
-        <div class="container">
-          <h2>Ný byrjun í garðinum<br>þínum.</h2>
-          <div class="service-cards">
-            <article class="service-card"
+</div>
+
+</section>
+
+<!-- =========================
+     SERVICES PAGE
+========================= -->
+
+<div id="services-page"
+     class="page-view">
+
+<section class="section-gray services-section">
+
+  <div class="container">
+
+    <div class="services-header">
+
+      <h2 class="services-title">
+        Þjónustan okkar
+      </h2>
+
+      <p class="services-text">
+
+        Við sjáum um garðinn
+        svo hann lítur alltaf
+        vel út fyrir þig.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <img class="wide-image"
+       src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1800&q=80"
+       alt="Garðvinna">
+
+</section>
+
+<section class="section-gray services-cards-section">
+
+<div class="container">
+
+<h2 class="big-services-title">
+  Ný byrjun í garðinum þínum.
+</h2>
+
+<div class="service-cards">
+
+  <!-- CARD 1 -->
+
+  <article class="service-card"
 onclick="showPage('almenn-page')">
 
-  <img src="slattuvelar.jpg" alt="Sláttuvélar" />
+    <img src="slattuvelar.jpg"
+         alt="Sláttuvélar">
 
-  <div class="service-card-content">
+    <div class="service-card-content">
 
-    <h3>Almenn garðþjónusta</h3>
+      <h3>
+        Almenn garðþjónusta
+      </h3>
 
-    <p>
-      Við sláum, hreinsum og snyrtum garðinn svo hann líti alltaf vel út.
-    </p>
-    
-     </div>
-    
-    <div class="service-arrow">›</div>
+      <p>
+        Við sláum, hreinsum og snyrtum
+        garðinn svo hann líti alltaf vel út.
+      </p>
 
-</article>
+    </div>
 
-          <article class="service-card"
+    <div class="service-arrow">
+      ›
+    </div>
+
+  </article>
+
+  <!-- CARD 2 -->
+
+  <article class="service-card"
 onclick="showPage('smavinna-page')">
 
-  <img src="IMG_2399.jpg" alt="Smá garðvinna" />
+    <img src="IMG_2399.jpg"
+         alt="Smá garðvinna">
 
-  <div class="service-card-content">
+    <div class="service-card-content">
 
-    <h3>Smá garðvinna</h3>
+      <h3>
+        Smá garðvinna
+      </h3>
 
-    <p>
-      Getum hjálpað með gróðursetningu, hreinsun og annað sem þarf í garðinum.
-    </p>
+      <p>
+        Gróðursetning, hreinsun
+        og önnur smáverk.
+      </p>
 
-  </div>
+    </div>
 
-  <div class="service-arrow">›</div>
+    <div class="service-arrow">
+      ›
+    </div>
 
-</article>
+  </article>
 
-            <article class="service-card"
+  <!-- CARD 3 -->
+
+  <article class="service-card"
 onclick="showPage('arstida-page')">
 
-  <img src="IMG_2379.jpg" alt="Árstíðabundið viðhald" />
+    <img src="IMG_2379.jpg"
+         alt="Árstíðabundið">
 
-  <div class="service-card-content">
+    <div class="service-card-content">
 
-    <h3>Árstíðabundið viðhald</h3>
+      <h3>
+        Árstíðabundið viðhald
+      </h3>
 
-    <p>
-      Vorsnyrting, hausthreinsun eða undirbúningur fyrir viðburði – við sjáum um að garðurinn sé tilbúinn.
-    </p>
+      <p>
+        Vorsnyrting og hausthreinsun
+        fyrir fallegan garð.
+      </p>
 
-  </div>
+    </div>
 
-  <div class="service-arrow">›</div>
+    <div class="service-arrow">
+      ›
+    </div>
 
-</article>
+  </article>
 
-          <article class="service-card"
+  <!-- CARD 4 -->
+
+  <article class="service-card"
 onclick="showPage('hreinsun-page')">
 
-  <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=800&q=80"
-       alt="Gengustígur með grasi" />
+    <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=800&q=80"
+         alt="Hreinsun">
 
-  <div class="service-card-content">
+    <div class="service-card-content">
 
-    <h3>Hreinsun &amp; tiltekt</h3>
+      <h3>
+        Hreinsun & tiltekt
+      </h3>
 
-    <p>
-      Við hreinsum hellur, göngustíga og útisvæði og látum allt líta snyrtilegra út.
+      <p>
+        Við hreinsum hellur,
+        göngustíga og útisvæði.
+      </p>
+
+    </div>
+
+    <div class="service-arrow">
+      ›
+    </div>
+
+  </article>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- =========================
+     CONTACT PAGE
+========================= -->
+
+<div id="contact-page"
+     class="page-view">
+
+<section class="section-gray contact-section">
+
+<div class="container">
+
+<div class="contact-top">
+
+  <div>
+
+    <h2 class="contact-title">
+      Svæði sem við<br>
+      þjónustum
+    </h2>
+
+    <p class="contact-description">
+
+      Akureyri.<br><br>
+
+      Við sinnum slætti og
+      garðvinnu í öllum hverfum
+      Akureyrar.
+
+      <br><br>
+
+      Hafðu samband og við komum til þín.
+
     </p>
 
   </div>
 
-  <div class="service-arrow">›</div>
+  <div class="before-after">
 
-</article>
+    <div>
 
-          </div>
-        </div>
-      </section>
-    </div>
+      <img src="IMG_2469.jpg"
+           alt="Fyrir">
 
-    <div id="contact-page" class="page-view">
-      <section class="section-gray areas">
-        <div class="container areas-wrap">
-          <div>
-            <h2 class="fade-text">Svæði sem við<br>þjónustum</h2>
-            <div class="areas-copy">
-              Akureyri.<br>
-              Við sinnum slætti og garðvinnu í öllum hverfum Akureyrar.<br>
-              Hafðu samband og við komum til þín.
-            </div>
-          </div>
-
-          <div class="before-after">
-            <div>
-              <img src="IMG_2469.jpg" alt="Fyrir slátt" />
-              <div class="caption">Fyrir</div>
-            </div>
-            <div>
-              <img src="IMG_2472.jpg" alt="Eftir slátt" />
-              <div class="caption">Eftir</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-     <section class="section-gray contact-band">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="arrow">→</div>
-      <div class="contact-text">
-        Garðsláttur Bjarka<br>
-        Akureyri
+      <div class="caption">
+        Fyrir
       </div>
-      <div class="contact-details modern-contact">
+
+    </div>
+
+    <div>
+
+      <img src="IMG_2472.jpg"
+           alt="Eftir">
+
+      <div class="caption">
+        Eftir
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CONTACT CARDS -->
+
+<div class="modern-contact">
 
   <div class="contact-card">
+
     <div class="contact-icon">
-  <i class="fa-solid fa-phone"></i>
-</div>
+      <i class="fa-solid fa-phone"></i>
+    </div>
 
     <div class="contact-divider"></div>
 
     <div class="contact-text-modern">
-      <strong>Sími:</strong> 833-6070
+
+      <strong>Sími:</strong><br>
+      833-6070
+
     </div>
+
   </div>
 
   <div class="contact-card">
+
     <div class="contact-icon">
-  <i class="fa-solid fa-envelope"></i>
-</div>
+      <i class="fa-solid fa-envelope"></i>
+    </div>
 
     <div class="contact-divider"></div>
 
     <div class="contact-text-modern">
-      <strong>Email:</strong> arnarsonslattur@gmail.com
+
+      <strong>Email:</strong><br>
+      arnarsonslattur@gmail.com
+
     </div>
+
   </div>
 
   <div class="contact-card">
+
     <div class="contact-icon">
-  <i class="fa-brands fa-facebook-f"></i>
-</div>
+      <i class="fa-brands fa-facebook-f"></i>
+    </div>
 
     <div class="contact-divider"></div>
 
     <div class="contact-text-modern">
-      <strong>Facebook:</strong> @GardslatturBjarka
+
+      <strong>Facebook:</strong><br>
+      @GardslatturBjarka
+
     </div>
+
   </div>
 
 </div>
-      <div class="facebook-modern">
+
+<!-- FACEBOOK SECTION -->
+
+<div class="facebook-modern">
 
   <div class="facebook-left">
 
     <a class="facebook-icon"
        href="https://www.facebook.com/GardslatturBjarka/"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Facebook">
+       target="_blank">
+
       f
+
     </a>
 
   </div>
 
   <div class="facebook-center">
-    Við erum á Facebook.
+
+    Fylgstu með okkur á Facebook
+    fyrir ný verkefni,
+    myndir og uppfærslur.
+
   </div>
 
   <a class="facebook-button"
@@ -2400,283 +1110,1113 @@ onclick="showPage('hreinsun-page')">
   </a>
 
 </div>
-    </div>
 
-    <div class="reviews-section">
-      <h2>Umsagnir viðskiptavina</h2>
+<!-- REVIEWS -->
 
-      <div class="embedsocial-hashtag" data-ref="0bccc8b273de2d34d954d5bf872f1adaf759ccb4">
-        <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
-           href="https://embedsocial.com/google-reviews-widget/"
-           target="_blank"
-           title="Embed Google reviews">
-          <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial">
-          <div class="es-widget-branding-text">Embed Google reviews</div>
-        </a>
-      </div>
+<div class="reviews-section">
 
-      <script>
-        (function(d, s, id) {
-          var js;
-          if (d.getElementById(id)) { return; }
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://embedsocial.com/cdn/ht.js";
-          d.getElementsByTagName("head")[0].appendChild(js);
-        }(document, "script", "EmbedSocialHashtagScript"));
-      </script>
-    </div>
+  <h2>
+    Umsagnir viðskiptavina
+  </h2>
+
+  <div class="embedsocial-hashtag"
+       data-ref="0bccc8b273de2d34d954d5bf872f1adaf759ccb4">
+
+    <a class="feed-powered-by-es"
+       href="https://embedsocial.com/google-reviews-widget/"
+       target="_blank">
+
+      EmbedSocial
+
+    </a>
+
   </div>
-  </div>
+
+</div>
+
+</div>
+
 </section>
-<!-- ALMENN GARÐÞJÓNUSTA -->
 
-<div id="almenn-page" class="page-view">
+</div>
 
-<section class="section-gray" style="padding:40px 0 80px;">
+<!-- =========================
+     SERVICE PAGES
+========================= -->
+
+<!-- ALMENN -->
+
+<div id="almenn-page"
+     class="page-view">
+
+<section class="section-gray service-page">
 
 <div class="container">
-  
-  <section class="service-hero">
 
-  <div class="service-left">
-
-    <a href="#" class="back-btn"
+<a href="#"
+   class="back-btn"
 onclick="showPage('services-page'); return false;">
+
 ← Til baka
+
 </a>
 
-    <h1 class="service-title">
-      Almenn<br>
-      garðþjónusta
-    </h1>
+<div class="service-hero">
 
-    <p class="service-text">
-      Við sjáum um garðinn svo þú getir notið hans —
-      við sláum, snyrtum og hreinsum allt af fagmennsku og metnaði.
-    </p>
+<div>
 
-  </div>
-
-  <div class="service-right">
-
-    <img
-  class="service-main-image"
-  src="IMG_2472.jpg"
-  alt="Sláttuvélar"
->
-
-  </div>
-
-</section>
-
-</div>
-
-</section>
-
-</div>
-
-<div id="smavinna-page" class="page-view">
-
-<section class="section-gray" style="padding:40px 0 80px;">
-
-<div class="container">
-
-<button onclick="showPage('services-page')"
-style="
-padding:12px 18px;
-border:none;
-border-radius:14px;
-background:var(--green);
-color:white;
-font-size:16px;
-margin-bottom:30px;
-cursor:pointer;
-">
-← Til baka
-</button>
-
-<h1 style="font-size:48px; margin-bottom:20px;">
-Smá garðvinna
+<h1 class="service-title">
+  Almenn<br>
+  garðþjónusta
 </h1>
 
-<img src="IMG_2399.jpg"
-style="
-width:100%;
-border-radius:28px;
-margin-bottom:30px;
-">
+<p class="service-text">
 
-<p style="
-font-size:22px;
-line-height:1.7;
-max-width:800px;
-">
-Við hjálpum með gróðursetningu, hreinsun og ýmis smáverk í garðinum.
+  Við sjáum um garðinn
+  svo þú getir notið hans —
+  við sláum, snyrtum
+  og hreinsum af metnaði.
+
 </p>
 
 </div>
 
+<img class="service-main-image"
+     src="IMG_2472.jpg"
+     alt="Garðsláttur">
+
+</div>
+
+</div>
+
 </section>
 
 </div>
 
-<div id="arstida-page" class="page-view">
+<!-- SMÁVINNA -->
 
-<section class="section-gray" style="padding:40px 0 80px;">
+<div id="smavinna-page"
+     class="page-view">
+
+<section class="section-gray service-page">
 
 <div class="container">
 
-<button onclick="showPage('services-page')"
-style="
-padding:12px 18px;
-border:none;
-border-radius:14px;
-background:var(--green);
-color:white;
-font-size:16px;
-margin-bottom:30px;
-cursor:pointer;
-">
-← Til baka
-</button>
+<a href="#"
+   class="back-btn"
+onclick="showPage('services-page'); return false;">
 
-<h1 style="font-size:48px; margin-bottom:20px;">
-Árstíðabundið viðhald
+← Til baka
+
+</a>
+
+<div class="service-hero">
+
+<div>
+
+<h1 class="service-title">
+  Smá<br>
+  garðvinna
 </h1>
 
-<img src="IMG_2379.jpg"
-style="
-width:100%;
-border-radius:28px;
-margin-bottom:30px;
-">
+<p class="service-text">
 
-<p style="
-font-size:22px;
-line-height:1.7;
-max-width:800px;
-">
-Við sjáum um vorsnyrtingu, hausthreinsun og undirbúning fyrir sumarið svo garðurinn sé alltaf tilbúinn.
+  Við hjálpum með
+  gróðursetningu,
+  hreinsun og önnur
+  smáverk í garðinum.
+
 </p>
 
 </div>
 
+<img class="service-main-image"
+     src="IMG_2399.jpg"
+     alt="Garðvinna">
+
+</div>
+
+</div>
+
 </section>
 
 </div>
 
-<div id="hreinsun-page" class="page-view">
+<!-- ÁRSTÍÐABUNDIÐ -->
 
-<section class="section-gray" style="padding:40px 0 80px;">
+<div id="arstida-page"
+     class="page-view">
+
+<section class="section-gray service-page">
 
 <div class="container">
 
-<button onclick="showPage('services-page')"
-style="
-padding:12px 18px;
-border:none;
-border-radius:14px;
-background:var(--green);
-color:white;
-font-size:16px;
-margin-bottom:30px;
-cursor:pointer;
-">
-← Til baka
-</button>
+<a href="#"
+   class="back-btn"
+onclick="showPage('services-page'); return false;">
 
-<h1 style="font-size:48px; margin-bottom:20px;">
-Hreinsun & tiltekt
+← Til baka
+
+</a>
+
+<div class="service-hero">
+
+<div>
+
+<h1 class="service-title">
+  Árstíðabundið<br>
+  viðhald
 </h1>
 
-<img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1200&q=80"
-style="
-width:100%;
-border-radius:28px;
-margin-bottom:30px;
-">
+<p class="service-text">
 
-<p style="
-font-size:22px;
-line-height:1.7;
-max-width:800px;
-">
-Við hreinsum hellur, göngustíga og útisvæði og látum garðinn líta snyrtilegan og ferskan út.
+  Við sjáum um vorsnyrtingu,
+  hausthreinsun og undirbúning
+  fyrir sumarið svo garðurinn
+  sé alltaf tilbúinn.
+
 </p>
 
 </div>
 
+<img class="service-main-image"
+     src="IMG_2379.jpg"
+     alt="Árstíðabundið viðhald">
+
+</div>
+
+</div>
+
 </section>
 
 </div>
+
+<!-- HREINSUN -->
+
+<div id="hreinsun-page"
+     class="page-view">
+
+<section class="section-gray service-page">
+
+<div class="container">
+
+<a href="#"
+   class="back-btn"
+onclick="showPage('services-page'); return false;">
+
+← Til baka
+
+</a>
+
+<div class="service-hero">
+
+<div>
+
+<h1 class="service-title">
+  Hreinsun<br>
+  & tiltekt
+</h1>
+
+<p class="service-text">
+
+  Við hreinsum hellur,
+  göngustíga og útisvæði
+  og látum garðinn líta
+  snyrtilega og ferskan út.
+
+</p>
+
+</div>
+
+<img class="service-main-image"
+     src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1200&q=80"
+     alt="Hreinsun">
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
 </main>
- 
-  <script>
-    function toggleMenu() {
-  const menu = document.getElementById('navLinks');
 
-  if (menu.classList.contains('show')) {
-    menu.classList.remove('show');
-  } else {
-    menu.classList.add('show');
-  }
+<!-- =========================
+     EXTRA CSS
+========================= -->
+
+<style>
+
+/* PAGE SYSTEM */
+
+.page-view{
+  display:none;
 }
 
-    function showPage(pageId, clickedLink = null) {
+.active-page{
+  display:block;
+}
 
-  document.querySelectorAll('.page-view').forEach(page => {
-    page.classList.remove('active-page');
-  });
+/* QUOTE */
 
-  document.getElementById(pageId).classList.add('active-page');
+.quote-section{
+  padding:90px 0;
+}
 
-  document.querySelectorAll('#navLinks a').forEach(link => {
-    link.classList.remove('active');
-  });
+.quote-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
 
-  if (clickedLink) {
+.quote-title{
+  font-size:clamp(60px, 7vw, 90px);
+  line-height:0.92;
+  font-family:Georgia, serif;
+  margin-bottom:24px;
+}
+
+.quote-text{
+  font-size:28px;
+  line-height:1.5;
+}
+
+.form-card{
+  background:#f5f5f5;
+  padding:28px;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+
+.form-grid{
+  display:grid;
+  gap:18px;
+}
+
+.label{
+  display:block;
+  margin-bottom:8px;
+  font-size:16px;
+}
+
+.input{
+  width:100%;
+  padding:16px;
+  border-radius:12px;
+  border:2px solid #ddd;
+  font-size:17px;
+}
+
+textarea.input{
+  resize:vertical;
+  min-height:140px;
+}
+
+.checkbox-list{
+  display:grid;
+  gap:10px;
+}
+
+.checkbox-row{
+  background:#e4e4e4;
+  padding:18px;
+  border-radius:16px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.submit-btn{
+  border:none;
+  background:black;
+  color:white;
+  padding:18px;
+  border-radius:20px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* SERVICES */
+
+.services-section{
+  padding-bottom:60px;
+}
+
+.services-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  padding:60px 0 30px;
+}
+
+.services-title{
+  font-size:clamp(60px, 7vw, 90px);
+  line-height:0.92;
+  font-family:Georgia, serif;
+}
+
+.services-text{
+  font-size:28px;
+  line-height:1.5;
+}
+
+.wide-image{
+  width:100%;
+  height:480px;
+  object-fit:cover;
+}
+
+.services-cards-section{
+  padding:80px 0;
+}
+
+.big-services-title{
+  font-size:clamp(60px, 7vw, 90px);
+  text-align:center;
+  line-height:0.92;
+  margin-bottom:70px;
+  font-family:Georgia, serif;
+}
+
+.service-cards{
+  display:grid;
+  gap:24px;
+}
+
+.service-card{
+  background:white;
+  border-radius:30px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.service-card:hover{
+  transform:translateY(-4px);
+}
+
+.service-card img{
+  width:100px;
+  height:100px;
+  border-radius:18px;
+  object-fit:cover;
+}
+
+.service-card-content{
+  flex:1;
+}
+
+.service-card h3{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.service-card p{
+  font-size:16px;
+  line-height:1.5;
+  color:#444;
+}
+
+.service-arrow{
+  font-size:54px;
+  color:var(--green);
+}
+
+/* CONTACT */
+
+.contact-section{
+  padding:80px 0;
+}
+
+.contact-top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  margin-bottom:70px;
+}
+
+.contact-title{
+  font-size:clamp(60px, 7vw, 90px);
+  line-height:0.92;
+  font-family:Georgia, serif;
+  margin-bottom:30px;
+}
+
+.contact-description{
+  font-size:28px;
+  line-height:1.5;
+}
+
+.before-after{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.before-after img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+.caption{
+  text-align:center;
+  font-size:24px;
+  margin-top:12px;
+}
+
+/* CONTACT CARDS */
+
+.modern-contact{
+  display:grid;
+  gap:20px;
+  margin-bottom:50px;
+}
+
+.contact-card{
+  background:white;
+  border-radius:28px;
+  padding:20px 24px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  box-shadow:var(--shadow);
+}
+
+.contact-icon{
+  width:74px;
+  height:74px;
+  border-radius:50%;
+  background:var(--green);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+.contact-icon i{
+  color:white;
+  font-size:28px;
+}
+
+.contact-divider{
+  width:1px;
+  height:60px;
+  background:#e5e5e5;
+}
+
+.contact-text-modern{
+  font-size:24px;
+  line-height:1.5;
+}
+
+/* FACEBOOK */
+
+.facebook-modern{
+  background:white;
+  border-radius:32px;
+  padding:28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:24px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:70px;
+}
+
+.facebook-icon{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:#1877f2;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+  font-size:90px;
+  font-weight:700;
+}
+
+.facebook-center{
+  flex:1;
+  font-size:28px;
+  line-height:1.4;
+}
+
+.facebook-button{
+  background:var(--green);
+  color:white;
+  padding:18px 24px;
+  border-radius:18px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* REVIEWS */
+
+.reviews-section{
+  background:linear-gradient(to bottom, #f5f5f5, #ededed);
+  border-radius:38px;
+  padding:34px;
+}
+
+.reviews-section h2{
+  font-size:clamp(42px, 5vw, 70px);
+  text-align:center;
+  margin-bottom:40px;
+  font-family:Georgia, serif;
+}
+
+.embedsocial-hashtag{
+  background:white;
+  border-radius:28px;
+  padding:18px;
+  overflow:hidden;
+}
+
+/* SERVICE PAGES */
+
+.service-page{
+  padding:60px 0 90px;
+}
+
+.back-btn{
+  display:inline-flex;
+  margin-bottom:40px;
+  color:var(--green);
+  font-weight:700;
+}
+
+.service-hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.service-title{
+  font-size:clamp(60px, 7vw, 100px);
+  line-height:0.92;
+  margin-bottom:24px;
+  font-family:Georgia, serif;
+}
+
+.service-text{
+  font-size:28px;
+  line-height:1.5;
+}
+
+.service-main-image{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  border-radius:34px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:760px){
+
+.container{
+  width:calc(100% - 28px);
+}
+
+/* NAV */
+
+.nav-inner{
+  min-height:78px;
+}
+
+.brand-logo{
+  width:56px;
+  height:56px;
+}
+
+.brand-title{
+  font-size:22px;
+}
+
+.brand-sub{
+  font-size:12px;
+}
+
+.mobile-menu-btn{
+  display:flex;
+}
+
+.nav-links{
+  position:absolute;
+
+  top:110%;
+  right:0;
+
+  width:220px;
+
+  background:white;
+
+  border-radius:24px;
+
+  padding:14px;
+
+  display:none;
+  flex-direction:column;
+
+  gap:6px;
+
+  box-shadow:0 16px 34px rgba(0,0,0,0.12);
+}
+
+.nav-links.show{
+  display:flex;
+}
+
+.nav-links a{
+  color:#111;
+  padding:16px;
+  border-radius:16px;
+}
+
+.contact-info .phone{
+  width:58px;
+  height:58px;
+}
+
+/* HERO */
+
+.hero{
+  padding-top:24px;
+}
+
+.hero-top{
+  grid-template-columns:1fr;
+  text-align:center;
+  gap:26px;
+}
+
+.hero-logo-wrap{
+  justify-content:center;
+}
+
+.hero-logo-big{
+  width:min(260px, 70vw);
+}
+
+.hero-headline{
+  font-size:56px;
+  text-align:center;
+}
+
+.hero-actions{
+  justify-content:center;
+}
+
+.hero-image{
+  height:240px;
+}
+
+.hero-bottom{
+  grid-template-columns:1fr;
+  min-height:100px;
+  text-align:center;
+  font-size:16px;
+}
+
+.arrow{
+  display:none;
+}
+
+/* WHY */
+
+.why-simple-section{
+  padding:60px 0;
+}
+
+.why-simple-header{
+  gap:18px;
+  margin-bottom:34px;
+}
+
+.why-simple-line{
+  height:110px;
+}
+
+.why-simple-header h2{
+  font-size:56px;
+}
+
+.why-simple-subtext{
+  font-size:20px;
+  margin-top:18px;
+}
+
+.why-simple-card{
+  min-height:140px;
+
+  padding:22px;
+
+  gap:16px;
+}
+
+.why-card-left{
+  width:72px;
+  height:72px;
+}
+
+.why-card-left img{
+  width:36px;
+  height:36px;
+}
+
+.why-card-divider{
+  height:70px;
+}
+
+.why-card-text h3{
+  font-size:18px;
+}
+
+.why-card-text p{
+  font-size:14px;
+}
+
+.why-card-arrow{
+  font-size:34px;
+}
+
+/* QUOTE */
+
+.quote-section{
+  padding:60px 0;
+}
+
+.quote-wrap{
+  grid-template-columns:1fr;
+  gap:34px;
+}
+
+.quote-title{
+  font-size:52px;
+}
+
+.quote-text{
+  font-size:20px;
+}
+
+.form-card{
+  padding:20px;
+}
+
+.checkbox-row{
+  font-size:15px;
+}
+
+/* SERVICES */
+
+.services-header{
+  grid-template-columns:1fr;
+  gap:24px;
+}
+
+.services-title{
+  font-size:52px;
+}
+
+.services-text{
+  font-size:20px;
+}
+
+.wide-image{
+  height:240px;
+}
+
+.big-services-title{
+  font-size:52px;
+  margin-bottom:40px;
+}
+
+.service-card{
+  align-items:flex-start;
+  padding:16px;
+}
+
+.service-card img{
+  width:82px;
+  height:82px;
+}
+
+.service-card h3{
+  font-size:18px;
+}
+
+.service-card p{
+  font-size:14px;
+}
+
+.service-arrow{
+  font-size:36px;
+}
+
+/* CONTACT */
+
+.contact-top{
+  grid-template-columns:1fr;
+  gap:30px;
+}
+
+.contact-title{
+  font-size:52px;
+}
+
+.contact-description{
+  font-size:20px;
+}
+
+.before-after{
+  grid-template-columns:1fr;
+}
+
+.before-after img{
+  height:320px;
+}
+
+.caption{
+  font-size:20px;
+}
+
+/* CONTACT CARDS */
+
+.contact-card{
+  padding:16px;
+  gap:14px;
+}
+
+.contact-icon{
+  width:58px;
+  height:58px;
+}
+
+.contact-icon i{
+  font-size:22px;
+}
+
+.contact-divider{
+  height:50px;
+}
+
+.contact-text-modern{
+  font-size:17px;
+}
+
+/* FACEBOOK */
+
+.facebook-modern{
+  flex-direction:column;
+  text-align:center;
+  padding:30px 22px;
+}
+
+.facebook-icon{
+  width:92px;
+  height:92px;
+  font-size:72px;
+}
+
+.facebook-center{
+  font-size:18px;
+}
+
+.facebook-button{
+  width:100%;
+  text-align:center;
+}
+
+/* REVIEWS */
+
+.reviews-section{
+  padding:22px;
+}
+
+.reviews-section h2{
+  font-size:38px;
+}
+
+/* SERVICE PAGES */
+
+.service-page{
+  padding:40px 0 70px;
+}
+
+.service-hero{
+  grid-template-columns:1fr;
+  gap:24px;
+}
+
+.service-title{
+  font-size:52px;
+}
+
+.service-text{
+  font-size:18px;
+}
+
+.service-main-image{
+  height:260px;
+}
+
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width:761px){
+
+.mobile-menu-btn{
+  display:none;
+}
+
+.nav-links{
+  position:static;
+
+  display:flex !important;
+
+  opacity:1 !important;
+
+  pointer-events:auto !important;
+
+  transform:none !important;
+
+  flex-direction:row;
+
+  background:transparent;
+
+  box-shadow:none;
+
+  width:auto;
+
+  padding:0;
+
+  gap:28px;
+}
+
+.nav-links a{
+  color:white;
+  padding:0;
+}
+
+}
+
+/* =========================
+   JAVASCRIPT
+========================= */
+</style>
+
+<script>
+
+function toggleMenu(){
+
+  const menu =
+    document.getElementById('navLinks');
+
+  menu.classList.toggle('show');
+}
+
+function showPage(pageId, clickedLink = null){
+
+  document
+    .querySelectorAll('.page-view')
+    .forEach(page => {
+
+      page.classList.remove('active-page');
+
+    });
+
+  document
+    .getElementById(pageId)
+    .classList.add('active-page');
+
+  document
+    .querySelectorAll('#navLinks a')
+    .forEach(link => {
+
+      link.classList.remove('active');
+
+    });
+
+  if(clickedLink){
+
     clickedLink.classList.add('active');
   }
 
   window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+    top:0,
+    behavior:'smooth'
   });
 
-  const menu = document.getElementById('navLinks');
-
-  if (menu) {
-    menu.classList.remove('show');
-  }
+  document
+    .getElementById('navLinks')
+    .classList.remove('show');
 }
 
-    const form = document.getElementById('quote-form');
-    const formMessage = document.getElementById('form-message');
+const form =
+  document.getElementById('quote-form');
 
-    if (form) {
-      form.addEventListener('submit', async function (event) {
-        event.preventDefault();
+const formMessage =
+  document.getElementById('form-message');
 
-        const formData = new FormData(form);
+if(form){
 
-        const response = await fetch('https://formspree.io/f/mjgpozzr', {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
+  form.addEventListener(
+    'submit',
 
-        if (response.ok) {
-          form.reset();
-          formMessage.style.display = 'block';
-        }
-      });
+    async function(event){
+
+      event.preventDefault();
+
+      const formData =
+        new FormData(form);
+
+      const response =
+        await fetch(
+          'https://formspree.io/f/mjgpozzr',
+          {
+            method:'POST',
+            body:formData,
+            headers:{
+              'Accept':'application/json'
+            }
+          }
+        );
+
+      if(response.ok){
+
+        form.reset();
+
+        formMessage.style.display =
+          'block';
+      }
     }
-  </script>
-  <script>
-  if (window.location.hash === "#home") {
-    history.replaceState(null, "", window.location.pathname);
-  }
+  );
+}
+
 </script>
 
 </body>
