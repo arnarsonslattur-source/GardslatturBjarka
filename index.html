@@ -2050,7 +2050,53 @@ overflow: hidden;
     gap:28px;
   }
   
+  /* Force desktop to use mobile layout */
+@media (min-width: 761px) {
+  /* Make everything single-column like mobile */
+  .hero-top,
+  .why-top,
+  .quote-wrap,
+  .services-header,
+  .areas-wrap,
+  .contact-grid,
+  .service-hero {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
   }
+
+  /* Center text and buttons */
+  .hero-headline,
+  .why-copy,
+  .services-header p,
+  .service-text,
+  .contact-text,
+  .contact-details {
+    justify-self: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Stack service cards one per row */
+  .service-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Reduce section width to mobile scale */
+  .container {
+    width: calc(100% - 28px) !important;
+  }
+
+  /* Make navbar simpler */
+  .nav-links {
+    flex-direction: column !important;
+    background: white !important;
+  }
+
+  .nav-links a {
+    color: black !important;
+  }
+}
+
     
 </style>
 </head>
