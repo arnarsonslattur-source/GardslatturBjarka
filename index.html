@@ -190,11 +190,13 @@ transition: 0.25s ease;
 
     .section-gray { background: var(--bg); }
 
-    .container {
-      width: min(1280px, calc(100% - 56px));
-      margin: 0 auto;
-    }
-
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 28px;
+  margin: 0 auto;
+}
+ 
     .page-view {
   display: none;
   opacity: 0;
@@ -1063,7 +1065,7 @@ align-items: center;
 .why-simple-header h2 {
   margin: 0;
 
-  font-size: clamp(70px, 8vw, 120px);
+  font-size: clamp(48px, 6vw, 92px);
 
   line-height: 0.9;
 
@@ -1840,6 +1842,8 @@ overflow: hidden;
   font-weight:600;
 }
 
+  @media (max-width:760px){
+
   .service-hero{
 
     display:grid;
@@ -1855,7 +1859,7 @@ overflow: hidden;
     min-width:0;
   }
 
- .service-title{
+  .service-title{
 
     font-size:30px;
 
@@ -1864,14 +1868,14 @@ overflow: hidden;
     letter-spacing:-1px;
 
     margin:10px 0 12px;
-}
+  }
 
   .service-text{
 
     font-size:13px;
 
     line-height:1.35;
-}
+  }
 
   .service-right{
     width:100%;
@@ -1888,7 +1892,7 @@ overflow: hidden;
     border-radius:22px;
 
     display:block;
-}
+  }
 
 }
   
@@ -2045,14 +2049,11 @@ overflow: hidden;
   }
 
   .service-cards{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:28px;
-  }
-  
-  /* Force desktop to use mobile layout */
-@media (min-width: 761px) {
-  /* Make everything single-column like mobile */
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
   .hero-top,
   .why-top,
   .quote-wrap,
@@ -2060,44 +2061,27 @@ overflow: hidden;
   .areas-wrap,
   .contact-grid,
   .service-hero {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
+    align-items: center;
   }
 
-  /* Center text and buttons */
-  .hero-headline,
-  .why-copy,
-  .services-header p,
-  .service-text,
-  .contact-text,
-  .contact-details {
-    justify-self: center !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-  }
-
-  /* Stack service cards one per row */
   .service-cards {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Reduce section width to mobile scale */
-  .container {
-    width: calc(100% - 28px) !important;
+  .hero-headline {
+    max-width: 700px;
   }
 
-  /* Make navbar simpler */
-  .nav-links {
-    flex-direction: column !important;
-    background: white !important;
+  .service-main-image {
+    height: 520px;
   }
 
-  .nav-links a {
-    color: black !important;
+  .why-simple-header {
+    max-width: 1200px;
   }
+
 }
-
-    
+ 
 </style>
 </head>
 <body>
