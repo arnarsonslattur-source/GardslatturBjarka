@@ -1001,74 +1001,225 @@ align-items: center;
   pointer-events: auto;
 }
 
-    
- 
-/* ===== WHY SIMPLE ===== */
+    <!-- SETTU ÞETTA Í STAÐINN FYRIR ALLT "WHY SIMPLE" CSS-IÐ -->
 
-.why-simple-section {
-  padding: 90px 0;
-  background: #f3f3f3;
+/* ===== WHY SIMPLE SECTION ===== */
+
+.why-simple-section{
+  padding:90px 0;
+  background:#f3f3f3;
 }
 
-.why-simple-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-
-  margin-bottom: 50px;
+.why-simple-header{
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+  margin-bottom:50px;
 }
 
-.why-simple-line {
-  width: 5px;
-  height: 180px;
-
-  background: var(--green);
-
-  border-radius: 999px;
-
-  flex-shrink: 0;
+.why-simple-line{
+  width:5px;
+  height:180px;
+  background:var(--green);
+  border-radius:999px;
+  flex-shrink:0;
 }
 
-.why-simple-header h2 {
-  margin: 0;
-
-  font-size: clamp(70px, 8vw, 120px);
-
-  line-height: 0.9;
-
-  font-weight: 500;
-
-  letter-spacing: -3px;
+.why-simple-header h2{
+  margin:0;
+  font-size:clamp(56px,8vw,120px);
+  line-height:0.9;
+  font-weight:500;
+  letter-spacing:-3px;
 }
 
- .why-simple-subtext {
-
-  margin-top: 28px;
-
-  font-size: 34px;
-
-  line-height: 1.4;
-
-  max-width: 520px;
-
-  color: #222;
+.why-simple-subtext{
+  margin-top:28px;
+  font-size:34px;
+  line-height:1.4;
+  max-width:520px;
+  color:#222;
 }
 
-.why-simple-cards {
-  display: grid;
-  gap: 26px;
+.why-simple-cards{
+  display:grid;
+  gap:26px;
 }
 
-.why-simple-card {
-  width: 100%;
+/* ===== CARD ===== */
 
-  height: 170px;
+.why-simple-card{
 
-  background: white;
+  width:100%;
 
-  border-radius: 28px;
+  min-height:170px;
 
-  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  background:white;
+
+  border-radius:28px;
+
+  box-shadow:0 10px 28px rgba(0,0,0,0.06);
+
+  display:flex;
+
+  align-items:center;
+
+  gap:34px;
+
+  padding:26px 34px;
+
+  overflow:hidden;
+}
+
+.why-card-left{
+
+  width:82px;
+  height:82px;
+
+  border-radius:50%;
+
+  background:#eef1ea;
+
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+}
+
+.why-card-left img{
+
+  width:44px;
+  height:44px;
+
+  object-fit:contain;
+}
+
+.why-card-divider{
+
+  width:1px;
+  height:90px;
+
+  background:#e5e5e5;
+
+  flex-shrink:0;
+}
+
+.why-card-text{
+  flex:1;
+}
+
+.why-card-text h3{
+
+  margin:0 0 8px;
+
+  font-size:28px;
+
+  line-height:1.05;
+
+  font-weight:700;
+}
+
+.why-card-text p{
+
+  margin:0;
+
+  font-size:22px;
+
+  line-height:1.4;
+
+  color:#333;
+}
+
+.why-card-arrow{
+
+  font-size:64px;
+
+  color:var(--green);
+
+  font-weight:300;
+
+  flex-shrink:0;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:760px){
+
+  .why-simple-section{
+    padding:60px 0;
+  }
+
+  .why-simple-header{
+    gap:16px;
+    margin-bottom:30px;
+  }
+
+  .why-simple-line{
+    height:110px;
+  }
+
+  .why-simple-header h2{
+    font-size:56px;
+  }
+
+  .why-simple-subtext{
+
+    font-size:20px;
+
+    margin-top:16px;
+
+    max-width:320px;
+  }
+
+  .why-simple-card{
+
+    min-height:120px;
+
+    padding:18px 18px;
+
+    gap:18px;
+
+    border-radius:24px;
+  }
+
+  .why-card-left{
+
+    width:70px;
+    height:70px;
+  }
+
+  .why-card-left img{
+
+    width:34px;
+    height:34px;
+  }
+
+  .why-card-divider{
+
+    height:70px;
+  }
+
+  .why-card-text h3{
+
+    font-size:16px;
+
+    margin-bottom:6px;
+  }
+
+  .why-card-text p{
+
+    font-size:12px;
+
+    line-height:1.35;
+  }
+
+  .why-card-arrow{
+
+    font-size:42px;
+  }
 }
 
 /* ===== MOBILE ===== */
