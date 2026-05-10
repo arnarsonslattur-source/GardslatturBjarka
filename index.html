@@ -884,7 +884,9 @@ align-items: center;
       .nav-links a { padding: 16px 18px; border-bottom: 1px solid #eee; }
       .nav-links a:last-child { border-bottom: 0; }
 
-      .container { width: calc(100% - 28px); }
+     .container {
+  width: 100%;
+}
       .hero { padding-top: 28px; }
       .hero-image { height: 230px; }
       .wide-image, .bottom-image { height: 240px; }
@@ -2090,6 +2092,62 @@ margin: 0 auto;
     max-width: 1200px;
   }
 
+ }
+ 
+/* ===== FIX DESKTOP LOOK ===== */
+
+@media (min-width: 761px) {
+
+  .areas-wrap,
+  .contact-grid,
+  .why-simple-header,
+  .service-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .before-after {
+    width: 100%;
+    max-width: 1100px;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 24px;
+  }
+
+  .contact-details,
+  .facebook-modern,
+  .why-simple-cards {
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .facebook-modern {
+    margin-top: 20px;
+  }
+
+  .service-hero {
+    gap: 30px;
+  }
+
+  .service-main-image {
+    width: 100%;
+    max-width: 1100px;
+  }
+
+}
+
+/* ===== STOP SIDE SCROLL ON MOBILE ===== */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
 }
  
 </style>
