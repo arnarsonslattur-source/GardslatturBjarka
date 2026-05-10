@@ -2413,6 +2413,164 @@ body {
   }
 
 }
+
+/* ===== BOTTOM CARDS ===== */
+
+.service-bottom-cards{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:22px;
+
+  margin-top:40px;
+}
+
+.bottom-card{
+
+  background:#f5f5f1;
+
+  border-radius:28px;
+
+  padding:34px;
+
+  min-height:220px;
+}
+
+.bottom-card h3{
+
+  margin:0 0 24px;
+
+  font-size:42px;
+
+  line-height:1;
+
+  font-family:Georgia, serif;
+
+  color:#1d3416;
+}
+
+.bottom-card ul{
+
+  padding:0;
+  margin:0;
+
+  list-style:none;
+}
+
+.bottom-card li{
+
+  margin-bottom:16px;
+
+  font-size:22px;
+}
+
+.offer-card{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.offer-card p{
+
+  font-size:22px;
+
+  line-height:1.5;
+
+  max-width:340px;
+}
+
+.offer-btn{
+
+  display:inline-flex;
+
+  margin-top:20px;
+
+  background:var(--green);
+
+  color:white;
+
+  padding:16px 28px;
+
+  border-radius:14px;
+
+  font-weight:700;
+
+  transition:0.25s ease;
+}
+
+.offer-btn:hover{
+
+  background:var(--green-dark);
+
+  transform:translateY(-2px);
+}
+
+.offer-icon{
+
+  font-size:90px;
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+  .service-bottom-cards{
+
+    grid-template-columns:1fr;
+
+    gap:16px;
+  }
+
+  .bottom-card{
+
+    padding:22px;
+
+    border-radius:22px;
+
+    min-height:auto;
+  }
+
+  .bottom-card h3{
+
+    font-size:28px;
+
+    margin-bottom:18px;
+  }
+
+  .bottom-card li{
+
+    font-size:16px;
+
+    margin-bottom:12px;
+  }
+
+  .offer-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  .offer-card p{
+
+    font-size:16px;
+  }
+
+  .offer-icon{
+
+    font-size:54px;
+
+    align-self:flex-end;
+  }
+
+}
  
 </style>
 </head>
@@ -2961,11 +3119,54 @@ alt="Garðsláttur">
 
 </div>
 
+<!-- BOTTOM INFO CARDS -->
+
+<div class="service-bottom-cards">
+
+  <div class="bottom-card">
+
+    <h3>Af hverju að velja okkur?</h3>
+
+    <ul>
+      <li>✔ Áreiðanleg og stundvís þjónusta</li>
+      <li>✔ Vönduð vinnubrögð og snyrtimennska</li>
+      <li>✔ Persónuleg þjónusta og gott verð</li>
+    </ul>
+
+  </div>
+
+  <div class="bottom-card offer-card">
+
+    <div>
+
+      <h3>Viltu fá tilboð?</h3>
+
+      <p>
+        Hafðu samband og við gerum þér
+        tilboð að kostnaðarlausu.
+      </p>
+
+      <a href="#tilbod"
+onclick="showPage('home-page'); setTimeout(()=>{document.getElementById('tilbod').scrollIntoView({behavior:'smooth'});},200);"
+class="offer-btn">
+
+FÁ TILBOÐ
+
+</a>
+
+    </div>
+
+    <div class="offer-icon">
+      📋
+    </div>
+
+  </div>
+
+</div>
+
 </div>
 
 </section>
-
-</div>
 
 </div>
 
