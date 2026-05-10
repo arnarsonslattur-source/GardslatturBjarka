@@ -2244,6 +2244,159 @@ body {
 
     border-radius:18px;
   }
+  
+  }
+
+/* ===== INCLUDED SECTION ===== */
+
+.service-included{
+
+  display:grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap:24px;
+
+  margin-top:50px;
+
+  align-items:start;
+}
+
+.included-left h2{
+
+  font-size:42px;
+
+  margin:0 0 30px;
+
+  font-family:Georgia, serif;
+
+  color:#1d3416;
+}
+
+.included-item{
+
+  display:flex;
+
+  gap:16px;
+
+  margin-bottom:28px;
+}
+
+.included-icon{
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  font-size:24px;
+}
+
+.included-item h3{
+
+  margin:0 0 6px;
+
+  font-size:22px;
+}
+
+.included-item p{
+
+  margin:0;
+
+  font-size:16px;
+
+  line-height:1.5;
+
+  color:#444;
+}
+
+/* RIGHT GRID */
+
+.service-gallery{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:14px;
+}
+
+.service-gallery img{
+
+  width:100%;
+
+  height:170px;
+
+  object-fit:cover;
+
+  border-radius:22px;
+
+  display:block;
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+  .service-included{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+
+    align-items:start;
+  }
+
+  .included-left h2{
+
+    font-size:26px;
+
+    margin-bottom:20px;
+  }
+
+  .included-item{
+
+    gap:12px;
+
+    margin-bottom:18px;
+  }
+
+  .included-icon{
+
+    width:40px;
+    height:40px;
+
+    font-size:18px;
+  }
+
+  .included-item h3{
+
+    font-size:15px;
+  }
+
+  .included-item p{
+
+    font-size:12px;
+
+    line-height:1.35;
+  }
+
+  .service-gallery img{
+
+    height:120px;
+
+    border-radius:16px;
+  }
 
 }
  
@@ -2723,12 +2876,74 @@ alt="Garðsláttur">
 
 <!-- 4 MYNDA GRID -->
 
-<div class="service-gallery">
+<div class="service-included">
 
-<img src="mynd1.jpg" alt="">
-<img src="mynd2.jpg" alt="">
-<img src="mynd3.jpg" alt="">
-<img src="mynd4.jpg" alt="">
+  <!-- LEFT SIDE -->
+
+  <div class="included-left">
+
+    <h2>Þetta er innifalið</h2>
+
+    <div class="included-item">
+
+      <div class="included-icon">
+        ✂️
+      </div>
+
+      <div>
+        <h3>Garðsláttur</h3>
+        <p>
+          Við sláum grasflötina reglulega
+          og jafnt fyrir fallegt útlit.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="included-item">
+
+      <div class="included-icon">
+        ✂️
+      </div>
+
+      <div>
+        <h3>Snyrting á kantlögum</h3>
+        <p>
+          Við snyrtum brúnir og beð
+          til að halda öllu hreinu.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="included-item">
+
+      <div class="included-icon">
+        🍃
+      </div>
+
+      <div>
+        <h3>Hreinsun</h3>
+        <p>
+          Við hreinsum lauf og annað
+          sem safnast upp.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+
+  <div class="service-gallery">
+
+    <img src="mynd1.jpg" alt="">
+    <img src="mynd2.jpg" alt="">
+    <img src="mynd3.jpg" alt="">
+    <img src="mynd4.jpg" alt="">
+
+  </div>
 
 </div>
 
@@ -2737,8 +2952,6 @@ alt="Garðsláttur">
 </section>
 
 </div>
-
-</section>
 
 </div>
 
