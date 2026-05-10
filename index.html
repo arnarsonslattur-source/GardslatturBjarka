@@ -650,8 +650,8 @@ transition: 0.25s ease;
     }
 
     .before-after {
-      display: grid;
-      grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
       gap: 26px;
       align-items: start;
     }
@@ -677,7 +677,7 @@ transition: 0.25s ease;
 
     .contact-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 80px 1fr 1.2fr 1fr;
       gap: 48px;
       align-items: center;
       padding: 40px 0 40px;
@@ -757,10 +757,10 @@ transition: 0.25s ease;
       .why-top,
       .quote-wrap,
       .services-header,
-      .areas-wrap,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .areas-wrap {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+}
 
       .hero-headline,
       .why-copy,
@@ -1003,7 +1003,7 @@ align-items: center;
 
      /* ===== DESKTOP NAV FIX ===== */
 
-@media (min-width: 1200px)
+@media (min-width: 1200px) {
 
   .nav-actions {
     display: flex;
@@ -1250,7 +1250,7 @@ align-items: center;
 
 /* ===== WHY SECTION DESKTOP FIX ===== */
 
-@media (min-width: 1200px)
+@media (min-width: 1200px) {
 
   .why-simple-section {
     padding: 90px 0;
@@ -1770,15 +1770,10 @@ overflow: hidden;
 }
 
 .service-hero{
-
   display:grid;
-
-  grid-template-columns: 1fr;
-
+  grid-template-columns: 0.9fr 1.1fr;
   gap:40px;
-
   align-items:center;
-
   padding:40px 0 70px;
 }
 
@@ -1887,7 +1882,7 @@ overflow: hidden;
 
 /* ===== DESKTOP FIX ===== */
 
-@media (min-width: 1200px)
+@media (min-width: 1200px) {
 
   .mobile-menu-btn{
     display:none;
@@ -2042,7 +2037,32 @@ overflow: hidden;
     gap:28px;
   }
   
+  @media (max-width: 900px) {
+
+  .contact-grid,
+  .areas-wrap,
+  .before-after,
+  .service-hero {
+    grid-template-columns: 1fr !important;
   }
+
+  .contact-grid {
+    gap: 28px;
+  }
+
+  .facebook-modern {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+}
     
 </style>
 </head>
