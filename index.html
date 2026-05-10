@@ -2037,29 +2037,338 @@ overflow: hidden;
     gap:28px;
   }
   
-  @media (max-width: 900px) {
+  }
+
+@media (max-width: 900px) {
 
   .contact-grid,
+
   .areas-wrap,
+
   .before-after,
+
   .service-hero {
+
     grid-template-columns: 1fr !important;
+
   }
 
   .contact-grid {
+
     gap: 28px;
+
+  }
+
+  .facebook-modern {
+
+    width: 100%;
+
+  }
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+  .nav-links.show {
+
+    display: flex;
+
+  }
+
+}
+
+/* ===== MOBILE FIX ALL ===== */
+
+@media (max-width: 760px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  /* NAVBAR */
+
+  .nav-inner {
+    min-height: 78px;
+    gap: 10px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .contact-info .phone,
+  .mobile-menu-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .mobile-menu-btn {
+    font-size: 28px;
+  }
+
+  /* HERO */
+
+  .hero-top,
+  .why-top,
+  .quote-wrap,
+  .services-header,
+  .areas-wrap,
+  .contact-grid,
+  .service-hero,
+  .before-after {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-top {
+    gap: 20px;
+    padding: 10px 0 30px;
+  }
+
+  .hero-logo-wrap {
+    justify-content: center;
+  }
+
+  .hero-logo-big {
+    width: 180px;
+  }
+
+  .hero-headline {
+    font-size: 48px;
+    line-height: 0.95;
+    text-align: left;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  /* WHY */
+
+  .why-simple-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .why-simple-line {
+    width: 100%;
+    height: 4px;
+  }
+
+  .why-simple-header h2 {
+    font-size: 52px;
+    line-height: 0.95;
+  }
+
+  .why-simple-subtext {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .why-simple-card {
+    min-height: auto;
+    padding: 18px;
+    gap: 16px;
+  }
+
+  .why-card-left {
+    width: 60px;
+    height: 60px;
+  }
+
+  .why-card-divider {
+    display: none;
+  }
+
+  .why-card-text h3 {
+    font-size: 18px;
+  }
+
+  .why-card-text p {
+    font-size: 14px;
+  }
+
+  .why-card-arrow {
+    font-size: 30px;
+  }
+
+  /* QUOTE SECTION */
+
+  .quote {
+    padding: 40px 0;
+  }
+
+  .quote h2 {
+    font-size: 64px;
+    line-height: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .quote-copy {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .form-card {
+    padding: 18px;
+    width: 100%;
+  }
+
+  .checkbox-row {
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  /* SERVICES PAGE */
+
+  .services-header {
+    gap: 20px;
+    padding: 40px 0 20px;
+  }
+
+  .services-header h2 {
+    font-size: 64px;
+    line-height: 0.9;
+  }
+
+  .services-header p {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .wide-image {
+    height: 240px;
+  }
+
+  .new-beginnings h2 {
+    font-size: 44px;
+    margin-bottom: 30px;
+  }
+
+  .service-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .service-card img {
+    width: 82px;
+    height: 82px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+  /* CONTACT */
+
+  .areas h2 {
+    font-size: 58px;
+    line-height: 0.95;
+  }
+
+  .areas-copy {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .before-after {
+    gap: 18px;
+  }
+
+  .before-after img {
+    aspect-ratio: unset;
+    height: auto;
+  }
+
+  .caption {
+    font-size: 22px;
+  }
+
+  .contact-grid {
+    gap: 24px;
+  }
+
+  .contact-text {
+    font-size: 42px;
+  }
+
+  .modern-contact {
+    width: 100%;
+  }
+
+  .contact-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .contact-text-modern {
+    font-size: 16px;
+    word-break: break-word;
   }
 
   .facebook-modern {
     width: 100%;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .nav-links {
-    display: none;
+  .facebook-center {
+    font-size: 18px;
   }
 
-  .nav-links.show {
-    display: flex;
+  .facebook-button {
+    width: 100%;
+  }
+
+  /* SERVICE SUBPAGE */
+
+  .service-hero {
+    gap: 24px;
+  }
+
+  .service-title {
+    font-size: 54px;
+    line-height: 0.9;
+  }
+
+  .service-text {
+    font-size: 17px;
+    max-width: 100%;
+  }
+
+  .service-main-image {
+    height: 300px;
   }
 
 }
