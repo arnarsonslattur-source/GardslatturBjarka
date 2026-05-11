@@ -2560,64 +2560,103 @@ body {
 
     grid-template-columns:1fr 1fr;
 
-    gap:12px;
+    gap:16px;
+
+    margin-top:30px;
   }
 
   .bottom-card{
 
     padding:18px;
 
-    border-radius:20px;
+    border-radius:24px;
 
-    min-height:auto;
+    min-height:260px;
   }
 
   .bottom-card h3{
 
     font-size:24px;
 
-    margin-bottom:14px;
-
     line-height:1.05;
+
+    margin-bottom:18px;
+
+    letter-spacing:-1px;
+  }
+
+  .bottom-card ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
   }
 
   .bottom-card li{
 
     font-size:14px;
 
-    margin-bottom:10px;
+    line-height:1.4;
+
+    margin:0;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
   }
 
   .offer-card{
 
+    display:flex;
+
     flex-direction:column;
 
+    justify-content:flex-start;
+
     align-items:flex-start;
+
+    position:relative;
   }
 
   .offer-card p{
 
     font-size:14px;
 
-    line-height:1.4;
+    line-height:1.5;
+
+    margin:0;
   }
 
   .offer-btn{
 
+    margin-top:18px;
+
     width:100%;
 
-    text-align:center;
+    justify-content:center;
 
-    padding:14px 18px;
+    padding:16px 18px;
 
-    font-size:14px;
+    font-size:15px;
+
+    border-radius:16px;
   }
 
   .offer-icon{
 
-    font-size:42px;
+    font-size:52px;
 
-    align-self:flex-end;
+    position:absolute;
+
+    right:12px;
+
+    bottom:10px;
+
+    opacity:0.8;
   }
 
 }
