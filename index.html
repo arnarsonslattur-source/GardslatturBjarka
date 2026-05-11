@@ -35,8 +35,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: white;
-      
-      padding-top: 100px;
     }
 
     img { max-width: 100%; display: block; }
@@ -46,12 +44,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   background: var(--green);
   border-bottom: 1px solid rgba(255,255,255,0.15);
 
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-
-  width: 100%;
-
   z-index: 999;
 
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);
@@ -196,13 +190,11 @@ transition: 0.25s ease;
 
     .section-gray { background: var(--bg); }
 
-.container {
-  width: 100%;
-  max-width: 1280px;
-  padding: 0 28px;
-  margin: 0 auto;
-}
- 
+    .container {
+      width: min(1280px, calc(100% - 56px));
+      margin: 0 auto;
+    }
+
     .page-view {
   display: none;
   opacity: 0;
@@ -354,7 +346,6 @@ transition: 0.25s ease;
     }
 
     .arrow {
-     display:none;
       font-size: 60px;
       line-height: 1;
       font-weight: 300;
@@ -684,16 +675,13 @@ transition: 0.25s ease;
       padding: 44px 0 0;
     }
 
- .contact-grid {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 34px;
-
-  padding: 40px 0 40px;
-}
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 80px 1fr 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 40px 0 40px;
+    }
 
     .contact-text,
     .contact-details,
@@ -702,23 +690,17 @@ transition: 0.25s ease;
       line-height: 1.45;
     }
     
-.contact-text {
-
-  font-size: 64px;
-
+    .contact-text {
+  font-size: 42px;
   font-weight: 700;
-
-  line-height: 1;
-
-  max-width: 500px;
+  line-height: 1.1;
 }
 
     .contact-details {
-
-  width: 100%;
-
-  max-width: 900px;
-}
+      max-width: 520px;
+      font-size: clamp(20px, 1.5vw, 26px);
+      line-height: 1.6;
+    }
 
     .contact-details div { margin-bottom: 10px; }
 
@@ -890,9 +872,7 @@ align-items: center;
       .nav-links a { padding: 16px 18px; border-bottom: 1px solid #eee; }
       .nav-links a:last-child { border-bottom: 0; }
 
-     .container {
-  width: 100%;
-}
+      .container { width: calc(100% - 28px); }
       .hero { padding-top: 28px; }
       .hero-image { height: 230px; }
       .wide-image, .bottom-image { height: 240px; }
@@ -1083,7 +1063,7 @@ align-items: center;
 .why-simple-header h2 {
   margin: 0;
 
-  font-size: clamp(48px, 6vw, 92px);
+  font-size: clamp(70px, 8vw, 120px);
 
   line-height: 0.9;
 
@@ -1578,9 +1558,6 @@ overflow: hidden;
 
   width: 100%;
 
- max-width: 900px;
-margin: 0 auto;
-
   background: white;
 
   border-radius: 30px;
@@ -1765,6 +1742,8 @@ margin: 0 auto;
   line-height: 1.4;
 }
 
+}
+
 /* ===== MOBILE ===== */
 
 @media (max-width:760px){
@@ -1800,13 +1779,13 @@ margin: 0 auto;
 
   display:grid;
 
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 0.9fr 1.1fr;
 
-  gap:22px;
+  gap:40px;
 
-  align-items:start;
+  align-items:center;
 
-  padding:30px 0 20px;
+  padding:40px 0 70px;
 }
 
 .service-title{
@@ -1861,8 +1840,6 @@ margin: 0 auto;
   font-weight:600;
 }
 
-  @media (max-width:760px){
-
   .service-hero{
 
     display:grid;
@@ -1878,7 +1855,7 @@ margin: 0 auto;
     min-width:0;
   }
 
-  .service-title{
+ .service-title{
 
     font-size:30px;
 
@@ -1887,14 +1864,14 @@ margin: 0 auto;
     letter-spacing:-1px;
 
     margin:10px 0 12px;
-  }
+}
 
   .service-text{
 
     font-size:13px;
 
     line-height:1.35;
-  }
+}
 
   .service-right{
     width:100%;
@@ -1911,7 +1888,7 @@ margin: 0 auto;
     border-radius:22px;
 
     display:block;
-  }
+}
 
 }
   
@@ -2052,1280 +2029,29 @@ margin: 0 auto;
     line-height:1.5;
   }
 
+  .contact-grid{
+    grid-template-columns:
+    80px
+    1fr
+    1fr
+    1fr;
+
+    gap:40px;
+  }
+
   .facebook-modern{
-
-  flex-direction: column;
-
-  text-align: center;
-
-  align-items: center;
-
-  padding: 50px 40px;
-
-  gap: 28px;
-
-  border-radius: 38px;
-}
+    flex-direction:column;
+    text-align:center;
+  }
 
   .service-cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:28px;
-}
-
-  .hero-top,
-  .why-top,
-  .quote-wrap,
-  .services-header,
-  .areas-wrap,
-  .service-hero {
-  align-items: center;
-}
-
-  .service-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-headline {
-    max-width: 700px;
-  }
-
-  .service-main-image {
-    height: 520px;
-  }
-
-  .why-simple-header {
-    max-width: 1200px;
-  }
-
- }
- 
-/* ===== FIX DESKTOP LOOK ===== */
-
-@media (min-width: 761px) {
-
-  .areas-wrap,
-  .contact-grid,
-  .why-simple-header {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-  }
-
-  .before-after {
-    width: 100%;
-    max-width: 1100px;
-
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-
-    gap: 24px;
-  }
-
-  .contact-details,
-  .facebook-modern,
-  .why-simple-cards {
-    width: 100%;
-    max-width: 1000px;
-  }
-
-  .facebook-modern {
-    margin-top: 20px;
-  }
-
-  .service-hero {
-    gap: 30px;
-  }
-
-  .service-main-image {
-    width: 100%;
-    max-width: 1100px;
-  }
-
-}
-
-/* ===== STOP SIDE SCROLL ON MOBILE ===== */
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-* {
-  max-width: 100%;
-}
-
-/* ===== SERVICE PAGE MODERN ===== */
-
-.service-line{
-  width:80px;
-  height:4px;
-  background:var(--green);
-  border-radius:999px;
-  margin:30px 0;
-}
-
-.service-small-text{
-  font-size:20px;
-  line-height:1.7;
-  max-width:520px;
-  color:#444;
-}
-
-.service-gallery{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:22px;
-
-  margin-top:60px;
-}
-
-.service-gallery img{
-
-  width:100%;
-
-  height:280px;
-
-  object-fit:cover;
-
-  border-radius:26px;
-
-  display:block;
-}
-  
-  }
-
-/* ===== INCLUDED SECTION ===== */
-
-.service-included{
-
-  display:grid;
-
-  grid-template-columns: 0.9fr 1.1fr;
-
-  gap:16px;
-
-  margin-top:8px;
-
-  align-items:start;
-}
-
-.included-left h2{
-
-  font-size:42px;
-
-  margin:0 0 30px;
-
-  font-family:Georgia, serif;
-
-  color:#1d3416;
-}
-
-.included-item{
-
-  display:flex;
-
-  gap:16px;
-
-  margin-bottom:28px;
-}
-
-.included-icon{
-
-  width:54px;
-  height:54px;
-
-  border-radius:50%;
-
-  background:var(--green);
-
-  color:white;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  flex-shrink:0;
-
-  font-size:24px;
-}
-
-.included-item h3{
-
-  margin:0 0 6px;
-
-  font-size:22px;
-}
-
-.included-item p{
-
-  margin:0;
-
-  font-size:16px;
-
-  line-height:1.5;
-
-  color:#444;
-}
-
-/* RIGHT GRID */
-
-.service-gallery{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:14px;
-}
-
-.service-gallery img{
-
-  width:100%;
-
-  height:190px;
-
-  object-fit:cover;
-
-  border-radius:22px;
-
-  display:block;
-}
-
-/* MOBILE */
-
-@media (max-width:760px){
-
-  .service-included{
-
-    grid-template-columns:0.78fr 1.22fr;
-
-    gap:22px;
-
-    align-items:start;
-
-    margin-top:34px;
-  }
-
-  .included-left h2{
-
-    font-size:16px;
-
-    margin-bottom:18px;
-
-    line-height:1.05;
-
-    letter-spacing:-0.5px;
-  }
-
-  .included-item{
-
-    gap:10px;
-
-    margin-bottom:22px;
-
-    align-items:flex-start;
-  }
-
-  .included-icon{
-
-    width:38px;
-    height:38px;
-
-    font-size:16px;
-
-    flex-shrink:0;
-  }
-
-  .included-item h3{
-
-    font-size:11px;
-
-    margin:0 0 4px;
-
-    line-height:1.15;
-  }
-
-  .included-item p{
-
-    font-size:9.5px;
-
-    line-height:1.45;
-
-    color:#444;
-
-    margin:0;
-  }
-
-  .service-gallery{
-
-    margin-top:0;
-
-    gap:12px;
-  }
-
-  .service-gallery img{
-
-    height:165px;
-
-    border-radius:18px;
-
-    object-fit:cover;
-
-    display:block;
-  }
-
-  .service-bottom-cards{
-
-    grid-template-columns:1fr 1fr;
-
-    gap:14px;
-
-    margin-top:26px;
-  }
-
-  .bottom-card{
-
-    min-height:170px;
-
-    padding:16px;
-
-    border-radius:24px;
-  }
-
-  .bottom-card h3{
-
-    font-size:15px;
-
-    line-height:1.05;
-
-    margin-bottom:12px;
-  }
-
-  .bottom-card li{
-
-    font-size:10px;
-
-    line-height:1.45;
-
-    margin-bottom:7px;
-  }
-
-  .offer-card p{
-
-    font-size:10px;
-
-    line-height:1.45;
-  }
-
-  .offer-btn{
-
-    padding:11px 14px;
-
-    font-size:11px;
-
-    border-radius:12px;
-  }
-
-  .offer-icon{
-
-    font-size:42px;
-
-    right:12px;
-
-    bottom:10px;
-  }
-
-}
-
-/* ===== MODERN BOTTOM CARDS ===== */
-
-.service-bottom-cards{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:14px;
-
-  margin-top:8px;
-
-  align-items:stretch;
-}
-
-.bottom-card{
-
-  background:#f7f7f3;
-
-  border:1px solid #ececec;
-
-  border-radius:26px;
-
-  padding:18px;
-
-  min-height:auto;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.04);
-
-  transition:0.25s ease;
-}
-
-.bottom-card h3{
-
-  margin:0 0 10px;
-
-  font-size:18px;
-
-  line-height:1;
-
-  font-family:Georgia, serif;
-
-  color:#1d3416;
-
-  letter-spacing:-0.5px;
-}
-
-.bottom-card ul{
-
-  padding:0;
-  margin:0;
-
-  list-style:none;
-}
-
-.bottom-card li{
-
-  font-size:11px;
-
-  line-height:1.35;
-
-  margin-bottom:7px;
-
-  display:flex;
-
-  align-items:flex-start;
-
-  gap:6px;
-}
-
-/* OFFER CARD */
-
-.offer-card{
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:flex-start;
-
-  align-items:flex-start;
-}
-
-.offer-card p{
-
-  font-size:11px;
-
-  line-height:1.35;
-
-  margin:0 0 10px;
-}
-
-.offer-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  background:var(--green);
-
-  color:white;
-
-  padding:12px 16px;
-
-  border-radius:14px;
-
-  font-weight:700;
-
-  font-size:12px;
-
-  transition:0.25s ease;
-}
-
-.offer-btn:hover{
-
-  background:var(--green-dark);
-
-  transform:translateY(-2px);
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width:760px){
-
-  .service-bottom-cards{
-
-    grid-template-columns:1fr 1fr;
-
-    gap:10px;
-
-    margin-top:6px;
-  }
-
-  .bottom-card{
-
-    padding:14px;
-
-    border-radius:22px;
-
-    min-height:auto;
-  }
-
-  .bottom-card h3{
-
-    font-size:15px;
-
-    line-height:1.05;
-
-    margin-bottom:10px;
-  }
-
-  .bottom-card li{
-
-    font-size:10px;
-
-    line-height:1.3;
-
-    margin-bottom:6px;
-  }
-
-  .offer-card p{
-
-    font-size:10px;
-
-    line-height:1.3;
-
-    margin-bottom:10px;
-  }
-
-  .offer-btn{
-
-    font-size:11px;
-
-    padding:10px 14px;
-
-    border-radius:12px;
-  }
-
-}
-
-.bottom-card:hover{
-
-  transform:translateY(-4px);
-}
-
-.bottom-card h3{
-
-  margin:0 0 18px;
-
-  font-size:32px;
-
-  line-height:1.1;
-
-  font-family:Georgia, serif;
-
-  color:#1d3416;
-
-  letter-spacing:-1px;
-}
-
-.bottom-card ul{
-
-  padding:0;
-  margin:0;
-
-  list-style:none;
-}
-
-.bottom-card li{
-
-    font-size:11px;
-
-    line-height:1.3;
-
-    margin-bottom:8px;
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:6px;
-}
-
-.offer-card{
-
-  display:flex;
-
-  align-items:flex-start;
-
-  justify-content:space-between;
-
-  gap:24px;
-}
-
-.offer-card p{
-
-  font-size:16px;
-
-  line-height:1.35;
-
-  max-width:240px;
-
-  margin-top:-6px;
-
-  margin-bottom:10px;
-}
-
-.offer-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  margin-top:18px;
-
-  background:var(--green);
-
-  color:white;
-
-  padding:16px 26px;
-
-  border-radius:14px;
-
-  font-weight:700;
-
-  font-size:15px;
-
-  transition:0.25s ease;
-}
-
-.offer-btn:hover{
-
-  background:var(--green-dark);
-
-  transform:translateY(-2px);
-}
-
-.offer-icon{
-
-  font-size:78px;
-
-  opacity:0.9;
-
-  margin-top:auto;
-
-  align-self:flex-end;
-}
-
-/* MOBILE */
-
-@media (max-width:760px){
-
-  .service-bottom-cards{
-
-    grid-template-columns:1fr 1fr;
-
-    gap:10px;
-
-    margin-top:24px;
-  }
-
- .bottom-card{
-
-    padding:14px;
-
-    border-radius:22px;
-
-    min-height:220px;
-}
-
-.bottom-card h3{
-
-    font-size:18px;
-
-    line-height:1;
-
-    margin-bottom:12px;
-
-    letter-spacing:-1px;
-}
-
-.bottom-card li{
-
-    font-size:11px;
-
-    line-height:1.3;
-
-    margin:0;
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:6px;
-}
-
-  .offer-card{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    align-items:flex-start;
-
-    position:relative;
-  }
-
- .offer-card p{
-
-    font-size:11px;
-
-    line-height:1.35;
-}
-
- .offer-btn{
-
-    margin-top:12px;
-
-    padding:12px 10px;
-
-    font-size:12px;
-}
-
-  .offer-icon{
-
-    font-size:52px;
-
-    position:absolute;
-
-    right:12px;
-
-    bottom:10px;
-
-    opacity:0.8;
-  }
-
-/* ===== MOBILE TEXT SCALE DOWN ===== */
-
-@media (max-width:760px){
-
-  .included-left h2{
-    font-size:16px;
-    margin-bottom:12px;
-  }
-
-  .included-item h3{
-    font-size:11px;
-    line-height:1.15;
-  }
-
-  .included-item p{
-    font-size:9.5px;
-    line-height:1.3;
-  }
-
-  .service-gallery{
-    gap:8px;
-  }
-
-  .service-gallery img{
-    height:135px;
-  }
-
-  .bottom-card{
-    min-height:180px;
-    padding:14px 12px;
-  }
-
-  .bottom-card h3{
-    font-size:14px;
-    line-height:1.05;
-  }
-
-  .bottom-card li{
-    font-size:9.5px;
-    line-height:1.3;
-    margin-bottom:6px;
-  }
-
-  .offer-card p{
-    font-size:9.5px;
-    line-height:1.3;
-  }
-
-  .offer-btn{
-    font-size:10px;
-    padding:10px 12px;
-  }
-
-  .offer-icon{
-    font-size:42px;
-  }
-
-  .service-included{
-    grid-template-columns:0.72fr 1.28fr;
-    gap:18px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
   }
   
   }
-
-@media (max-width:760px){
-
-  .service-hero{
-
-    grid-template-columns:0.9fr 1.1fr;
-
-    gap:14px;
-
-    align-items:start;
-
-    padding:16px 0 8px;
-}
-
-  .service-title{
-    font-size:34px;
-    line-height:0.92;
-    letter-spacing:-1px;
-    margin:8px 0 12px;
-  }
-
-  .service-text{
-    font-size:10px;
-    line-height:1.45;
-    max-width:100%;
-  }
-
-  .service-small-text{
-    font-size:9px;
-    line-height:1.5;
-  }
-
-  .service-line{
-    width:70px;
-    margin:18px 0;
-  }
-
-  .service-main-image{
-    height:240px;
-    border-radius:24px;
-  }
-
-  .service-included{
-
-    grid-template-columns:0.95fr 1.05fr;
-
-    gap:10px;
-
-    margin-top:-8px;
-}
-
-  .included-left h2{
-    font-size:22px;
-    margin-bottom:18px;
-    line-height:1;
-  }
-
-  .included-item{
-    gap:10px;
-    margin-bottom:18px;
-  }
-
-  .included-icon{
-    width:40px;
-    height:40px;
-    font-size:16px;
-  }
-
-  .included-item h3{
-    font-size:12px;
-    line-height:1.2;
-    margin-bottom:4px;
-  }
-
-  .included-item p{
-    font-size:10px;
-    line-height:1.45;
-  }
-
-  .service-gallery{
-    gap:10px;
-  }
-
-  .service-gallery img{
-    height:120px;
-    border-radius:16px;
-  }
-
-  .service-bottom-cards{
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:18px;
-  }
-
-  .bottom-card{
-    padding:16px;
-    border-radius:22px;
-    min-height:210px;
-  }
-
-  .bottom-card h3{
-    font-size:16px;
-    line-height:1;
-    margin-bottom:12px;
-  }
-
-  .bottom-card li{
-    font-size:11px;
-    line-height:1.35;
-    margin-bottom:8px;
-  }
-
-  .offer-card p{
-    font-size:11px;
-    line-height:1.4;
-  }
-
-  .offer-btn{
-    font-size:11px;
-    padding:10px 14px;
-  }
-
-/* ===== SERVICE PAGE LIKE MOCKUP ===== */
-
-.service-hero{
-
-  display:grid !important;
-
-  grid-template-columns:0.92fr 1.08fr;
-
-  gap:34px;
-
-  align-items:start;
-
-  padding:30px 0 18px;
-}
-
-.service-left{
-  padding-top:10px;
-}
-
-.service-title{
-
-  font-size:clamp(72px,7vw,118px);
-
-  line-height:0.9;
-
-  letter-spacing:-4px;
-
-  margin:18px 0 20px;
-
-  max-width:520px;
-}
-
-.service-text{
-
-  font-size:28px;
-
-  line-height:1.45;
-
-  max-width:520px;
-}
-
-.service-small-text{
-
-  font-size:24px;
-
-  line-height:1.55;
-
-  max-width:540px;
-}
-
-.service-main-image{
-
-  width:100%;
-
-  height:640px;
-
-  object-fit:cover;
-
-  border-radius:34px;
-}
-
-/* ===== INCLUDED SECTION ===== */
-
-.service-included{
-
-  display:grid;
-
-  grid-template-columns:0.88fr 1.12fr;
-
-  gap:28px;
-
-  align-items:start;
-
-  margin-top:18px;
-}
-
-.included-left{
-  padding-top:8px;
-}
-
-.included-left h2{
-
-  font-size:64px;
-
-  line-height:0.92;
-
-  letter-spacing:-2px;
-
-  margin:0 0 36px;
-}
-
-.included-item{
-
-  gap:18px;
-
-  margin-bottom:34px;
-}
-
-.included-icon{
-
-  width:66px;
-
-  height:66px;
-
-  font-size:28px;
-}
-
-.included-item h3{
-
-  font-size:28px;
-
-  margin:0 0 8px;
-}
-
-.included-item p{
-
-  font-size:20px;
-
-  line-height:1.5;
-}
-
-/* ===== RIGHT GRID ===== */
-
-.service-gallery{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:18px;
-}
-
-.service-gallery img{
-
-  width:100%;
-
-  height:240px;
-
-  object-fit:cover;
-
-  border-radius:24px;
-}
-
-/* ===== BOTTOM CARDS ===== */
-
-.service-bottom-cards{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:22px;
-
-  margin-top:30px;
-}
-
-.bottom-card{
-
-  border-radius:30px;
-
-  padding:34px;
-
-  min-height:280px;
-}
-
-.bottom-card h3{
-
-  font-size:54px;
-
-  line-height:0.92;
-
-  letter-spacing:-2px;
-
-  margin-bottom:26px;
-}
-
-.bottom-card li{
-
-  font-size:22px;
-
-  line-height:1.5;
-
-  margin-bottom:16px;
-}
-
-.offer-card p{
-
-  font-size:24px;
-
-  line-height:1.5;
-
-  max-width:320px;
-}
-
-.offer-btn{
-
-  padding:18px 28px;
-
-  font-size:20px;
-
-  border-radius:18px;
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width:760px){
-
-  .service-hero{
-
-    grid-template-columns:0.92fr 1.08fr;
-
-    gap:14px;
-
-    padding:18px 0 8px;
-  }
-
-  .service-title{
-
-    font-size:34px;
-
-    line-height:0.92;
-
-    letter-spacing:-1px;
-
-    margin:8px 0 12px;
-  }
-
-  .service-text{
-
-    font-size:10px;
-
-    line-height:1.45;
-  }
-
-  .service-small-text{
-
-    font-size:9px;
-
-    line-height:1.5;
-  }
-
-  .service-main-image{
-
-    height:240px;
-
-    border-radius:22px;
-  }
-
-  .service-included{
-
-    grid-template-columns:0.9fr 1.1fr;
-
-    gap:10px;
-
-    margin-top:-6px;
-  }
-
-  .included-left h2{
-
-    font-size:22px;
-
-    margin-bottom:18px;
-  }
-
-  .included-item{
-
-    margin-bottom:18px;
-  }
-
-  .included-icon{
-
-    width:40px;
-
-    height:40px;
-
-    font-size:16px;
-  }
-
-  .included-item h3{
-
-    font-size:12px;
-  }
-
-  .included-item p{
-
-    font-size:10px;
-  }
-
-  .service-gallery img{
-
-    height:120px;
-
-    border-radius:16px;
-  }
-
-  .bottom-card{
-
-    min-height:210px;
-
-    padding:16px;
-  }
-
-  .bottom-card h3{
-
-    font-size:18px;
-  }
-
-  .bottom-card li{
-
-    font-size:11px;
-  }
-
-  .offer-card p{
-
-    font-size:11px;
-  }
-
-}
- 
+    
 </style>
 </head>
 <body>
@@ -3759,160 +2485,39 @@ onclick="showPage('hreinsun-page')">
 <section class="section-gray" style="padding:40px 0 80px;">
 
 <div class="container">
+  
+  <section class="service-hero">
 
-<section class="service-hero">
+  <div class="service-left">
 
-<div class="service-left">
-
-<a href="#" class="back-btn"
+    <a href="#" class="back-btn"
 onclick="showPage('services-page'); return false;">
 ← Til baka
 </a>
 
-<h1 class="service-title">
-Almenn<br>
-garðþjónusta
-</h1>
+    <h1 class="service-title">
+      Almenn<br>
+      garðþjónusta
+    </h1>
 
-<p class="service-text">
-Við sjáum um garðinn svo þú getir notið hans —
-við sláum, snyrtum og hreinsum allt af fagmennsku og metnaði.
-</p>
+    <p class="service-text">
+      Við sjáum um garðinn svo þú getir notið hans —
+      við sláum, snyrtum og hreinsum allt af fagmennsku og metnaði.
+    </p>
 
-<div class="service-line"></div>
+  </div>
 
-<p class="service-small-text">
-Við bjóðum upp á reglubundna umhirðu sem heldur
-garðinum þínum snyrtilegum og fallegum yfir allt sumarið.
-</p>
+  <div class="service-right">
 
-</div>
+    <img
+  class="service-main-image"
+  src="IMG_2472.jpg"
+  alt="Sláttuvélar"
+>
 
-<div class="service-right">
-
-<img
-class="service-main-image"
-src="IMG_2472.jpg"
-alt="Garðsláttur">
-
-</div>
+  </div>
 
 </section>
-
-
-<!-- 4 MYNDA GRID -->
-
-<div class="service-included">
-
-  <!-- LEFT SIDE -->
-
-  <div class="included-left">
-
-    <h2>Þetta er innifalið</h2>
-
-    <div class="included-item">
-
-      <div class="included-icon">
-        ✂️
-      </div>
-
-      <div>
-        <h3>Garðsláttur</h3>
-        <p>
-          Við sláum grasflötina reglulega
-          og jafnt fyrir fallegt útlit.
-        </p>
-      </div>
-
-    </div>
-
-    <div class="included-item">
-
-      <div class="included-icon">
-        ✂️
-      </div>
-
-      <div>
-        <h3>Snyrting á kantlögum</h3>
-        <p>
-          Við snyrtum brúnir og beð
-          til að halda öllu hreinu.
-        </p>
-      </div>
-
-    </div>
-
-    <div class="included-item">
-
-      <div class="included-icon">
-        🍃
-      </div>
-
-      <div>
-        <h3>Hreinsun</h3>
-        <p>
-          Við hreinsum lauf og annað
-          sem safnast upp.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- RIGHT SIDE -->
-
-  <div class="service-gallery">
-
-    <img src="mynd1.jpg" alt="">
-    <img src="mynd2.jpg" alt="">
-    <img src="mynd3.jpg" alt="">
-    <img src="mynd4.jpg" alt="">
-
-  </div>
-
-</div>
-
-<!-- BOTTOM INFO CARDS -->
-
-<div class="service-bottom-cards">
-
-  <div class="bottom-card">
-
-    <h3>Af hverju að velja okkur?</h3>
-
-    <ul>
-      <li>✔ Áreiðanleg og stundvís þjónusta</li>
-      <li>✔ Vönduð vinnubrögð og snyrtimennska</li>
-      <li>✔ Persónuleg þjónusta og gott verð</li>
-    </ul>
-
-  </div>
-
-  <div class="bottom-card offer-card">
-
-    <div>
-
-      <h3>Viltu fá tilboð?</h3>
-
-      <p>
-        Hafðu samband og við gerum þér
-        tilboð að kostnaðarlausu.
-      </p>
-
-      <a href="#tilbod"
-onclick="showPage('home-page'); setTimeout(()=>{document.getElementById('tilbod').scrollIntoView({behavior:'smooth'});},200);"
-class="offer-btn">
-
-FÁ TILBOÐ
-
-</a>
-
-    </div>
-
-  </div>
-
-</div>
 
 </div>
 
