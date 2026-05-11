@@ -1829,45 +1829,39 @@ overflow: hidden;
 
 @media (max-width:760px){
 
+/* ===== TOP SECTION ===== */
+
 .service-hero{
 
     display:grid;
 
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 1fr 1fr;
 
     gap:18px;
 
     align-items:start;
 
-    padding:0;
-}
-
-.service-left{
-    min-width:0;
-}
-
-.service-right{
-    min-width:0;
+    padding:0 0 30px;
 }
 
 .service-title{
 
-    font-size:42px;
+    font-size:34px;
 
-    line-height:0.92;
+    line-height:0.9;
 
     letter-spacing:-2px;
 
-    margin:10px 0 14px;
+    margin:10px 0 16px;
 
     word-break:break-word;
 }
 
 .service-text{
 
-    font-size:16px;
+    font-size:15px;
 
-    line-height:1.65;
+    line-height:1.7;
 
     margin:0;
 }
@@ -1876,99 +1870,104 @@ overflow: hidden;
 
     margin-top:20px;
 
-    padding-top:18px;
+    padding-top:16px;
 
     border-top:3px solid var(--green);
 
-    font-size:15px;
+    font-size:14px;
 
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .service-main-image{
 
     width:100%;
 
-    height:280px;
+    height:340px;
 
     object-fit:cover;
 
-    border-radius:26px;
+    border-radius:28px;
 }
 
-.back-btn{
-
-    font-size:16px;
-}
-
-}
-
-@media (max-width:760px){
+/* ===== INCLUDED SECTION ===== */
 
 .section-card{
 
-    padding:30px 22px;
+    padding:28px 18px;
 
     border-radius:34px;
 }
 
+.included-section{
+
+    display:grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap:18px;
+
+    align-items:start;
+
+    padding:0;
+}
+
 .included-title{
 
-    font-size:52px;
+    font-size:44px;
 
     line-height:0.9;
 
-    margin-bottom:30px;
+    margin:0 0 24px;
 }
 
+.included-list{
+
+    gap:22px;
 }
-  
-  .page-view {
-  display: none;
-  width: 100%;
-  min-height: 100vh;
+
+.included-item{
+
+    gap:14px;
 }
-  
-/* ===== INCLUDED SECTION ===== */
 
-.included-title{
+.included-icon{
 
-  font-size: clamp(54px, 6vw, 92px);
+    width:42px;
+    height:42px;
 
-  line-height:0.92;
+    font-size:16px;
+}
 
-  letter-spacing:-3px;
+.included-item h3{
 
-  margin:0;
+    font-size:15px;
 
-  font-family: Georgia, serif;
+    margin-bottom:4px;
+}
 
-  color:#1d3416;
+.included-item p{
+
+    font-size:13px;
+
+    line-height:1.45;
 }
 
 .included-images{
 
-  display:grid;
+    grid-template-columns:1fr 1fr;
 
-  grid-template-columns:1fr 1fr;
-
-  gap:22px;
+    gap:12px;
 }
 
 .included-images img{
 
-  width:100%;
+    height:145px;
 
-  height:260px;
+    border-radius:20px;
+}
 
-  object-fit:cover;
-
-  border-radius:28px;
-
-  box-shadow:
-    0 10px 28px rgba(0,0,0,0.06);
-    
-    }
+}
 
 /* ===== MOBILE ===== */
 
