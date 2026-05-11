@@ -2106,8 +2106,7 @@ margin: 0 auto;
 
   .areas-wrap,
   .contact-grid,
-  .why-simple-header,
-  .service-hero {
+  .why-simple-header {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -3006,6 +3005,323 @@ body {
   .offer-btn{
     font-size:11px;
     padding:10px 14px;
+  }
+
+/* ===== SERVICE PAGE LIKE MOCKUP ===== */
+
+.service-hero{
+
+  display:grid !important;
+
+  grid-template-columns:0.92fr 1.08fr;
+
+  gap:34px;
+
+  align-items:start;
+
+  padding:30px 0 18px;
+}
+
+.service-left{
+  padding-top:10px;
+}
+
+.service-title{
+
+  font-size:clamp(72px,7vw,118px);
+
+  line-height:0.9;
+
+  letter-spacing:-4px;
+
+  margin:18px 0 20px;
+
+  max-width:520px;
+}
+
+.service-text{
+
+  font-size:28px;
+
+  line-height:1.45;
+
+  max-width:520px;
+}
+
+.service-small-text{
+
+  font-size:24px;
+
+  line-height:1.55;
+
+  max-width:540px;
+}
+
+.service-main-image{
+
+  width:100%;
+
+  height:640px;
+
+  object-fit:cover;
+
+  border-radius:34px;
+}
+
+/* ===== INCLUDED SECTION ===== */
+
+.service-included{
+
+  display:grid;
+
+  grid-template-columns:0.88fr 1.12fr;
+
+  gap:28px;
+
+  align-items:start;
+
+  margin-top:18px;
+}
+
+.included-left{
+  padding-top:8px;
+}
+
+.included-left h2{
+
+  font-size:64px;
+
+  line-height:0.92;
+
+  letter-spacing:-2px;
+
+  margin:0 0 36px;
+}
+
+.included-item{
+
+  gap:18px;
+
+  margin-bottom:34px;
+}
+
+.included-icon{
+
+  width:66px;
+
+  height:66px;
+
+  font-size:28px;
+}
+
+.included-item h3{
+
+  font-size:28px;
+
+  margin:0 0 8px;
+}
+
+.included-item p{
+
+  font-size:20px;
+
+  line-height:1.5;
+}
+
+/* ===== RIGHT GRID ===== */
+
+.service-gallery{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:18px;
+}
+
+.service-gallery img{
+
+  width:100%;
+
+  height:240px;
+
+  object-fit:cover;
+
+  border-radius:24px;
+}
+
+/* ===== BOTTOM CARDS ===== */
+
+.service-bottom-cards{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:22px;
+
+  margin-top:30px;
+}
+
+.bottom-card{
+
+  border-radius:30px;
+
+  padding:34px;
+
+  min-height:280px;
+}
+
+.bottom-card h3{
+
+  font-size:54px;
+
+  line-height:0.92;
+
+  letter-spacing:-2px;
+
+  margin-bottom:26px;
+}
+
+.bottom-card li{
+
+  font-size:22px;
+
+  line-height:1.5;
+
+  margin-bottom:16px;
+}
+
+.offer-card p{
+
+  font-size:24px;
+
+  line-height:1.5;
+
+  max-width:320px;
+}
+
+.offer-btn{
+
+  padding:18px 28px;
+
+  font-size:20px;
+
+  border-radius:18px;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:760px){
+
+  .service-hero{
+
+    grid-template-columns:0.92fr 1.08fr;
+
+    gap:14px;
+
+    padding:18px 0 8px;
+  }
+
+  .service-title{
+
+    font-size:34px;
+
+    line-height:0.92;
+
+    letter-spacing:-1px;
+
+    margin:8px 0 12px;
+  }
+
+  .service-text{
+
+    font-size:10px;
+
+    line-height:1.45;
+  }
+
+  .service-small-text{
+
+    font-size:9px;
+
+    line-height:1.5;
+  }
+
+  .service-main-image{
+
+    height:240px;
+
+    border-radius:22px;
+  }
+
+  .service-included{
+
+    grid-template-columns:0.9fr 1.1fr;
+
+    gap:10px;
+
+    margin-top:-6px;
+  }
+
+  .included-left h2{
+
+    font-size:22px;
+
+    margin-bottom:18px;
+  }
+
+  .included-item{
+
+    margin-bottom:18px;
+  }
+
+  .included-icon{
+
+    width:40px;
+
+    height:40px;
+
+    font-size:16px;
+  }
+
+  .included-item h3{
+
+    font-size:12px;
+  }
+
+  .included-item p{
+
+    font-size:10px;
+  }
+
+  .service-gallery img{
+
+    height:120px;
+
+    border-radius:16px;
+  }
+
+  .bottom-card{
+
+    min-height:210px;
+
+    padding:16px;
+  }
+
+  .bottom-card h3{
+
+    font-size:18px;
+  }
+
+  .bottom-card li{
+
+    font-size:11px;
+  }
+
+  .offer-card p{
+
+    font-size:11px;
   }
 
 }
