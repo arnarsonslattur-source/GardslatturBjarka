@@ -263,7 +263,7 @@ transition: 0.25s ease;
 
     .hero-headline {
       font-size: clamp(50px, 6vw, 94px);
-      line-height: 0.94;
+      line-height: 0.98;
       font-weight: 400;
       letter-spacing: -2.5px;
       margin: 0;
@@ -335,7 +335,7 @@ transition: 0.25s ease;
       display: grid;
       grid-template-columns: 120px 1fr;
       align-items: center;
-      min-height: 170px;
+      min-height: 130px;
       font-size: clamp(24px, 2.2vw, 31px);
       letter-spacing: 0.6px;
       text-transform: uppercase;
@@ -1831,10 +1831,13 @@ overflow: hidden;
 
 .service-hero{
 
-    display:flex;
-    flex-direction:column;
+    display:grid;
 
-    gap:26px;
+    grid-template-columns: 1fr 1fr;
+
+    gap:22px;
+
+    align-items:start;
 
     padding:0;
 }
@@ -1849,29 +1852,29 @@ overflow: hidden;
 
 .service-title{
 
-    font-size:46px;
+    font-size:58px;
 
-    line-height:0.92;
+    line-height:0.9;
 
-    margin:10px 0 18px;
+    margin:14px 0 18px;
 }
 
 .service-text{
 
-    font-size:22px;
+    font-size:18px;
 
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .service-extra-text{
 
     margin-top:24px;
 
-    padding-top:22px;
+    padding-top:20px;
 
-    border-top:4px solid var(--green);
+    border-top:3px solid var(--green);
 
-    font-size:18px;
+    font-size:16px;
 
     line-height:1.7;
 }
@@ -1880,11 +1883,11 @@ overflow: hidden;
 
     width:100%;
 
-    height:320px;
+    height:420px;
 
     object-fit:cover;
 
-    border-radius:34px;
+    border-radius:30px;
 }
 
 }
@@ -2146,7 +2149,7 @@ body{
 .section-card{
   background:white;
 
-  border-radius:36px;
+  border-radius:28px;
 
   padding:48px;
 
@@ -2158,6 +2161,10 @@ section {
   overflow: hidden;
 }
 
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 0 4px;
 }
     
 </style>
