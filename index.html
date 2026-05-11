@@ -2103,6 +2103,86 @@ overflow: hidden;
   color:#333;
 }
 
+/* ===== INCLUDED SECTION ===== */
+
+.included-section{
+
+  display:grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap:40px;
+
+  align-items:start;
+
+  padding:80px 56px;
+
+  background:#f3f3f3;
+}
+
+.included-title{
+
+  font-size: clamp(54px, 6vw, 92px);
+
+  line-height:0.92;
+
+  letter-spacing:-3px;
+
+  margin:0;
+
+  font-family: Georgia, serif;
+
+  color:#1d3416;
+}
+
+.included-images{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:22px;
+}
+
+.included-images img{
+
+  width:100%;
+
+  height:260px;
+
+  object-fit:cover;
+
+  border-radius:28px;
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.06);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:760px){
+
+  .included-section{
+
+    grid-template-columns:1fr;
+
+    padding:50px 22px;
+
+    gap:28px;
+  }
+
+  .included-title{
+
+    font-size:44px;
+  }
+
+  .included-images img{
+
+    height:170px;
+
+    border-radius:22px;
+  }
+
 }
     
 </style>
@@ -2575,6 +2655,8 @@ onclick="showPage('services-page'); return false;">
 >
 
   </div>
+  
+  </div>
 
 </section>
 
@@ -2583,6 +2665,31 @@ onclick="showPage('services-page'); return false;">
 </section>
 
 </div>
+
+</section>
+
+</div>
+
+<section class="included-section">
+
+  <div class="included-left">
+
+    <h2 class="included-title">
+      Þetta er innifalið
+    </h2>
+
+  </div>
+
+  <div class="included-images">
+
+    <img src="IMG_2472.jpg" alt="">
+    <img src="IMG_2399.jpg" alt="">
+    <img src="IMG_2379.jpg" alt="">
+    <img src="slattuvelar.jpg" alt="">
+
+  </div>
+
+</section>
 
 <div id="smavinna-page" class="page-view">
 
