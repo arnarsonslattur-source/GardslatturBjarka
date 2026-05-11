@@ -2183,6 +2183,131 @@ overflow: hidden;
     border-radius:22px;
   }
 
+/* ===== INCLUDED SECTION ===== */
+
+.included-section{
+
+display:grid;
+
+grid-template-columns: 1fr 2fr;
+
+gap:40px;
+
+padding:80px 0;
+}
+
+.included-title{
+
+font-size:52px;
+
+line-height:0.95;
+
+margin:0 0 40px;
+
+font-family:Georgia, serif;
+
+color:#1d3416;
+}
+
+.included-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:24px;
+}
+
+.included-item{
+
+display:flex;
+
+gap:18px;
+
+align-items:flex-start;
+}
+
+.included-icon{
+
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+background:var(--green);
+
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-weight:700;
+
+flex-shrink:0;
+}
+
+.included-item h3{
+
+margin:0 0 6px;
+
+font-size:22px;
+}
+
+.included-item p{
+
+margin:0;
+
+font-size:16px;
+
+line-height:1.5;
+
+color:#444;
+}
+
+.included-images{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:22px;
+}
+
+.included-images img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+border-radius:26px;
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+.included-section{
+
+grid-template-columns:1fr;
+
+gap:30px;
+
+padding:50px 0;
+}
+
+.included-title{
+
+font-size:42px;
+}
+
+.included-images img{
+
+height:170px;
+}
+
 }
     
 </style>
@@ -2672,22 +2797,62 @@ onclick="showPage('services-page'); return false;">
 
 <section class="included-section">
 
-  <div class="included-left">
+<div class="included-left">
 
-    <h2 class="included-title">
-      Þetta er innifalið
-    </h2>
+<h2 class="included-title">
+Þetta er innifalið
+</h2>
 
-  </div>
+<div class="included-list">
 
-  <div class="included-images">
+<div class="included-item">
+<div class="included-icon">✓</div>
 
-    <img src="IMG_2472.jpg" alt="">
-    <img src="IMG_2399.jpg" alt="">
-    <img src="IMG_2379.jpg" alt="">
-    <img src="slattuvelar.jpg" alt="">
+<div>
+<h3>Garðsláttur</h3>
+<p>Reglulegur og snyrtilegur sláttur.</p>
+</div>
+</div>
 
-  </div>
+<div class="included-item">
+<div class="included-icon">✓</div>
+
+<div>
+<h3>Hreinsun</h3>
+<p>Við tökum gras og garðaúrgang.</p>
+</div>
+</div>
+
+<div class="included-item">
+<div class="included-icon">✓</div>
+
+<div>
+<h3>Kantsnyrting</h3>
+<p>Snyrtum kanta og gönguleiðir.</p>
+</div>
+</div>
+
+<div class="included-item">
+<div class="included-icon">✓</div>
+
+<div>
+<h3>Fagleg þjónusta</h3>
+<p>Við leggjum metnað í hvert verkefni.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="included-images">
+
+<img src="IMG_2472.jpg" alt="">
+<img src="IMG_2399.jpg" alt="">
+<img src="IMG_2379.jpg" alt="">
+<img src="slattuvelar.jpg" alt="">
+
+</div>
 
 </section>
 
