@@ -19,7 +19,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <style>
     :root {
-  --bg: #ececec;
+  --bg: #f5f5f1;
   --text: #111111;
   --line: #6d6d6d;
   --shadow: 0 8px 24px rgba(0,0,0,0.06);
@@ -191,9 +191,9 @@ transition: 0.25s ease;
     .section-gray { background: var(--bg); }
 
     .container {
-      width: min(1280px, calc(100% - 56px));
-      margin: 0 auto;
-    }
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
 
    .page-view {
   display: none;
@@ -1785,18 +1785,9 @@ overflow: hidden;
 }
 
 .service-title{
-
-  font-size: clamp(64px, 8vw, 120px);
-
-  line-height: 0.92;
-
-  letter-spacing:-4px;
-
-  margin:30px 0 24px;
-
-  font-family: Georgia, serif;
-
-  color:#1d3416;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -2px;
 }
 
 .service-text{
@@ -1814,7 +1805,7 @@ overflow: hidden;
 
   width:100%;
 
-  height:520px;
+  height:460px;
 
   object-fit:cover;
 
@@ -1858,7 +1849,7 @@ overflow: hidden;
 
 .service-title{
 
-    font-size:58px;
+    font-size:46px;
 
     line-height:0.92;
 
@@ -1889,7 +1880,7 @@ overflow: hidden;
 
     width:100%;
 
-    height:420px;
+    height:320px;
 
     object-fit:cover;
 
@@ -1905,21 +1896,6 @@ overflow: hidden;
 }
   
 /* ===== INCLUDED SECTION ===== */
-
-.included-section{
-
-  display:grid;
-
-  grid-template-columns: 1fr 2fr;
-
-  gap:40px;
-
-  align-items:start;
-
-  padding:80px 56px;
-
-  background:#f3f3f3;
-}
 
 .included-title{
 
@@ -2019,7 +1995,7 @@ display:flex;
 
 flex-direction:column;
 
-gap:24px;
+gap:34px;
 }
 
 .included-item{
@@ -2033,8 +2009,10 @@ align-items:flex-start;
 
 .included-icon{
 
-width:42px;
-height:42px;
+width:58px;
+height:58px;
+
+font-size:22px;
 
 border-radius:50%;
 
@@ -2141,6 +2119,43 @@ html, body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+} /* END MOBILE MEDIA QUERY */
+
+.included-images img{
+  aspect-ratio: 1 / 1;
+
+  width:100%;
+
+  object-fit:cover;
+
+  border-radius:28px;
+}
+
+body{
+  color:#1d1d1d;
+}
+
+.included-item p,
+.service-text,
+.service-extra-text{
+  color:#4a4a4a;
+}
+
+.section-card{
+  background:white;
+
+  border-radius:36px;
+
+  padding:48px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.04);
+}
+
+section {
+  overflow: hidden;
 }
 
 }
@@ -2621,6 +2636,8 @@ onclick="showPage('services-page'); return false;">
 </section>
 
 <div class="container">
+
+<div class="section-card">
 
 <section class="included-section">
 
