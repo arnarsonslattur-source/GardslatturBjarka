@@ -2590,49 +2590,75 @@ onclick="showPage('services-page'); return false;">
 <div class="section-card">
 
 <section class="included-section">
-  <div class="included-left">
-    <h2 class="included-title">Þetta er<br>innifalið</h2>
+  <div class="included-wrap">
+    <h2 class="included-title">Þetta er innifalið</h2>
 
-    <div class="included-list">
-      <div class="included-item">
-        <div class="included-icon">
-          <!-- mower -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h13l3-4h2v4"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M6 13V7h6l2 4"/></svg>
-        </div>
-        <div><h3>Garðsláttur</h3><p>Reglulegur og snyrtilegur sláttur.</p></div>
-      </div>
+    <div class="included-grid">
+      <!-- Vinstri: táknlistinn -->
+      <ul class="feature-list">
+        <li>
+          <span class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h13l2-4h3"/><circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M8 13V7h6l2 4"/></svg>
+          </span>
+          <div>
+            <h3>Garðsláttur</h3>
+            <p>Við sláum grasflötina reglulega og jafnt fyrir fallegt útlit.</p>
+          </div>
+        </li>
+        <li>
+          <span class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          </span>
+          <div>
+            <h3>Snyrting á kantlægjum</h3>
+            <p>Við snyrtum brúnir og beð til að halda öllu hreinu og snyrtilegu.</p>
+          </div>
+        </li>
+        <li>
+          <span class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-5 7-11 7-11s7 6 7 11a7 7 0 0 1-7 7z"/><path d="M11 20v-7"/></svg>
+          </span>
+          <div>
+            <h3>Hreinsun</h3>
+            <p>Við hreinsum lauf, greinar og annað sem safnast upp.</p>
+          </div>
+        </li>
+        <li>
+          <span class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+          </span>
+          <div>
+            <h3>Förgun á úrgangi</h3>
+            <p>Við sjáum um að fjarlægja allt rusl og lífrænan úrgang af lóðinni.</p>
+          </div>
+        </li>
+      </ul>
 
-      <div class="included-item">
-        <div class="included-icon">
-          <!-- scissors -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-        </div>
-        <div><h3>Kantsnyrting</h3><p>Snyrtum kanta og gönguleiðir.</p></div>
-      </div>
-
-      <div class="included-item">
-        <div class="included-icon">
-          <!-- leaf -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16Z"/><path d="M2 22c4-4 6-6 9-9"/></svg>
-        </div>
-        <div><h3>Hreinsun</h3><p>Við tökum gras og garðaúrgang.</p></div>
-      </div>
-
-      <div class="included-item">
-        <div class="included-icon">
-          <!-- trash -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-        </div>
-        <div><h3>Förgun á úrgangi</h3><p>Við sjáum um að fjarlægja allt rusl.</p></div>
+      <!-- Hægri: 4-mynda grid -->
+      <div class="included-images">
+        <img src="IMG_2472.jpg" alt="Sleginn garður">
+        <img src="IMG_2399.jpg" alt="Hreinsun garðs">
+        <img src="IMG_2379.jpg" alt="Snyrting kanta">
+        <img src="slattuvelar.jpg" alt="Sláttuvélar">
       </div>
     </div>
-  </div>
 
-  <div class="included-images">
-    <img src="IMG_2472.jpg" alt="">
-    <img src="IMG_2399.jpg" alt="">
-    <img src="IMG_2379.jpg" alt="">
-    <img src="slattuvelar.jpg" alt="">
+    <!-- Tvö kort fyrir neðan -->
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Af hverju að velja okkur?</h3>
+        <ul class="check-list">
+          <li><span class="check">✓</span> Áreiðanleg og punktleg þjónusta</li>
+          <li><span class="check">✓</span> Vönduð vinnubrögð og snyrtimennska</li>
+          <li><span class="check">✓</span> Persónuleg þjónusta og gott verð</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Viltu fá tilboð?</h3>
+        <p>Hafðu samband og við gerum þér tilboð að kostnaðarlausu.</p>
+        <a href="#hafa-samband" class="cta-btn">FÁ TILBOÐ</a>
+      </div>
+    </div>
   </div>
 </section>
 
