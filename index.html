@@ -2148,6 +2148,50 @@ section {
   .info-card h3{font-size:20px}
 }
 
+/* Halda desktop-layout líka á síma (textalisti vinstra, 4 myndir hægra) */
+@media (max-width: 760px){
+  .included-section{ padding: 32px 12px !important; }
+  .included-title{ font-size: 26px !important; line-height: 1.1 !important; }
+
+  .included-grid{
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    align-items: start !important;
+  }
+
+  .feature-list{ gap: 14px !important; }
+  .feature-list li{ gap: 10px !important; }
+  .feature-list .feat-icon{
+    width: 36px !important; height: 36px !important; flex: 0 0 36px !important;
+  }
+  .feature-list .feat-icon svg{ width: 18px; height: 18px; }
+  .feature-list h3{ font-size: 13px !important; margin: 0 0 2px !important; }
+  .feature-list p{ font-size: 11.5px !important; line-height: 1.35 !important; }
+
+  .included-images{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+  .included-images img{
+    width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px;
+  }
+
+  /* "Af hverju" og "Viltu fá tilboð" hlið við hlið */
+  .info-cards{
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 28px !important;
+  }
+  .info-card{ padding: 14px !important; }
+  .info-card h3{ font-size: 15px !important; margin-bottom: 8px !important; }
+  .info-card p, .info-card li{ font-size: 12px !important; line-height: 1.35 !important; }
+  .info-card .cta-btn{
+    padding: 10px 14px !important; font-size: 12px !important; display:inline-block;
+  }
+  .check-list{ padding-left: 0 !important; }
+}
+
     
 </style>
 </head>
