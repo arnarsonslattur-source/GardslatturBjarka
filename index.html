@@ -2291,6 +2291,23 @@ section {
     padding: 8px 12px !important; font-size: 10.5px !important;
     border-radius: 6px !important; background:#2f5d2a !important; color:#fff !important;
   }
+  
+  .img-placeholder{
+  width:100%;
+  aspect-ratio:1/1;
+  background:#dcdcd2;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#8a8a7a;
+  font-size:12px;
+  font-family:sans-serif;
+}
+@media (max-width:760px){
+  .img-placeholder{ border-radius:10px; font-size:10px; }
+}
+
 }
     
 </style>
@@ -2796,13 +2813,13 @@ onclick="showPage('services-page'); return false;">
         </li>
       </ul>
 
-      <div class="included-images">
-        <img src="mynd1.jpg" alt="Sláttur">
-        <img src="mynd2.jpg" alt="Kantar">
-        <img src="mynd3.jpg" alt="Hreinsun">
-        <img src="mynd4.jpg" alt="Förgun">
+           <div class="included-images">
+        <div class="img-placeholder">Mynd 1</div>
+        <div class="img-placeholder">Mynd 2</div>
+        <div class="img-placeholder">Mynd 3</div>
+        <div class="img-placeholder">Mynd 4</div>
       </div>
-    </div>
+
 
     <div class="info-cards">
       <div class="info-card">
