@@ -2381,10 +2381,31 @@ section {
 }
 
 .check-list li{
+  position:relative;
+
+  padding-left:26px;
 
   font-size:13px;
 
-  line-height:1.4;
+  line-height:1.45;
+
+  color:#222;
+}
+
+.check-list li::before{
+
+  content:"✓";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  color:var(--green);
+
+  font-weight:700;
+
+  font-size:14px;
 }
 
 .cta-btn{
@@ -2502,7 +2523,7 @@ section {
   .info-card p,
   .check-list li{
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:1.45;
   }
