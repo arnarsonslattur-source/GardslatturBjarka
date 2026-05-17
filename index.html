@@ -3300,9 +3300,18 @@ onclick="showPage('services-page'); return false;">
 
    <div class="cta-row">
 
-  <a href="#" class="cta-btn">
-    FÁ TILBOÐ
-  </a>
+  <a href="#"
+   class="cta-btn"
+   onclick="
+     showPage('home-page');
+     setTimeout(() => {
+       document.getElementById('tilbod')
+         .scrollIntoView({ behavior: 'smooth' });
+     }, 100);
+     return false;
+   ">
+   FÁ TILBOÐ
+</a>
 
   <img src="leaf2.png" class="cta-leaf" alt="lauf">
 
