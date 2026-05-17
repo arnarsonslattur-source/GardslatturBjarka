@@ -2653,6 +2653,53 @@ section {
   margin-top:2px;
 }
 
+.cta-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  margin-top:14px;
+}
+
+.cta-leaf{
+
+  width:54px;
+
+  height:54px;
+
+  object-fit:contain;
+
+  transform:rotate(-8deg);
+
+  filter:
+    drop-shadow(0 6px 10px rgba(0,0,0,0.12));
+
+  transition:0.25s ease;
+}
+
+.cta-leaf:hover{
+
+  transform:
+    rotate(-2deg)
+    scale(1.06);
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+  .cta-row{
+    gap:10px;
+  }
+
+  .cta-leaf{
+
+    width:42px;
+    height:42px;
+  }
 }
     
 </style>
@@ -3251,9 +3298,15 @@ onclick="showPage('services-page'); return false;">
       Hafðu samband og við gerum þér tilboð að kostnaðarlausu.
     </p>
 
-    <a href="#" class="cta-btn">
-      FÁ TILBOÐ
-    </a>
+   <div class="cta-row">
+
+  <a href="#" class="cta-btn">
+    FÁ TILBOÐ
+  </a>
+
+  <img src="leaf.png" class="cta-leaf" alt="lauf">
+
+</div>
 
   </div>
 
