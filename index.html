@@ -1823,30 +1823,6 @@ height:320px;
 border-radius:28px;
 }
 
-/* INCLUDED */
-
-.included-section{
-
-display:grid;
-
-grid-template-columns:0.9fr 1.1fr;
-
-gap:18px;
-
-align-items:start;
-
-padding:0;
-}
-
-.included-title{
-
-font-size:44px;
-
-line-height:0.9;
-
-margin:0 0 24px;
-}
-
 .included-list{
 
 gap:22px;
@@ -1879,15 +1855,6 @@ font-size:13px;
 line-height:1.45;
 }
 
-.included-images{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:12px;
-}
-
 .included-images img{
 
 height:145px;
@@ -1901,24 +1868,6 @@ overflow-x:hidden;
 
 }
 
-/* ===== MOBILE ===== */
-
-@media (max-width:760px){
-
-  .included-section{
-
-    grid-template-columns:1fr;
-
-    padding:50px 22px;
-
-    gap:28px;
-  }
-
-  .included-title{
-
-    font-size:44px;
-  }
-
   .included-images img{
 
     height:170px;
@@ -1927,32 +1876,6 @@ overflow-x:hidden;
   }
   
   }
-
-.included-section{
-
-display:grid;
-
-grid-template-columns: 0.9fr 1.1fr;
-
-align-items:start;
-
-gap:60px;
-
-padding:80px 0;
-}
-
-.included-title{
-
-font-size:52px;
-
-line-height:0.95;
-
-margin:0 0 40px;
-
-font-family:Georgia, serif;
-
-color:#1d3416;
-}
 
 .included-list{
 
@@ -2012,26 +1935,6 @@ line-height:1.5;
 color:#444;
 }
 
-.included-images{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:22px;
-}
-
-.included-images img{
-
-width:100%;
-
-height:240px;
-
-object-fit:cover;
-
-border-radius:26px;
-}
-
 .included-images img{
   aspect-ratio: 1 / 1;
 
@@ -2081,136 +1984,44 @@ section {
   display:flex; align-items:center; justify-content:center;
 }
 .included-icon svg{ width:22px; height:22px; }
-.included-title{
-  font-family:Georgia, serif;
-  color:#1d3416;
-}
 
-/* Mobile: keep images in 2x2 grid (don't hide them) */
-@media (max-width:760px){
-  .included-section{
-    grid-template-columns:1fr;
-    padding:30px 18px 50px;
-    gap:24px;
-  }
-  .included-title{ font-size:38px; }
-  .included-images{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-  .included-images img{
-    height:auto;
-    aspect-ratio:1/1;
-    border-radius:18px;
-  }
+ 
   .included-icon{ width:44px; height:44px; }
   .included-icon svg{ width:20px; height:20px; }
   .included-item h3{ font-size:17px; }
   .included-item p{ font-size:14px; }
-}
 
-.included-section{background:#fff;padding:80px 24px}
 .included-wrap{max-width:1200px;margin:0 auto}
-.included-title{font-family:Georgia,serif;color:#2f5d2a;font-size:42px;margin:0 0 40px;font-weight:700}
-.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.feature-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:24px}
-.feature-list li{display:flex;gap:16px;align-items:flex-start}
-.feat-icon{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:#2f5d2a;display:flex;align-items:center;justify-content:center}
-.feat-icon svg{width:22px;height:22px}
-.feature-list h3{margin:0 0 4px;font-size:18px;color:#111}
-.feature-list p{margin:0;color:#444;font-size:15px;line-height:1.45}
 .included-images{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .included-images img{width:100%;height:200px;object-fit:cover;border-radius:14px;display:block}
 
-.info-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:60px}
-.info-card{background:#f5f5f0;border-radius:14px;padding:28px}
-.info-card h3{font-family:Georgia,serif;color:#1f3d1c;font-size:22px;margin:0 0 16px}
 .check-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
 .check-list li{display:flex;align-items:center;gap:10px;color:#222;font-size:15px}
-.check-list .check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#2f5d2a;color:#fff;font-size:13px;flex:0 0 22px}
-.info-card p{color:#444;margin:0 0 16px;font-size:15px}
 .cta-btn{display:inline-block;background:#2f5d2a;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700;letter-spacing:.5px;font-size:14px}
 .cta-btn:hover{background:#264b22}
 
 @media (max-width:760px){
-  .included-section{padding:48px 18px}
-  .included-title{font-size:34px;margin-bottom:28px}
-  .included-grid{grid-template-columns:1fr;gap:28px}
-  .feature-list{gap:20px}
-  .feat-icon{flex:0 0 40px;width:40px;height:40px}
-  .feat-icon svg{width:20px;height:20px}
-  .feature-list h3{font-size:17px}
-  .feature-list p{font-size:14px}
   .included-images{gap:10px}
   .included-images img{height:140px;border-radius:12px}
-  .info-cards{grid-template-columns:1fr;gap:16px;margin-top:40px}
-  .info-card{padding:22px}
-  .info-card h3{font-size:20px}
-}
+  
 
-/* Halda desktop-layout líka á síma (textalisti vinstra, 4 myndir hægra) */
-@media (max-width: 760px){
-  .included-section{ padding: 32px 12px !important; }
-  .included-title{ font-size: 26px !important; line-height: 1.1 !important; }
-
-  .included-grid{
-    grid-template-columns: 1fr 1fr !important;
-    gap: 14px !important;
-    align-items: start !important;
-  }
-
-  .feature-list{ gap: 14px !important; }
-  .feature-list li{ gap: 10px !important; }
-  .feature-list .feat-icon{
-    width: 36px !important; height: 36px !important; flex: 0 0 36px !important;
-  }
-  .feature-list .feat-icon svg{ width: 18px; height: 18px; }
-  .feature-list h3{ font-size: 13px !important; margin: 0 0 2px !important; }
-  .feature-list p{ font-size: 11.5px !important; line-height: 1.35 !important; }
-
-  .included-images{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 6px !important;
-  }
+ 
   .included-images img{
     width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px;
   }
 
-  /* "Af hverju" og "Viltu fá tilboð" hlið við hlið */
-  .info-cards{
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    margin-top: 28px !important;
-  }
-  .info-card{ padding: 14px !important; }
-  .info-card h3{ font-size: 15px !important; margin-bottom: 8px !important; }
-  .info-card p, .info-card li{ font-size: 12px !important; line-height: 1.35 !important; }
-  .info-card .cta-btn{
-    padding: 10px 14px !important; font-size: 12px !important; display:inline-block;
-  }
+ 
   .check-list{ padding-left: 0 !important; }
 }
 
-.included-section{ background:#fff; padding:64px 20px; }
 .included-wrap{ max-width:1100px; margin:0 auto; }
-.included-title{ font-family:Georgia,serif; color:#2f5d34; font-size:34px; margin:0 0 28px; }
 
-.included-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
-.feature-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:18px; }
-.feature-list li{ display:flex; gap:14px; align-items:flex-start; }
-.feat-icon{ width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:#2f5d34;display:flex;align-items:center;justify-content:center; }
-.feat-icon svg{ width:22px;height:22px; }
-.feature-list h3{ margin:0 0 4px; font-size:16px; color:#111; }
-.feature-list p{ margin:0; font-size:14px; color:#444; line-height:1.4; }
 
 .included-images{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
 .included-images img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; }
 
-.info-cards{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:40px; }
-.info-card{ background:#f1f3ec; border-radius:14px; padding:22px; }
-.info-card h3{ font-family:Georgia,serif; color:#2f5d34; margin:0 0 12px; font-size:20px; }
-.info-card p{ margin:0 0 14px; color:#333; font-size:14px; }
+
+
 .check-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
 .check-list li{ position:relative; padding-left:28px; font-size:14px; color:#222; }
 .check-list li::before{ content:"✓"; position:absolute; left:0; top:0; width:20px;height:20px; background:#2f5d34; color:#fff; border-radius:50%; font-size:12px; display:flex; align-items:center; justify-content:center; }
@@ -2218,79 +2029,58 @@ section {
 
 /* SÍMI – halda sama layouti */
 @media (max-width:760px){
-  .included-section{ padding:32px 12px; }
-  .included-title{ font-size:24px; margin-bottom:18px; }
-  .included-grid{ gap:14px; }
-  .feature-list{ gap:14px; }
-  .feat-icon{ width:34px;height:34px;flex:0 0 34px; }
-  .feat-icon svg{ width:16px;height:16px; }
-  .feature-list h3{ font-size:13px; }
-  .feature-list p{ font-size:11.5px; line-height:1.35; }
-  .included-images{ gap:6px; }
-  .info-cards{ gap:10px; margin-top:24px; }
-  .info-card{ padding:14px; }
-  .info-card h3{ font-size:15px; }
-  .info-card p, .check-list li{ font-size:12px; }
+   .included-images{ gap:6px; }
   .cta-btn{ padding:10px 14px; font-size:12px; }
 }
 
-    <style>
-/* ===== LOKA-OVERRIDE FYRIR SÍMA – mynd 3 layout ===== */
-@media (max-width: 760px){
-  .included-section{ padding: 28px 14px !important; background:#fff !important; }
-  .included-title{ font-size: 24px !important; line-height: 1.15 !important; text-align:center !important; margin-bottom: 6px !important; }
-  .included-sub, .included-section > p { font-size: 12.5px !important; text-align:center !important; margin-bottom: 18px !important; }
-
-  /* Texti vinstra megin (40%), myndir hægra megin (60%) */
-  .included-grid{
-    display:grid !important;
-    grid-template-columns: 42% 1fr !important;
-    gap: 14px !important;
-    align-items: start !important;
-  }
-
-  .feature-list{ display:flex !important; flex-direction:column !important; gap: 14px !important; margin:0 !important; padding:0 !important; }
-  .feature-list li{ display:flex !important; gap: 8px !important; align-items:flex-start !important; }
-  .feature-list .feat-icon, .feat-icon{
-    width: 30px !important; height: 30px !important; flex: 0 0 30px !important;
-    border-radius: 50% !important; background:#2f5d2a !important;
-    display:flex !important; align-items:center !important; justify-content:center !important;
-  }
-  .feat-icon svg{ width: 14px !important; height: 14px !important; }
-  .feature-list h3{ font-size: 12px !important; margin: 0 0 2px !important; line-height:1.2 !important; color:#111 !important; }
-  .feature-list p{ font-size: 10.5px !important; line-height: 1.3 !important; margin:0 !important; color:#555 !important; }
-
-  /* 2x2 myndaragrid hægra megin */
-  .included-images{
-    display:grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-auto-rows: 1fr !important;
-    gap: 6px !important;
-  }
   .included-images img{
     width:100% !important; height:auto !important;
     aspect-ratio: 1/1 !important; object-fit: cover !important;
     border-radius: 10px !important; display:block !important;
   }
 
-  /* "Af hverju að velja okkur" + "Viltu fá tilboð" hlið við hlið */
-  .info-cards{
-    display:grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
-    margin-top: 22px !important;
-  }
-  .info-card{ padding: 12px !important; background:#f1f3ec !important; border-radius: 12px !important; }
-  .info-card h3{ font-size: 13px !important; margin: 0 0 8px !important; line-height:1.2 !important; }
-  .check-list{ padding:0 !important; margin:0 !important; list-style:none !important; display:flex !important; flex-direction:column !important; gap:6px !important; }
-  .check-list li{ font-size: 10.5px !important; line-height:1.25 !important; gap:6px !important; align-items:flex-start !important; }
-  .check-list .check{ width:14px !important; height:14px !important; flex:0 0 14px !important; font-size:9px !important; }
-  .info-card p{ font-size: 10.5px !important; line-height:1.3 !important; margin:0 0 10px !important; }
-  .info-card .cta-btn, .cta-btn{
-    display:inline-block !important;
-    padding: 8px 12px !important; font-size: 10.5px !important;
-    border-radius: 6px !important; background:#2f5d2a !important; color:#fff !important;
-  }
+  .check-list{
+  padding:0 !important;
+  margin:0 !important;
+  list-style:none !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+
+  gap:6px !important;
+}
+
+.check-list li{
+  font-size:10.5px !important;
+  line-height:1.25 !important;
+
+  gap:6px !important;
+
+  align-items:flex-start !important;
+}
+
+.check-list .check{
+  width:14px !important;
+  height:14px !important;
+
+  flex:0 0 14px !important;
+
+  font-size:9px !important;
+}
+
+.cta-btn{
+  display:inline-block !important;
+
+  padding:8px 12px !important;
+
+  font-size:10.5px !important;
+
+  border-radius:6px !important;
+
+  background:#2f5d2a !important;
+
+  color:#fff !important;
+}
   
   .img-placeholder{
   width:100%;
@@ -2837,6 +2627,8 @@ onclick="showPage('services-page'); return false;">
   </div>
 </section>
 
+
+</div>
 
 </div>
 
