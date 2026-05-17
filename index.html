@@ -2024,7 +2024,6 @@ section {
 
 .check-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
 .check-list li{ position:relative; padding-left:28px; font-size:14px; color:#222; }
-.check-list li::before{ content:"✓"; position:absolute; left:0; top:0; width:20px;height:20px; background:#2f5d34; color:#fff; border-radius:50%; font-size:12px; display:flex; align-items:center; justify-content:center; }
 .cta-btn{ display:inline-block; background:#2f5d34; color:#fff; text-decoration:none; padding:12px 18px; border-radius:8px; font-weight:600; font-size:13px; letter-spacing:.5px; }
 
 /* SÍMI – halda sama layouti */
@@ -2096,6 +2095,137 @@ section {
 }
 @media (max-width:760px){
   .img-placeholder{ border-radius:10px; font-size:10px; }
+}
+
+/* ===== INCLUDED SECTION FIX ===== */
+
+.feature-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.feature-list li{
+  display:flex;
+  align-items:flex-start;
+
+  gap:12px;
+}
+
+.feature-list h3{
+  margin:0 0 2px;
+
+  font-size:16px;
+}
+
+.feature-list p{
+  margin:0;
+
+  font-size:13px;
+
+  line-height:1.45;
+
+  color:#444;
+}
+
+.feat-icon{
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  background:#2f5d2a;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+.feat-icon svg{
+  width:18px;
+  height:18px;
+}
+
+.info-cards{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:16px;
+
+  margin-top:26px;
+}
+
+.info-card{
+  background:#f5f5f1;
+
+  border-radius:18px;
+
+  padding:22px;
+}
+
+.info-card h3{
+  margin:0 0 16px;
+
+  font-size:22px;
+}
+
+.info-card p{
+  font-size:14px;
+
+  line-height:1.6;
+
+  color:#444;
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+  .info-cards{
+    gap:12px;
+  }
+
+  .info-card{
+    padding:16px;
+
+    border-radius:16px;
+  }
+
+  .info-card h3{
+    font-size:15px;
+
+    line-height:1.15;
+  }
+
+  .info-card p{
+    font-size:11px;
+
+    line-height:1.5;
+  }
+
+  .check-list{
+    gap:6px !important;
+  }
+
+  .check-list li{
+    font-size:10.5px !important;
+
+    line-height:1.25 !important;
+  }
+
+  .cta-btn{
+    padding:8px 12px !important;
+
+    font-size:10.5px !important;
+  }
 }
     
 </style>
@@ -2601,12 +2731,12 @@ onclick="showPage('services-page'); return false;">
         </li>
       </ul>
 
-           <div class="included-images">
-        <div class="img-placeholder">Mynd 1</div>
-        <div class="img-placeholder">Mynd 2</div>
-        <div class="img-placeholder">Mynd 3</div>
-        <div class="img-placeholder">Mynd 4</div>
-      </div>
+         <div class="included-images">
+  <img src="mynd1.jpg" alt="">
+  <img src="mynd2.jpg" alt="">
+  <img src="mynd3.jpg" alt="">
+  <img src="mynd4.jpg" alt="">
+</div>
 
 
     <div class="info-cards">
