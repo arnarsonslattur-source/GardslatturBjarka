@@ -3335,38 +3335,179 @@ onclick="showPage('services-page'); return false;">
 
 <div class="container">
 
-<button onclick="showPage('services-page')"
-style="
-padding:12px 18px;
-border:none;
-border-radius:14px;
-background:var(--green);
-color:white;
-font-size:16px;
-margin-bottom:30px;
-cursor:pointer;
-">
-← Til baka
-</button>
+<section class="service-hero">
 
-<h1 style="font-size:48px; margin-bottom:20px;">
-Smá garðvinna
+<div class="service-left">
+
+<a href="#" class="back-btn"
+onclick="showPage('services-page'); return false;">
+← Til baka
+</a>
+
+<h1 class="service-title">
+Smá<br>
+garðvinna
 </h1>
 
-<img src="IMG_2399.jpg"
-style="
-width:100%;
-border-radius:28px;
-margin-bottom:30px;
-">
-
-<p style="
-font-size:22px;
-line-height:1.7;
-max-width:800px;
-">
-Við hjálpum með gróðursetningu, hreinsun og ýmis smáverk í garðinum.
+<p class="service-text">
+Við hjálpum með gróðursetningu,
+hreinsun og ýmis smáverk
+í garðinum.
 </p>
+
+<div class="service-extra-text">
+Við tökum að okkur minni verkefni í garðinum
+og sjáum um að allt verði snyrtilegt,
+hreint og vel frágengið.
+</div>
+
+</div>
+
+<div class="service-right">
+
+<img
+class="service-main-image"
+src="IMG_2399.jpg"
+alt="Smá garðvinna"
+>
+
+</div>
+
+</section>
+
+</div>
+
+<div class="container">
+
+<div class="section-card">
+
+<section class="included-section">
+
+<div class="included-wrap">
+
+<h2 class="included-title">Þetta er innifalið</h2>
+
+<div class="included-layout">
+
+<!-- LEFT -->
+
+<div class="included-left">
+
+<ul class="feature-list">
+
+<li>
+<span class="feat-icon">
+<i class="fa-solid fa-seedling"></i>
+</span>
+
+<div>
+<h3>Gróðursetning</h3>
+<p>Við hjálpum með plöntur, tré og annað sem þarf að gróðursetja.</p>
+</div>
+</li>
+
+<li>
+<span class="feat-icon">
+<i class="fa-solid fa-broom"></i>
+</span>
+
+<div>
+<h3>Hreinsun</h3>
+<p>Við hreinsum beð, lauf og annað sem safnast upp í garðinum.</p>
+</div>
+</li>
+
+<li>
+<span class="feat-icon">
+<i class="fa-solid fa-scissors"></i>
+</span>
+
+<div>
+<h3>Snyrting</h3>
+<p>Við snyrtum runna, kantla og smáatriði svo allt líti betur út.</p>
+</div>
+</li>
+
+<li>
+<span class="feat-icon">
+<i class="fa-solid fa-trash"></i>
+</span>
+
+<div>
+<h3>Förgun</h3>
+<p>Við fjarlægjum garðaúrgang og skilum öllu hreinu.</p>
+</div>
+</li>
+
+</ul>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="included-images">
+
+<img src="IMG_2399.jpg" alt="">
+<img src="IMG_2472.jpg" alt="">
+
+<img src="mynd3.jpg" alt="">
+<img src="mynd4.jpg" alt="">
+
+</div>
+
+</div>
+
+<div class="info-cards">
+
+<div class="info-card">
+
+<h3>Af hverju að velja okkur?</h3>
+
+<ul class="check-list">
+<li>Vönduð vinnubrögð</li>
+<li>Persónuleg þjónusta</li>
+<li>Snyrtileg frágangur</li>
+</ul>
+
+</div>
+
+<div class="info-card">
+
+<h3>Viltu fá tilboð?</h3>
+
+<p>
+Hafðu samband og við gerum þér
+tilboð að kostnaðarlausu.
+</p>
+
+<div class="cta-row">
+
+<a href="#"
+class="cta-btn"
+onclick="
+showPage('home-page');
+setTimeout(() => {
+document.getElementById('tilbod')
+.scrollIntoView({ behavior: 'smooth' });
+}, 100);
+return false;
+">
+FÁ TILBOÐ
+</a>
+
+<img src="leaf2.png" class="cta-leaf" alt="lauf">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
 
 </div>
 
