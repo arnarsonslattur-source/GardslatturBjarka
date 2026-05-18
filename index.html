@@ -3617,13 +3617,23 @@ background:var(--green-dark);
 </section>
 
 <script>
-  document.querySelectorAll('#tilbod .q2-opt').forEach(function (opt) {
-    var cb = opt.querySelector('input[type="checkbox"]');
-    opt.addEventListener('click', function (e) {
-      if (e.target.tagName !== 'INPUT') cb.checked = !cb.checked;
-      opt.classList.toggle('is-checked', cb.checked);
-    });
-  });
+document.querySelectorAll('#tilbod .q2-opt').forEach(function(opt){
+
+  const cb = opt.querySelector('input[type="checkbox"]');
+
+  function updateCard() {
+
+    if(cb.checked){
+      opt.classList.add('is-checked');
+    } else {
+      opt.classList.remove('is-checked');
+    }
+
+  }
+
+  cb.addEventListener('change', updateCard);
+
+});
 </script>
 </div>
 
