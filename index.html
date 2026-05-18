@@ -2777,7 +2777,7 @@ color:#444;
 
 width:100%;
 
-height:760px;
+height:auto;
 
 object-fit:cover;
 
@@ -3151,6 +3151,65 @@ background:var(--green-dark);
   .service-bottom-cta{
     margin-top:20px !important;
   }
+
+.offer-card{
+  background:#fff;
+  border-radius:24px;
+  padding:28px 24px;
+}
+.offer-header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+.offer-leaf{
+  width:34px;height:34px;border-radius:50%;
+  background:#e7f3e3;color:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.offer-header h2{
+  font-size:22px;margin:0;font-weight:700;
+}
+.offer-divider{
+  flex:1;height:2px;background:var(--green);opacity:.6;
+}
+.offer-list{
+  list-style:none;margin:0;padding:0;
+}
+.offer-list li{
+  display:flex;align-items:center;gap:18px;
+  padding:22px 6px;
+  border-bottom:1px solid #ececec;
+}
+.offer-list li:last-child{ border-bottom:none; }
+.offer-icon{
+  width:54px;height:54px;border-radius:50%;
+  background:#eef6ea;color:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.offer-text{ flex:1; }
+.offer-text h3{ margin:0 0 4px;font-size:18px;font-weight:700; }
+.offer-text p{ margin:0;font-size:15px;line-height:1.5;color:#555; }
+.offer-chevron{
+  color:var(--green);font-size:18px;flex-shrink:0;
+}
+
+/* CTA neðst - láta líta út eins og mockup */
+.service-bottom-cta{
+  background:#f3f1e9;
+  border-radius:22px;
+  padding:18px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  margin-top:24px;
+}
+
+@media (max-width: 768px){
+  .service-clean-layout{ grid-template-columns: 1fr; }
+  .offer-card{ padding:22px 16px; }
+}
 
 }
     
@@ -3994,80 +4053,49 @@ alt="Árstíðabundið viðhald"
 
 <div class="section-card">
 
-<div class="service-clean-layout">
+<div class="offer-card">
+  <div class="offer-header">
+    <span class="offer-leaf"><i class="fa-solid fa-leaf"></i></span>
+    <h2>Það sem við bjóðum</h2>
+    <span class="offer-divider"></span>
+  </div>
 
-<!-- LEFT -->
-
-<div class="service-clean-left">
-
-<div class="service-clean-item">
-
-<div class="clean-icon">
-<i class="fa-solid fa-seedling"></i>
+  <ul class="offer-list">
+    <li>
+      <span class="offer-icon"><i class="fa-solid fa-seedling"></i></span>
+      <div class="offer-text">
+        <h3>Vorsnyrting</h3>
+        <p>Við hreinsum beð, snyrtum runna, fjarlægjum veturleifar og gerum garðinn kláran fyrir sumarið.</p>
+      </div>
+      <i class="fa-solid fa-chevron-right offer-chevron"></i>
+    </li>
+    <li>
+      <span class="offer-icon"><i class="fa-solid fa-leaf"></i></span>
+      <div class="offer-text">
+        <h3>Hausthreinsun</h3>
+        <p>Við hrífum lauf, klippum niður þar sem þarf og hreinsum allt fyrir veturinn.</p>
+      </div>
+      <i class="fa-solid fa-chevron-right offer-chevron"></i>
+    </li>
+    <li>
+      <span class="offer-icon"><i class="fa-solid fa-shield-halved"></i></span>
+      <div class="offer-text">
+        <h3>Undirbúningur</h3>
+        <p>Við sjáum um undirbúning fyrir viðburði, samkomur eða sérstök tilefni.</p>
+      </div>
+      <i class="fa-solid fa-chevron-right offer-chevron"></i>
+    </li>
+    <li>
+      <span class="offer-icon"><i class="fa-solid fa-trash-can"></i></span>
+      <div class="offer-text">
+        <h3>Förgun</h3>
+        <p>Við fjarlægjum gróðurúrgang og rusl svo garðurinn verði hreinn og snyrtilegur.</p>
+      </div>
+      <i class="fa-solid fa-chevron-right offer-chevron"></i>
+    </li>
+  </ul>
 </div>
 
-<div>
-<h3>Vorsnyrting</h3>
-
-<p>
-Við hreinsum beð,
-snyrtum runna og gerum
-garðinn tilbúinn fyrir sumarið.
-</p>
-</div>
-
-</div>
-
-<div class="service-clean-item">
-
-<div class="clean-icon">
-<i class="fa-solid fa-leaf"></i>
-</div>
-
-<div>
-<h3>Hausthreinsun</h3>
-
-<p>
-Við fjarlægjum lauf,
-greinar og annað sem
-safnast upp yfir tímabilið.
-</p>
-</div>
-
-</div>
-
-<div class="service-clean-item">
-
-<div class="clean-icon">
-<i class="fa-solid fa-broom"></i>
-</div>
-
-<div>
-<h3>Undirbúningur</h3>
-
-<p>
-Við sjáum um að
-garðurinn sé snyrtilegur
-fyrir viðburði eða gesti.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- RIGHT IMAGE -->
-
-<div class="service-clean-image">
-
-<img
-src="IMG_2379.jpg"
-alt="Árstíðabundið viðhald"
->
-
-</div>
-
-</div>
 
 <!-- CTA -->
 
