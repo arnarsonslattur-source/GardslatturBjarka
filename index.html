@@ -3947,38 +3947,168 @@ FÁ TILBOÐ →
 
 <div class="container">
 
-<button onclick="showPage('services-page')"
-style="
-padding:12px 18px;
-border:none;
-border-radius:14px;
-background:var(--green);
-color:white;
-font-size:16px;
-margin-bottom:30px;
-cursor:pointer;
-">
-← Til baka
-</button>
+<section class="service-hero">
 
-<h1 style="font-size:48px; margin-bottom:20px;">
-Árstíðabundið viðhald
+<div class="service-left">
+
+<a href="#" class="back-btn"
+onclick="showPage('services-page'); return false;">
+← Til baka
+</a>
+
+<h1 class="service-title">
+Árstíðabundið<br>
+viðhald
 </h1>
 
-<img src="IMG_2379.jpg"
-style="
-width:100%;
-border-radius:28px;
-margin-bottom:30px;
-">
-
-<p style="
-font-size:22px;
-line-height:1.7;
-max-width:800px;
-">
-Við sjáum um vorsnyrtingu, hausthreinsun og undirbúning fyrir sumarið svo garðurinn sé alltaf tilbúinn.
+<p class="service-text">
+Við sjáum um vorsnyrtingu,
+hausthreinsun og undirbúning
+fyrir sumarið svo garðurinn
+sé alltaf tilbúinn.
 </p>
+
+<div class="service-extra-text">
+Við hjálpum til við að halda
+garðinum hreinum og snyrtilegum
+allt árið um kring.
+</div>
+
+</div>
+
+<div class="service-right">
+
+<img
+class="service-main-image"
+src="IMG_2379.jpg"
+alt="Árstíðabundið viðhald"
+>
+
+</div>
+
+</section>
+
+</div>
+
+<div class="container">
+
+<div class="section-card">
+
+<div class="service-clean-layout">
+
+<!-- LEFT -->
+
+<div class="service-clean-left">
+
+<div class="service-clean-item">
+
+<div class="clean-icon">
+<i class="fa-solid fa-seedling"></i>
+</div>
+
+<div>
+<h3>Vorsnyrting</h3>
+
+<p>
+Við hreinsum beð,
+snyrtum runna og gerum
+garðinn tilbúinn fyrir sumarið.
+</p>
+</div>
+
+</div>
+
+<div class="service-clean-item">
+
+<div class="clean-icon">
+<i class="fa-solid fa-leaf"></i>
+</div>
+
+<div>
+<h3>Hausthreinsun</h3>
+
+<p>
+Við fjarlægjum lauf,
+greinar og annað sem
+safnast upp yfir tímabilið.
+</p>
+</div>
+
+</div>
+
+<div class="service-clean-item">
+
+<div class="clean-icon">
+<i class="fa-solid fa-broom"></i>
+</div>
+
+<div>
+<h3>Undirbúningur</h3>
+
+<p>
+Við sjáum um að
+garðurinn sé snyrtilegur
+fyrir viðburði eða gesti.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT IMAGE -->
+
+<div class="service-clean-image">
+
+<img
+src="IMG_2379.jpg"
+alt="Árstíðabundið viðhald"
+>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="service-bottom-cta">
+
+<div class="cta-left">
+
+<div class="clean-icon">
+<i class="fa-solid fa-leaf"></i>
+</div>
+
+<div>
+
+<h3>Viltu fá tilboð?</h3>
+
+<p>
+Hafðu samband og við
+gefum þér tilboð
+að kostnaðarlausu.
+</p>
+
+</div>
+
+</div>
+
+<a href="#"
+class="clean-cta-btn"
+onclick="
+showPage('home-page');
+setTimeout(() => {
+document.getElementById('tilbod')
+.scrollIntoView({ behavior: 'smooth' });
+}, 100);
+return false;
+">
+FÁ TILBOÐ →
+</a>
+
+</div>
+
+</div>
 
 </div>
 
