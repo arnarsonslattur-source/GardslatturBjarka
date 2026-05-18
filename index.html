@@ -2900,7 +2900,7 @@ background:var(--green-dark);
 }
 
 .service-title{
-  font-size:72px;
+  font-size:58px;
   line-height:0.9;
   letter-spacing:-4px;
 
@@ -3094,6 +3094,63 @@ background:var(--green-dark);
 
   font-weight:700;
 }
+
+/* ===== FINAL SMÁ GARÐVINNA FIX ===== */
+
+@media (max-width:760px){
+
+  .service-clean-layout{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  .service-clean-left{
+    order:2;
+  }
+
+  .service-clean-image{
+    order:1;
+    margin-bottom:24px;
+  }
+
+  .service-bottom-cta{
+    order:3;
+  }
+
+  .service-title{
+    font-size:58px !important;
+    line-height:0.9 !important;
+
+    letter-spacing:-3px !important;
+
+    max-width:320px;
+  }
+
+  .service-text{
+    font-size:16px !important;
+
+    line-height:1.5 !important;
+
+    max-width:320px;
+  }
+
+  .service-main-image{
+    height:360px !important;
+  }
+
+  .service-clean-image img{
+    height:420px !important;
+
+    border-radius:28px !important;
+  }
+
+  .service-clean-item{
+    padding:22px 0 !important;
+  }
+
+  .service-bottom-cta{
+    margin-top:20px !important;
+  }
 
 }
     
