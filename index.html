@@ -3307,11 +3307,15 @@ background:var(--green-dark);
   .q2-opt:hover { border-color: #c8ddb7; }
   .q2-opt.is-checked {
 
-  border: 2px solid var(--green);
+  border: 3px solid #69b548;
 
-  background: white;
+  background: #ffffff;
 
-  box-shadow: 0 0 0 4px rgba(105,181,72,0.18);
+  box-shadow:
+    0 0 0 5px rgba(105,181,72,0.22),
+    0 8px 24px rgba(105,181,72,0.18);
+
+  transform: translateY(-2px);
 }
   .q2-opt.is-checked .q2-check { display: inline-flex; }
   .q2-submit {
