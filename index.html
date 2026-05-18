@@ -3211,8 +3211,126 @@ background:var(--green-dark);
   .offer-card{ padding:22px 16px; }
 }
 
+<style>
+  #tilbod.quote-v2 {
+    background: linear-gradient(180deg, #f4f8f1 0%, #eef5ea 100%);
+    padding: 56px 0 80px;
+  }
+  #tilbod.quote-v2 .container {
+    width: min(720px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+  .q2-card {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(20,70,30,0.08), 0 2px 6px rgba(0,0,0,0.04);
+    padding: 28px 24px;
+  }
+  .q2-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    color: #5aa03c; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .q2-eyebrow .dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #eaf5e2; display: inline-flex;
+    align-items: center; justify-content: center; color: #5aa03c;
+  }
+  .q2-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800; font-size: 28px; line-height: 1.2;
+    color: #111; margin: 0 0 14px; letter-spacing: -0.5px;
+  }
+  .q2-rule { width: 56px; height: 3px; border-radius: 3px; background: #9ccc7e; margin-bottom: 22px; }
+  .q2-info {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: linear-gradient(180deg, #f1f8ec, #e9f4e1);
+    border: 1px solid #d9ead0; border-radius: 16px;
+    padding: 16px 18px; margin-bottom: 22px;
+  }
+  .q2-info .q2-info-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #fff; display: inline-flex; align-items: center; justify-content: center;
+    color: #5aa03c; font-size: 20px; flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .q2-info p { margin: 0; color: #2c3a25; font-size: 14.5px; line-height: 1.5; }
+  .q2-info p strong { display: block; margin-bottom: 2px; color: #1b3010; }
+  .q2-block {
+    background: #fff; border-radius: 18px; border: 1px solid #eef0ec;
+    padding: 20px 18px; margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  }
+  .q2-section-title {
+    display: flex; align-items: center; gap: 12px;
+    font-weight: 700; color: #1b1b1b; font-size: 16px; margin-bottom: 14px;
+  }
+  .q2-section-title .ico {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #eaf5e2; color: #5aa03c;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .q2-field {
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid #e6e6e2; border-radius: 12px;
+    padding: 12px 14px; background: #fff; margin-bottom: 10px;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .q2-field:focus-within { border-color: #9ccc7e; box-shadow: 0 0 0 4px rgba(105,181,72,0.12); }
+  .q2-field i { color: #8a8a8a; width: 18px; text-align: center; }
+  .q2-field input, .q2-field textarea {
+    flex: 1; border: 0; outline: 0; background: transparent;
+    font-size: 15px; font-family: inherit; color: #111; resize: vertical;
+  }
+  .q2-field textarea { min-height: 96px; padding-top: 2px; }
+  .q2-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .q2-opt {
+    position: relative; display: flex; flex-direction: column; gap: 10px;
+    padding: 16px 14px; border: 1px solid #e8eae5; border-radius: 14px;
+    background: #fff; cursor: pointer; transition: all .15s ease; min-height: 110px;
+  }
+  .q2-opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .q2-opt .q2-opt-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: #f1f8ec; color: #5aa03c;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 22px;
+  }
+  .q2-opt .q2-opt-label { font-weight: 600; color: #1b1b1b; font-size: 14px; line-height: 1.35; }
+  .q2-opt .q2-check {
+    position: absolute; top: 10px; right: 10px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #69b548; color: #fff;
+    display: none; align-items: center; justify-content: center; font-size: 12px;
+  }
+  .q2-opt:hover { border-color: #c8ddb7; }
+  .q2-opt.is-checked {
+    border-color: #69b548; background: #f4faef;
+    box-shadow: 0 4px 14px rgba(105,181,72,0.15);
+  }
+  .q2-opt.is-checked .q2-check { display: inline-flex; }
+  .q2-submit {
+    width: 100%; margin-top: 8px; border: 0; cursor: pointer;
+    background: linear-gradient(180deg, #7ec458 0%, #5aa03c 100%);
+    color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 0.3px;
+    padding: 16px 20px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    box-shadow: 0 10px 24px rgba(90,160,60,0.35);
+    transition: transform .1s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  .q2-submit:hover { filter: brightness(1.03); box-shadow: 0 14px 28px rgba(90,160,60,0.4); }
+  .q2-submit:active { transform: translateY(1px); }
+  .q2-submit .plane {
+    width: 32px; height: 32px; border-radius: 10px;
+    background: rgba(255,255,255,0.18);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  @media (max-width: 420px) {
+    .q2-options { grid-template-columns: 1fr; }
+    .q2-title { font-size: 24px; }
+  }
+
 }
-    
+
 </style>
 </head>
 <body>
@@ -3362,57 +3480,88 @@ background:var(--green-dark);
 
 </section>
 
-     <section id="tilbod" class="section-gray quote">
-        <div class="container quote-wrap">
-          <div>
-            <h2 class="fade-text">Óska eftir<br>tilboði</h2>
-            <div class="quote-copy">
-              Segðu okkur aðeins frá garðinum þínum: stærð, ástand og hvað þú vilt láta gera.<br><br>
-              Við sendum sérsniðið tilboð innan 48 klukkustunda eða komum á staðinn í stutta skoðun.
-            </div>
-          </div>
+  <section id="tilbod" class="quote-v2">
+  <div class="container">
+    <div class="q2-card">
+      <span class="q2-eyebrow">
+        <span class="dot"><i class="fa-solid fa-leaf"></i></span>
+        Óska eftir tilboði
+      </span>
+      <h2 class="q2-title">Segðu okkur frá garðinum þínum: stærð, ástand og hvað þú vilt láta gera.</h2>
+      <div class="q2-rule"></div>
 
-          <form class="form-card" id="quote-form">
-            <input type="hidden" name="_subject" value="Nýtt tilboð af vefsíðunni!" />
+      <div class="q2-info">
+        <span class="q2-info-icon"><i class="fa-regular fa-clock"></i></span>
+        <p><strong>Við sendum sérsniðið tilboð</strong>innan 48 klukkustunda eða komum á staðinn í stutta skoðun.</p>
+      </div>
 
-            <div class="form-grid">
-              <div>
-                <label class="label" for="name">Nafn eða fyrirtæki</label>
-                <input class="input" id="name" name="name" type="text" />
-              </div>
+      <form id="quote-form" novalidate>
+        <input type="hidden" name="_subject" value="Nýtt tilboð af vefsíðunni!" />
 
-              <div>
-                <label class="label" for="email">Email</label>
-                <input class="input" id="email" name="email" type="email" />
-              </div>
-
-              <div>
-                <label class="label" for="address">Heimilisfang</label>
-                <input class="input" id="address" name="address" type="text" />
-              </div>
-
-              <div>
-                <label class="label">Hvað hefur þú helst áhuga á?</label>
-                <div class="checkbox-list">
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Garðsláttur" /> Garðsláttur (eða reglulegur garðsláttur)</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Garðhreinsun" /> Garðhreinsun / þrif á lóð</label>
-                  <label class="checkbox-row highlight"><input type="checkbox" name="service" value="Gróðursetning" /> Gróðursetning</label>
-                  <label class="checkbox-row"><input type="checkbox" name="service" value="Flutningur" /> Flutningur á grasi og úrgangi</label>
-                </div>
-              </div>
-
-              <div>
-                <label class="label" for="message">Nánari upplýsingar</label>
-                <textarea class="input" id="message" name="message" rows="5" placeholder="Skrifaðu hér upplýsingar um garðinn þinn, stærð, hvað þú vilt láta gera o.s.frv."></textarea>
-              </div>
-
-              <button class="submit-btn" type="submit">Submit</button>
-              <p id="form-message" style="display:none; margin-top:12px; font-weight:600;">Takk fyrir! Við höfum samband fljótlega.</p>
-            </div>
-          </form>
+        <div class="q2-block">
+          <div class="q2-section-title"><span class="ico"><i class="fa-solid fa-user"></i></span>Upplýsingar um þig</div>
+          <label class="q2-field"><i class="fa-solid fa-user"></i><input type="text" name="name" placeholder="Nafn eða fyrirtæki" /></label>
+          <label class="q2-field"><i class="fa-regular fa-envelope"></i><input type="email" name="email" placeholder="Email" /></label>
+          <label class="q2-field"><i class="fa-solid fa-house"></i><input type="text" name="address" placeholder="Heimilisfang" /></label>
         </div>
-      </section>
+
+        <div class="q2-block">
+          <div class="q2-section-title"><span class="ico"><i class="fa-solid fa-screwdriver-wrench"></i></span>Hvað hefur þú helst áhuga á?</div>
+          <div class="q2-options">
+            <label class="q2-opt">
+              <input type="checkbox" name="service" value="Garðsláttur" />
+              <span class="q2-opt-icon"><i class="fa-solid fa-seedling"></i></span>
+              <span class="q2-opt-label">Garðsláttur<br><span style="font-weight:400;color:#666;font-size:12.5px;">(eða reglulegur garðsláttur)</span></span>
+              <span class="q2-check"><i class="fa-solid fa-check"></i></span>
+            </label>
+            <label class="q2-opt">
+              <input type="checkbox" name="service" value="Garðhreinsun" />
+              <span class="q2-opt-icon"><i class="fa-solid fa-broom"></i></span>
+              <span class="q2-opt-label">Garðhreinsun<br>/ þrif á lóð</span>
+              <span class="q2-check"><i class="fa-solid fa-check"></i></span>
+            </label>
+            <label class="q2-opt">
+              <input type="checkbox" name="service" value="Gróðursetning" />
+              <span class="q2-opt-icon"><i class="fa-solid fa-leaf"></i></span>
+              <span class="q2-opt-label">Gróðursetning</span>
+              <span class="q2-check"><i class="fa-solid fa-check"></i></span>
+            </label>
+            <label class="q2-opt">
+              <input type="checkbox" name="service" value="Flutningur" />
+              <span class="q2-opt-icon"><i class="fa-solid fa-truck"></i></span>
+              <span class="q2-opt-label">Flutningur á grasi og úrgangi</span>
+              <span class="q2-check"><i class="fa-solid fa-check"></i></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="q2-block">
+          <div class="q2-section-title"><span class="ico"><i class="fa-regular fa-comment-dots"></i></span>Nánari upplýsingar</div>
+          <label class="q2-field" style="align-items:flex-start;">
+            <textarea name="message" rows="5" placeholder="Skrifaðu hér upplýsingar um garðinn þinn, stað, hvað þú vilt láta gera o.s.frv."></textarea>
+          </label>
+        </div>
+
+        <button class="q2-submit" type="submit">
+          Senda beiðni um tilboð
+          <span class="plane"><i class="fa-solid fa-paper-plane"></i></span>
+        </button>
+        <p id="form-message" style="display:none; margin-top:14px; font-weight:600; text-align:center; color:#2c6b1d;">Takk fyrir! Við höfum samband fljótlega.</p>
+      </form>
     </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('#tilbod .q2-opt').forEach(function (opt) {
+    var cb = opt.querySelector('input[type="checkbox"]');
+    opt.addEventListener('click', function (e) {
+      if (e.target.tagName !== 'INPUT') cb.checked = !cb.checked;
+      opt.classList.toggle('is-checked', cb.checked);
+    });
+  });
+</script>
+
 
     <div id="services-page" class="page-view">
       <section class="section-gray services-section">
