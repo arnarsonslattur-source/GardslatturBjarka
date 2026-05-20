@@ -3508,6 +3508,249 @@ background:var(--green-dark);
     font-size:18px;
   }
 
+/* ===== MODERN AREAS ===== */
+
+.modern-areas{
+
+  padding: 50px 0 70px;
+
+  background: #f6f6f3;
+}
+
+.modern-areas-header{
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.modern-areas-header h2{
+
+  font-size: clamp(42px, 7vw, 78px);
+
+  line-height: 0.92;
+
+  letter-spacing: -3px;
+
+  margin: 0 0 16px;
+
+  font-weight: 700;
+}
+
+.modern-areas-header p{
+
+  font-size: 22px;
+
+  color: #444;
+
+  margin: 0 auto;
+
+  max-width: 620px;
+
+  line-height: 1.5;
+}
+
+/* MAP */
+
+.iceland-map-card{
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  margin-top: 34px;
+
+  box-shadow:
+    0 12px 34px rgba(0,0,0,0.08);
+}
+
+.iceland-map-card img{
+
+  width: 100%;
+
+  display: block;
+}
+
+/* PIN */
+
+.map-pin{
+
+  position: absolute;
+
+  top: 26%;
+  left: 57%;
+
+  width: 74px;
+  height: 74px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.18);
+}
+
+.map-label{
+
+  position: absolute;
+
+  top: 39%;
+  left: 53%;
+
+  background: white;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  font-size: 24px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.10);
+}
+
+/* BEFORE AFTER */
+
+.modern-before-after{
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 28px;
+
+  margin-top: 38px;
+}
+
+.modern-image-card{
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 12px 34px rgba(0,0,0,0.08);
+}
+
+.modern-image-card img{
+
+  width: 100%;
+
+  display: block;
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+}
+
+/* TAGS */
+
+.image-tag{
+
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  padding: 14px 24px;
+
+  border-radius: 999px;
+
+  color: white;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  font-size: 18px;
+
+  z-index: 5;
+}
+
+.image-tag.before{
+
+  background: #1e1e1e;
+}
+
+.image-tag.after{
+
+  background: var(--green);
+}
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+  .modern-areas{
+
+    padding: 36px 0 50px;
+  }
+
+  .modern-areas-header h2{
+
+    font-size: 58px;
+
+    line-height: 0.92;
+
+    letter-spacing: -3px;
+  }
+
+  .modern-areas-header p{
+
+    font-size: 18px;
+
+    max-width: 320px;
+  }
+
+  .iceland-map-card{
+
+    border-radius: 28px;
+  }
+
+  .map-pin{
+
+    width: 54px;
+    height: 54px;
+
+    font-size: 24px;
+  }
+
+  .map-label{
+
+    font-size: 18px;
+
+    padding: 10px 18px;
+  }
+
+  .modern-image-card{
+
+    border-radius: 24px;
+  }
+
+  .image-tag{
+
+    padding: 12px 20px;
+
+    font-size: 16px;
+  }
+
 }
 
 </style>
@@ -3854,29 +4097,66 @@ onclick="showPage('hreinsun-page')">
     </div>
 
     <div id="contact-page" class="page-view">
-      <section class="section-gray areas">
-        <div class="container areas-wrap">
-          <div>
-            <h2 class="fade-text">Svæði sem við<br>þjónustum</h2>
-            <div class="areas-copy">
-              Akureyri.<br>
-              Við sinnum slætti og garðvinnu í öllum hverfum Akureyrar.<br>
-              Hafðu samband og við komum til þín.
-            </div>
-          </div>
+    
+      <section class="section-gray modern-areas">
 
-          <div class="before-after">
-            <div>
-              <img src="IMG_2469.jpg" alt="Fyrir slátt" />
-              <div class="caption">Fyrir</div>
-            </div>
-            <div>
-              <img src="IMG_2472.jpg" alt="Eftir slátt" />
-              <div class="caption">Eftir</div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="container">
+
+    <div class="modern-areas-header">
+
+      <h2>Við þjónustum alla Akureyri</h2>
+
+      <p>
+        Sláttur og garðvinna í öllum hverfum bæjarins.
+      </p>
+
+    </div>
+
+    <!-- MAP -->
+
+    <div class="iceland-map-card">
+
+      <img src="iceland-map.jpg" alt="Íslandskort">
+
+      <div class="map-pin">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+
+      <div class="map-label">
+        Akureyri
+      </div>
+
+    </div>
+
+    <!-- BEFORE AFTER -->
+
+    <div class="modern-before-after">
+
+      <div class="modern-image-card">
+
+        <span class="image-tag before">
+          FYRIR
+        </span>
+
+        <img src="IMG_2469.jpg" alt="Fyrir">
+
+      </div>
+
+      <div class="modern-image-card">
+
+        <span class="image-tag after">
+          EFTIR
+        </span>
+
+        <img src="IMG_2472.jpg" alt="Eftir">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
      <section class="section-gray contact-band">
   <div class="container">
