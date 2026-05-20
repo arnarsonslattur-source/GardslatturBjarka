@@ -3751,6 +3751,92 @@ background:var(--green-dark);
     font-size: 16px;
   }
 
+.modern-map-card{
+
+  position: relative;
+
+  width: 100%;
+
+  height: 420px;
+
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 34px rgba(0,0,0,0.08);
+
+  margin-top: 34px;
+}
+
+.modern-map-card iframe{
+
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+
+  filter: grayscale(0.1) contrast(1.05);
+}
+
+.modern-map-overlay{
+
+  position: absolute;
+
+  left: 24px;
+  bottom: 24px;
+
+  background: white;
+
+  padding: 14px 22px;
+
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.14);
+}
+
+.modern-map-overlay i{
+
+  color: var(--green);
+
+  font-size: 24px;
+}
+
+@media (max-width:760px){
+
+  .modern-map-card{
+
+    height: 300px;
+
+    border-radius: 26px;
+  }
+
+  .modern-map-overlay{
+
+    left: 16px;
+    bottom: 16px;
+
+    padding: 10px 16px;
+
+    font-size: 16px;
+  }
+
+  .modern-map-overlay i{
+
+    font-size: 18px;
+  }
+
 }
 
 </style>
@@ -4104,7 +4190,7 @@ onclick="showPage('hreinsun-page')">
 
     <div class="modern-areas-header">
 
-      <h2>Við þjónustum alla Akureyri</h2>
+      <h2>Garðsláttur og garðvinna á Akureyri</h2>
 
       <p>
         Sláttur og garðvinna í öllum hverfum bæjarins.
@@ -4114,19 +4200,20 @@ onclick="showPage('hreinsun-page')">
 
     <!-- MAP -->
 
-    <div class="iceland-map-card">
+  <div class="modern-map-card">
 
-      <img src="iceland-map.jpg" alt="Íslandskort">
+  <iframe
+    src="https://www.google.com/maps?q=Akureyri&output=embed"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
 
-      <div class="map-pin">
-        <i class="fa-solid fa-location-dot"></i>
-      </div>
+  <div class="modern-map-overlay">
+    <i class="fa-solid fa-location-dot"></i>
+    <span>Akureyri</span>
+  </div>
 
-      <div class="map-label">
-        Akureyri
-      </div>
-
-    </div>
+</div>
 
     <!-- BEFORE AFTER -->
 
