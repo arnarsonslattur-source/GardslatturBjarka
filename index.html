@@ -4660,10 +4660,17 @@ background:var(--green-dark);
   .why-top-row .why-simple-header{ margin-bottom:0; }
   .why-map{ order:0; max-width:440px; margin:0; }
 }
-/* ===== SAMI BAKGRUNNUR Á ÖLLUM SÍÐUM ===== */
-html, body{ background:var(--bg); }
+/* ===== SAMI BAKGRUNNUR Á ÖLLUM SÍÐUM: ljós efst, grænni neðar ===== */
+html, body{
+  background:#f7f9f4 linear-gradient(180deg, #f7f9f4 0%, #e8f0df 100%) fixed;
+  min-height:100%;
+}
+.section-gray,
 .why-simple-section,
-#tilbod.quote-v2{ background:var(--bg) !important; }
+#tilbod.quote-v2,
+.hero-desk,
+.page-view,
+#almenn-page.page-view{ background:transparent !important; }
 </style>
 </head>
 <body>
