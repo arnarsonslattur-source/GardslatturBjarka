@@ -4564,6 +4564,82 @@ background:var(--green-dark);
   .why-card-text h3{ font-size:23px; line-height:1.2; margin:0 0 6px; }
   .why-card-text p{ font-size:17px; color:#555; }
 }
+/* ===== SPURT OG SVARAÐ ===== */
+.faq-section{ padding:56px 0 64px; }
+.faq-grid{ display:grid; grid-template-columns:1fr; gap:24px; }
+.faq-kicker{
+  display:inline-block;
+  padding:7px 14px;
+  border-radius:999px;
+  background:#e6f2df;
+  color:#3f7f27;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.6px;
+}
+.faq-head h2{
+  margin:14px 0 10px;
+  font-size:clamp(32px, 4vw, 52px);
+  line-height:1.02;
+  letter-spacing:-1.5px;
+  font-weight:800;
+}
+.faq-head p{ margin:0; font-size:17px; line-height:1.5; color:#555; max-width:380px; }
+.faq-head a{ color:var(--green-dark); font-weight:700; white-space:nowrap; }
+.faq-list{ display:flex; flex-direction:column; gap:10px; }
+.faq-item{
+  background:white;
+  border-radius:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+  overflow:hidden;
+}
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:20px 22px;
+  font-size:18px;
+  font-weight:700;
+  color:#151515;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-plus{
+  position:relative;
+  flex-shrink:0;
+  width:30px; height:30px;
+  border-radius:50%;
+  background:#edf6e7;
+  transition:transform .25s ease, background .25s ease;
+}
+.faq-plus::before,
+.faq-plus::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  width:12px; height:2px;
+  border-radius:2px;
+  background:var(--green-dark);
+  transform:translate(-50%,-50%);
+}
+.faq-plus::after{ transform:translate(-50%,-50%) rotate(90deg); }
+.faq-item[open] .faq-plus{ transform:rotate(45deg); background:var(--green); }
+.faq-item[open] .faq-plus::before,
+.faq-item[open] .faq-plus::after{ background:white; }
+.faq-item p{
+  margin:0;
+  padding:0 22px 20px;
+  font-size:16px;
+  line-height:1.55;
+  color:#444;
+}
+@media (min-width:901px){
+  .faq-section{ padding:80px 0 90px; }
+  .faq-grid{ grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:start; }
+  .faq-head{ position:sticky; top:130px; }
+}
 </style>
 </head>
 <body>
@@ -4737,6 +4813,48 @@ background:var(--green-dark);
   </div>
 
 </section>
+
+  <!-- SPURT OG SVARAÐ -->
+  <section class="section-gray faq-section" id="spurt-og-svarad">
+    <div class="container faq-grid">
+      <div class="faq-head">
+        <span class="faq-kicker">Spurt og svarað</span>
+        <h2>Algengar spurningar</h2>
+        <p>Finnurðu ekki svarið? Hringdu í <a href="tel:8336070">833-6070</a> eða sendu okkur beiðni hér fyrir neðan.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Hversu oft er slegið?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Yfirleitt um 6–8 sinnum yfir sumarið.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Takið þið grasið með ykkur?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Já, við tökum grasið með okkur og skiljum við garðinn hreinan og snyrtilegan.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vinnið þið fyrir húsfélög og fyrirtæki?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Já, við vinnum bæði fyrir heimili, húsfélög og fyrirtæki.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvenær er tímabilið?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Það fer eftir vertíðinni, en yfirleitt frá maí og fram í september.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Þarf ég að vera heima?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Nei, það skiptir engu máli. Við sjáum um garðinn hvort sem þú ert heima eða ekki.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvernig er greitt?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Við tökum við öllum helstu greiðsluleiðum.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvað ef það rignir?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Við vinnum með veðrinu og finnum út úr því.</p>
+        </details>
+      </div>
+    </div>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hversu oft er slegið?", "acceptedAnswer": {"@type": "Answer", "text": "Yfirleitt um 6–8 sinnum yfir sumarið."}}, {"@type": "Question", "name": "Takið þið grasið með ykkur?", "acceptedAnswer": {"@type": "Answer", "text": "Já, við tökum grasið með okkur og skiljum við garðinn hreinan og snyrtilegan."}}, {"@type": "Question", "name": "Vinnið þið fyrir húsfélög og fyrirtæki?", "acceptedAnswer": {"@type": "Answer", "text": "Já, við vinnum bæði fyrir heimili, húsfélög og fyrirtæki."}}, {"@type": "Question", "name": "Hvenær er tímabilið?", "acceptedAnswer": {"@type": "Answer", "text": "Það fer eftir vertíðinni, en yfirleitt frá maí og fram í september."}}, {"@type": "Question", "name": "Þarf ég að vera heima?", "acceptedAnswer": {"@type": "Answer", "text": "Nei, það skiptir engu máli. Við sjáum um garðinn hvort sem þú ert heima eða ekki."}}, {"@type": "Question", "name": "Hvernig er greitt?", "acceptedAnswer": {"@type": "Answer", "text": "Við tökum við öllum helstu greiðsluleiðum."}}, {"@type": "Question", "name": "Hvað ef það rignir?", "acceptedAnswer": {"@type": "Answer", "text": "Við vinnum með veðrinu og finnum út úr því."}}]}</script>
+  </section>
 
   <section id="tilbod" class="quote-v2">
   <div class="container">
@@ -5002,7 +5120,7 @@ onclick="showPage('hreinsun-page')">
       <div class="cv2-area-text">
         <span class="cv2-area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
         <h2>Við þjónustum alla Akureyri</h2>
-        <p>Sláttur og garðvinna í öllum hverfum bæjarins, fyrir heimili og eignir.</p>
+        <p>Sláttur og garðvinna í öllum hverfum bæjarins, fyrir heimili, húsfélög og fyrirtæki.</p>
       </div>
       <div class="cv2-map">
         <svg class="is-map" viewBox="80 70 1385 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kort af Íslandi með Akureyri merkta">
