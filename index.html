@@ -4082,6 +4082,51 @@ background:var(--green-dark);
     display:none !important;
   }
 }
+/* ===== ÞJÓNUSTUSÍÐUR: lagfæringar ===== */
+/* Tölva */
+@media (min-width:761px){
+  /* Almenn: myndir í 4 dálka svo reiturinn verði ekki risalangur */
+  #almenn-page .included-images{
+    grid-template-columns:repeat(4, 1fr);
+  }
+  #almenn-page .included-images img{
+    width:100%;
+    height:auto;
+    aspect-ratio:1/1;
+    object-fit:cover;
+  }
+  #almenn-page .included-layout{
+    grid-template-columns:1fr;
+  }
+  #almenn-page .check-list li{ font-size:15px !important; line-height:1.5 !important; }
+  #almenn-page .info-card p{ font-size:15px; }
+  #almenn-page .cta-btn{ font-size:14px !important; padding:12px 20px !important; }
+  /* Smá garðvinna: listinn nær yfir alla breiddina */
+  #smavinna-page .service-clean-layout{
+    grid-template-columns:1fr;
+  }
+}
+/* Sími: aðeins Almenn garðþjónusta */
+@media (max-width:760px){
+  #almenn-page .section-gray{ padding-bottom:20px !important; }
+  #almenn-page .included-section{ margin-top:0; }
+  #almenn-page .included-layout{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  #almenn-page .feature-list{ gap:18px; }
+  #almenn-page .feature-list h3{ font-size:17px; margin:0 0 4px; }
+  #almenn-page .feature-list p{ font-size:15px; line-height:1.45; }
+  #almenn-page .included-images{
+    grid-template-columns:repeat(2, 1fr);
+    gap:8px;
+  }
+  #almenn-page .info-cards{ grid-template-columns:1fr; }
+  #almenn-page .info-card h3{ font-size:18px; }
+  #almenn-page .info-card p,
+  #almenn-page .check-list li{ font-size:15px !important; line-height:1.45 !important; }
+  #almenn-page .cta-btn{ font-size:14px !important; padding:12px 20px !important; }
+}
 </style>
 </head>
 <body>
